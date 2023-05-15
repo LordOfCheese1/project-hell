@@ -1,0 +1,5 @@
+res://scenes/testing.tscn
+res://prefabs/world/walls.tscn
+res://prefabs/entities/player.tscn
+res://scripts/classes/entity_class.gd
+res://scripts/entities/player.gd
