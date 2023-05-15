@@ -1,6 +1,5 @@
 extends "res://scripts/classes/entity_class.gd"
 
-
 var max_speed = 120
 var accel = 0.15
 var jump_power = 8

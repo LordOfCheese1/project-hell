@@ -3,3 +3,8 @@ res://prefabs/world/walls.tscn
 res://prefabs/entities/player.tscn
 res://scripts/classes/entity_class.gd
 res://scripts/entities/player.gd
+res://scripts/classes/item.gd
+res://prefabs/items/dagger.tscn
+res://scripts/items/dagger.gd
+res://scripts/classes/item_class.gd
+res://scripts/world/walls.gd

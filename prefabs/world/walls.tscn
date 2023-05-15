@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://brpr7evsluafp"]
+[gd_scene load_steps=5 format=3 uid="uid://brpr7evsluafp"]
 
 [ext_resource type="Texture2D" uid="uid://j275ccufwqny" path="res://textures/testing/tile.png" id="1_y1ri3"]
+[ext_resource type="Script" path="res://scripts/world/walls.gd" id="2_sc5t7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqcco"]
 texture = ExtResource("1_y1ri3")
@@ -16,3 +17,4 @@ sources/0 = SubResource("TileSetAtlasSource_vqcco")
 [node name="walls" type="TileMap"]
 tile_set = SubResource("TileSet_a6n7p")
 format = 2
+script = ExtResource("2_sc5t7")
