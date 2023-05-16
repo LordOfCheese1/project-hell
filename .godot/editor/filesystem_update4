@@ -1,10 +1,10 @@
 res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/entities/player.tscn
-res://scripts/classes/entity_class.gd
-res://scripts/entities/player.gd
-res://scripts/classes/item.gd
 res://prefabs/items/dagger.tscn
+res://scripts/classes/entity_class.gd
 res://scripts/items/dagger.gd
 res://scripts/classes/item_class.gd
-res://scripts/world/walls.gd
+res://scripts/entities/player.gd
+res://prefabs/item_grab_area/item_grab_area.tscn
+res://scripts/components/item_grab_area.gd

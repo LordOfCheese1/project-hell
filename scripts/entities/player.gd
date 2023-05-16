@@ -7,6 +7,12 @@ var jump_held_for = 0
 var is_jumping = false
 var jump_buffer = 0
 var max_jump_buffer = 8
+var look_dir_x = 1
+var look_dir_y = 0
+
+
+func _ready():
+	setup_entity(5.0, 2)
 
 
 func _physics_process(delta):
@@ -32,6 +38,18 @@ func _physics_process(delta):
 			else:
 				jump_held_for = 0
 			velocity.y -= jump_held_for * jump_power
+	
+	if Input.is_action_just_pressed("grab"):
+		if $item_grab_area.items_in_range != []:
+			$item_grab_area.items_in_range[0].grab(self)
+	
+	for i in range(len(grabbed_items)):
+		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 16), position.y + (look_dir_y * 16)), 0.3)
+	
+	if velocity.x != 0:
+		look_dir_x = velocity.x / abs(velocity.x)
+	
+	look_dir_y = Input.get_axis("up", "down")
 
 
 func jump():

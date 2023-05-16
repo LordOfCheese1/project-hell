@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://0oy3exnotukn"]
+[gd_scene load_steps=6 format=3 uid="uid://0oy3exnotukn"]
 
 [ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_xd2hm"]
 [ext_resource type="Texture2D" uid="uid://cg2tj8slgpw5k" path="res://textures/testing/player.png" id="2_haq8n"]
+[ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/item_grab_area/item_grab_area.tscn" id="3_w1yh2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh0d6"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nw3q4"]
+radius = 24.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_xd2hm")
@@ -14,3 +18,8 @@ texture = ExtResource("2_haq8n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sh0d6")
+
+[node name="item_grab_area" parent="." instance=ExtResource("3_w1yh2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_grab_area"]
+shape = SubResource("CircleShape2D_nw3q4")

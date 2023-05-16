@@ -1,18 +1,18 @@
 extends "res://scripts/classes/item_class.gd"
 
-
 var velocity = Vector2()
 var touching_wall = false
 
 
 func _ready():
+	setup_item()
 	velocity.x = -180
 
 
 func _physics_process(delta):
 	position += velocity * delta
 	
-	if !touching_wall:
+	if !touching_wall && grabbed_entity == null:
 		velocity.y += gravity_pull * delta
 		rotation_degrees += velocity.y / 10
 	else:
