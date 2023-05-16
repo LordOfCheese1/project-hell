@@ -65,6 +65,7 @@ func jump():
 func attempt_item_grab():
 	if $item_grab_area.items_in_range != []:
 			$item_grab_area.items_in_range[0].grab(self)
+			$item_grab_area.refresh()
 
 
 func attempt_item_use():
