@@ -40,11 +40,15 @@ func _physics_process(delta):
 			velocity.y -= jump_held_for * jump_power
 	
 	if Input.is_action_just_pressed("grab"):
-		if $item_grab_area.items_in_range != []:
-			$item_grab_area.items_in_range[0].grab(self)
+		attempt_item_grab()
+	
+	
+	if Input.is_action_just_pressed("use_item"):
+		attempt_item_use()
 	
 	for i in range(len(grabbed_items)):
 		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 16), position.y + (look_dir_y * 16)), 0.3)
+		grabbed_items[i].look_at(position + Vector2(look_dir_x * 64, look_dir_y * 64))
 	
 	if velocity.x != 0:
 		look_dir_x = velocity.x / abs(velocity.x)
@@ -56,3 +60,13 @@ func jump():
 	jump_held_for = 2
 	velocity.y = -10
 	is_jumping = true
+
+
+func attempt_item_grab():
+	if $item_grab_area.items_in_range != []:
+			$item_grab_area.items_in_range[0].grab(self)
+
+
+func attempt_item_use():
+	if grabbed_items != []:
+		grabbed_items[0].emit_signal("used")
