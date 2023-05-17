@@ -43,6 +43,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("grab"):
 		if len(grabbed_items) < 2:
 			attempt_item_grab()
+	
+	if Input.is_action_just_released("grab"):
 		grabbed_items.reverse()
 	
 	if Input.is_action_pressed("grab"):
@@ -84,7 +86,6 @@ func attempt_item_use():
 
 
 func attempt_attach():
-	print("attach")
 	if len(grabbed_items) > 1:
 		grabbed_items[1].attach_to(grabbed_items[0])
 		$item_grab_area.refresh()

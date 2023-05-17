@@ -6,6 +6,7 @@ var gravity_pull = 550
 var grabbed_entity : Node
 var is_attached_to : Node
 var has_attachment = false
+var attach_position = Vector2()
 
 
 func grab(entity : Node):
@@ -31,10 +32,12 @@ func attach_to(target : Node):
 	is_grabbed = false
 
 
-func setup_item():
+func setup_item(attach_pos = Vector2(0, 0)):
 	add_to_group("item")
+	attach_position = attach_pos
 
 
 func item_update():
 	if is_attached_to != null:
-		position = is_attached_to.position
+		position = is_attached_to.position + is_attached_to.attach_position * is_attached_to.transform.x
+		rotation_degrees = is_attached_to.rotation_degrees
