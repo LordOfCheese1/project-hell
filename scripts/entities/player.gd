@@ -40,7 +40,9 @@ func _physics_process(delta):
 			velocity.y -= jump_held_for * jump_power
 	
 	if Input.is_action_just_pressed("grab"):
-		attempt_item_grab()
+		if len(grabbed_items) < 2:
+			attempt_item_grab()
+		grabbed_items.reverse()
 	
 	
 	if Input.is_action_just_pressed("use_item"):

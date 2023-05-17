@@ -4,3 +4,4 @@ res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/items/dagger.tscn
+res://scripts/components/item_grab_area.gd
