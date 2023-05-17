@@ -86,6 +86,10 @@ func attempt_item_use():
 
 
 func attempt_attach():
-	if len(grabbed_items) > 1:
+	var attached_items_amt = 0
+	for i in grabbed_items:
+		if i.has_attachment:
+			attached_items_amt += 1
+	if len(grabbed_items) > 1 && attached_items_amt < 1:
 		grabbed_items[1].attach_to(grabbed_items[0])
 		$item_grab_area.refresh()
