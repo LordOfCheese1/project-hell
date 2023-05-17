@@ -5,7 +5,7 @@ var touching_wall = false
 
 
 func _ready():
-	setup_item(Vector2(-6, 0))
+	setup_item(Vector2(6, 0))
 	velocity.x = -180
 
 

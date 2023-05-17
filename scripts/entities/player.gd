@@ -66,6 +66,7 @@ func _physics_process(delta):
 		look_dir_x = velocity.x / abs(velocity.x)
 	
 	look_dir_y = Input.get_axis("up", "down")
+	$Sprite2D.rotation_degrees = velocity.x / 5
 
 
 func jump():

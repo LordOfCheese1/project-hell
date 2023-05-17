@@ -1,5 +1,5 @@
-res://prefabs/item_grab_area
 res://scripts/components
+res://prefabs/components
 res://scripts/world
 res://prefabs/items
 res://scripts/items
