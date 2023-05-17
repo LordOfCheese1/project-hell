@@ -10,6 +10,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	item_update()
 	position += velocity * delta
 	
 	if !touching_wall && grabbed_entity == null:

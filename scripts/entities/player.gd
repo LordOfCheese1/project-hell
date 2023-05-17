@@ -9,6 +9,7 @@ var jump_buffer = 0
 var max_jump_buffer = 8
 var look_dir_x = 1
 var look_dir_y = 0
+var grabbed_for = 0
 
 
 func _ready():
@@ -44,6 +45,13 @@ func _physics_process(delta):
 			attempt_item_grab()
 		grabbed_items.reverse()
 	
+	if Input.is_action_pressed("grab"):
+		grabbed_for += 1
+		if grabbed_for > 90:
+			grabbed_for = 0
+			attempt_attach()
+	else:
+		grabbed_for = 0
 	
 	if Input.is_action_just_pressed("use_item"):
 		attempt_item_use()
@@ -73,3 +81,10 @@ func attempt_item_grab():
 func attempt_item_use():
 	if grabbed_items != []:
 		grabbed_items[0].emit_signal("used")
+
+
+func attempt_attach():
+	print("attach")
+	if len(grabbed_items) > 1:
+		grabbed_items[1].attach_to(grabbed_items[0])
+		$item_grab_area.refresh()
