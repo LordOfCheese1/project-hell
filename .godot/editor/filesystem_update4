@@ -1,5 +1,6 @@
+res://prefabs/item_grab_area/item_grab_area.tscn
+res://scripts/entities/player.gd
 res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/items/dagger.tscn
-res://prefabs/item_grab_area/item_grab_area.tscn

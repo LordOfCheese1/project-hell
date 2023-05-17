@@ -14,3 +14,6 @@ position = Vector2(120, 143)
 
 [node name="dagger" parent="." instance=ExtResource("3_jas43")]
 position = Vector2(292, 61)
+
+[node name="dagger2" parent="." instance=ExtResource("3_jas43")]
+position = Vector2(194, 111)
