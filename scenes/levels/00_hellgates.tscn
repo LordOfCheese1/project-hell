@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brpr7evsluafp" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]
-[ext_resource type="PackedScene" uid="uid://ctlm3q4kbx0rd" path="res://prefabs/entities/player.tscn" id="2_1ot01"]
+[ext_resource type="PackedScene" uid="uid://rtq5jolpm2ji" path="res://prefabs/entities/player.tscn" id="2_1ot01"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="4_xdqfv"]
 
 [node name="00_hellgates" type="Node2D"]

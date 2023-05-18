@@ -1,23 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckfedxh8ujfre"]
+[gd_scene load_steps=8 format=3 uid="uid://rtq5jolpm2ji"]
 
-[ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_xd2hm"]
+[ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
+[ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
+[ext_resource type="Script" path="res://scripts/entities/player/player_leg.gd" id="2_wmahh"]
 [ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ere26"]
-size = Vector2(6, 14)
+size = Vector2(6, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nw3q4"]
 radius = 24.0
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_xd2hm")
+script = ExtResource("1_knm7x")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="body" type="Node2D" parent="."]
+
+[node name="leg_left" type="Sprite2D" parent="body"]
+position = Vector2(-2, 5)
+rotation = 0.383972
+texture = ExtResource("2_50baq")
+offset = Vector2(0, 2)
+script = ExtResource("2_wmahh")
+
+[node name="leg_right" type="Sprite2D" parent="body"]
+position = Vector2(2, 5)
+rotation = -0.383972
+texture = ExtResource("2_50baq")
+offset = Vector2(0, 2)
+flip_h = true
+script = ExtResource("2_wmahh")
+
+[node name="upper_body" type="Sprite2D" parent="body"]
 texture = ExtResource("3_ur0jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ere26")
 
 [node name="item_grab_area" parent="." instance=ExtResource("3_w1yh2")]
