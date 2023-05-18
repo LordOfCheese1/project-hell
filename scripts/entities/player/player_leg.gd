@@ -14,7 +14,7 @@ func _ready():
 func _physics_process(delta):
 	if !is_hooked or !get_parent().get_parent().is_on_floor():# && get_parent().get_parent().is_on_floor():
 		if get_parent().get_parent().is_on_floor():
-			hook_point = Vector2(get_parent().get_parent().position.x, get_parent().get_parent().position.y + 10)
+			hook_point = Vector2(get_parent().get_parent().position.x + position.x, get_parent().get_parent().position.y + 10)
 		else:
 			hook_point.x = get_parent().get_parent().position.x + position.x * 2
 			hook_point.y = get_parent().get_parent().position.y + position.y * 2
@@ -24,4 +24,4 @@ func _physics_process(delta):
 		if hook_point.distance_to(to_global(default_pos)) > 10:
 			is_hooked = false
 	
-	points[1] = to_local(hook_point)#lerp(points[1], to_local(hook_point), 0.2)
+	points[1] = to_local(hook_point)#lerp(points[1], to_local(hook_point), 0.3)
