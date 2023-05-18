@@ -14,7 +14,7 @@ layer_0/tile_data = PackedInt32Array(983040, 1, 2, 983041, 65537, 2, 983042, 655
 position = Vector2(120, 143)
 
 [node name="dagger" parent="." instance=ExtResource("3_jas43")]
-position = Vector2(292, 61)
+position = Vector2(223, 94)
 
 [node name="dagger2" parent="." instance=ExtResource("3_jas43")]
 position = Vector2(194, 111)
