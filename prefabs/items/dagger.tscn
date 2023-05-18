@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ldtlqltqfngi" path="res://textures/items/dagger.png" id="2_0cr1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45om3"]
-size = Vector2(16, 8)
+size = Vector2(16, 4)
 
 [node name="dagger" type="Area2D"]
 script = ExtResource("1_710lg")

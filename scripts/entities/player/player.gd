@@ -27,7 +27,9 @@ func _physics_process(delta):
 		jump_buffer = 8
 	if jump_buffer > 0:
 		jump_buffer -= 1
-	velocity.y += gravity * delta
+	
+	if velocity.y < gravity:
+		velocity.y += gravity * delta
 	if is_on_floor():
 		is_jumping = false
 		if jump_buffer > 0:
@@ -66,7 +68,8 @@ func _physics_process(delta):
 		look_dir_x = velocity.x / abs(velocity.x)
 	
 	look_dir_y = Input.get_axis("up", "down")
-	$Sprite2D.rotation_degrees = velocity.x / 5
+	$body/upper_body.rotation_degrees = velocity.x / 6
+	$body/upper_body.scale.x = -look_dir_x
 
 
 func jump():

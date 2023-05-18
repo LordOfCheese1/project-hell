@@ -6,5 +6,10 @@ res://prefabs/components/item_grab_area.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/components/hitbox.tscn
 res://prefabs/items/flamethrower.tscn
-res://scripts/items/flamethrower.gd
-res://scripts/components/item_grab_area.gd
+res://prefabs/world/game_camera.tscn
+res://scripts/world/game_camera.gd
+res://scenes/levels/00_hellgates.tscn
+res://scripts/entities/player.gd
+res://scripts/items/dagger.gd
+res://scripts/entities/player/player_leg.gd
+res://scripts/entities/player/player.gd

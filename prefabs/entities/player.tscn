@@ -1,23 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://dllvdtwus7rvh"]
+[gd_scene load_steps=8 format=3 uid="uid://ctlm3q4kbx0rd"]
 
-[ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_xd2hm"]
-[ext_resource type="Texture2D" uid="uid://cg2tj8slgpw5k" path="res://textures/testing/player.png" id="2_haq8n"]
+[ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
+[ext_resource type="Script" path="res://scripts/entities/player/player_leg.gd" id="2_wmahh"]
+[ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sh0d6"]
-radius = 8.0
+[sub_resource type="Curve" id="Curve_no5d2"]
+_data = [Vector2(0, 0.269939), 0.0, 0.0, 0, 0, Vector2(1, 0.0981596), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ere26"]
+size = Vector2(6, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nw3q4"]
 radius = 24.0
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_xd2hm")
+script = ExtResource("1_knm7x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_haq8n")
+[node name="body" type="Node2D" parent="."]
+
+[node name="leg_left" type="Line2D" parent="body"]
+position = Vector2(-2, 6)
+points = PackedVector2Array(0, -1, 0, 4)
+width_curve = SubResource("Curve_no5d2")
+default_color = Color(0.470588, 0.117647, 0.215686, 1)
+script = ExtResource("2_wmahh")
+
+[node name="leg_right" type="Line2D" parent="body"]
+position = Vector2(2, 6)
+points = PackedVector2Array(0, -1, 0, 4)
+width_curve = SubResource("Curve_no5d2")
+default_color = Color(0.470588, 0.117647, 0.215686, 1)
+script = ExtResource("2_wmahh")
+
+[node name="upper_body" type="Sprite2D" parent="body"]
+texture = ExtResource("3_ur0jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_sh0d6")
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ere26")
 
 [node name="item_grab_area" parent="." instance=ExtResource("3_w1yh2")]
 
