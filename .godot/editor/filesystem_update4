@@ -13,3 +13,4 @@ res://scripts/entities/player.gd
 res://scripts/items/dagger.gd
 res://scripts/entities/player/player_leg.gd
 res://scripts/entities/player/player.gd
+res://scripts/components/hitbox.gd

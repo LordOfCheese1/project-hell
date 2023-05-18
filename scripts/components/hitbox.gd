@@ -4,5 +4,10 @@ extends Area2D
 signal hit
 
 
+func _ready():
+	add_to_group("hitbox")
+
+
 func _on_area_entered(area):
-	pass # Replace with function body.
+	if area.is_in_group("attackbox"):
+		emit_signal("hit")

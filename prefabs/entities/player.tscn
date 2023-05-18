@@ -19,14 +19,14 @@ script = ExtResource("1_knm7x")
 
 [node name="leg_left" type="Sprite2D" parent="body"]
 position = Vector2(-2, 5)
-rotation = 0.383972
+rotation = 1.55334
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 script = ExtResource("2_wmahh")
 
 [node name="leg_right" type="Sprite2D" parent="body"]
 position = Vector2(2, 5)
-rotation = -0.383972
+rotation = -1.55334
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 flip_h = true
