@@ -5,3 +5,5 @@ res://prefabs/items/dagger.tscn
 res://prefabs/components/item_grab_area.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/components/hitbox.tscn
+res://prefabs/items/flamethrower.tscn
+res://scripts/items/flamethrower.gd

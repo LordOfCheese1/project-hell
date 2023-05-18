@@ -1,8 +1,8 @@
+res://scripts/items
+res://prefabs/items
 res://scripts/components
 res://prefabs/components
 res://scripts/world
-res://prefabs/items
-res://scripts/items
 res://scripts/entities
 res://prefabs/entities
 res://prefabs/world

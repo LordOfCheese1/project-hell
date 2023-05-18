@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ooqpsh4dbtp8"]
+[gd_scene load_steps=5 format=3 uid="uid://ooqpsh4dbtp8"]
 
 [ext_resource type="PackedScene" uid="uid://brpr7evsluafp" path="res://prefabs/world/walls.tscn" id="1_di5kh"]
 [ext_resource type="PackedScene" uid="uid://dllvdtwus7rvh" path="res://prefabs/entities/player.tscn" id="2_of53d"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="3_jas43"]
+[ext_resource type="PackedScene" uid="uid://b7x3dajhktcv0" path="res://prefabs/items/flamethrower.tscn" id="4_6g04t"]
 
 [node name="testing" type="Node2D"]
 
@@ -18,5 +19,5 @@ position = Vector2(292, 61)
 [node name="dagger2" parent="." instance=ExtResource("3_jas43")]
 position = Vector2(194, 111)
 
-[node name="dagger3" parent="." instance=ExtResource("3_jas43")]
-position = Vector2(280, 158)
+[node name="flamethrower" parent="." instance=ExtResource("4_6g04t")]
+position = Vector2(294, 191)
