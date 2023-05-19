@@ -13,7 +13,9 @@ var grabbed_for = 0
 
 
 func _ready():
+	gv.player = self
 	setup_entity(5.0, 2)
+	add_to_group("player")
 
 
 func _physics_process(delta):

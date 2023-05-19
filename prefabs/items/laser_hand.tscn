@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd1culmdmnt3w"]
+
+[ext_resource type="Texture2D" uid="uid://cjwymcx3misak" path="res://textures/items/laser_hand.png" id="1_4l83u"]
+[ext_resource type="Script" path="res://scripts/items/laser_hand.gd" id="1_5ehp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfjs"]
+size = Vector2(11, 4)
+
+[node name="laser_hand" type="Area2D"]
+script = ExtResource("1_5ehp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4l83u")
+offset = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_dgfjs")
+
+[connection signal="used" from="." to="." method="_on_used"]
