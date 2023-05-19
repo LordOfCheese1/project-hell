@@ -80,13 +80,13 @@ func jump():
 
 func attempt_item_grab():
 	if $item_grab_area.items_in_range != []:
-			$item_grab_area.items_in_range[0].grab(self)
-			$item_grab_area.refresh()
+		$item_grab_area.items_in_range[0].grab(self)
+		$item_grab_area.refresh()
 
 
 func attempt_item_use():
 	if grabbed_items != []:
-		grabbed_items[0].emit_signal("used")
+		grabbed_items[0].use()
 
 
 func attempt_attach():

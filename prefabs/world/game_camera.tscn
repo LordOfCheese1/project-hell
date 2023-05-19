@@ -3,4 +3,6 @@
 [ext_resource type="Script" path="res://scripts/world/game_camera.gd" id="1_r68ue"]
 
 [node name="game_camera" type="Camera2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 script = ExtResource("1_r68ue")

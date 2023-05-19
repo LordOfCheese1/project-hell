@@ -4,5 +4,3 @@
 
 [node name="hitbox" type="Area2D"]
 script = ExtResource("1_sawl5")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

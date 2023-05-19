@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ere26"]
-size = Vector2(6, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oag7"]
+radius = 3.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nw3q4"]
 radius = 24.0
@@ -19,14 +20,12 @@ script = ExtResource("1_knm7x")
 
 [node name="leg_left" type="Sprite2D" parent="body"]
 position = Vector2(-2, 5)
-rotation = 1.55334
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 script = ExtResource("2_wmahh")
 
 [node name="leg_right" type="Sprite2D" parent="body"]
 position = Vector2(2, 5)
-rotation = -1.55334
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 flip_h = true
@@ -36,8 +35,8 @@ script = ExtResource("2_wmahh")
 texture = ExtResource("3_ur0jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_ere26")
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_3oag7")
 
 [node name="item_grab_area" parent="." instance=ExtResource("3_w1yh2")]
 

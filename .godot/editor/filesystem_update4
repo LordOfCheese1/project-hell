@@ -1,3 +1,5 @@
+res://prefabs/world/game_camera.tscn
+res://scripts/entities/player/player.gd
 res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/components/attackbox.tscn
@@ -6,11 +8,9 @@ res://prefabs/components/item_grab_area.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/components/hitbox.tscn
 res://prefabs/items/flamethrower.tscn
-res://prefabs/world/game_camera.tscn
-res://scripts/world/game_camera.gd
 res://scenes/levels/00_hellgates.tscn
-res://scripts/entities/player.gd
-res://scripts/items/dagger.gd
+res://scripts/classes/item_class.gd
 res://scripts/entities/player/player_leg.gd
-res://scripts/entities/player/player.gd
 res://scripts/components/hitbox.gd
+res://scripts/components/attackbox.gd
+res://prefabs/world/close_background.tscn

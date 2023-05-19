@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://f17hcev0cvv2"]
+
+[ext_resource type="Texture2D" uid="uid://4n5awn1whb3b" path="res://textures/tiles/bg_pipes.png" id="1_lai07"]
+[ext_resource type="Texture2D" uid="uid://dwwh3eq1rptiu" path="res://textures/tiles/bg_press.png" id="2_i4nny"]
+[ext_resource type="Texture2D" uid="uid://10poanqvrl1r" path="res://textures/tiles/bg_bricks.png" id="3_urf3q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45bwi"]
+texture = ExtResource("1_lai07")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkncv"]
+texture = ExtResource("2_i4nny")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3ayb"]
+texture = ExtResource("3_urf3q")
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8y5xa"]
+sources/0 = SubResource("TileSetAtlasSource_45bwi")
+sources/1 = SubResource("TileSetAtlasSource_vkncv")
+sources/2 = SubResource("TileSetAtlasSource_m3ayb")
+
+[node name="close_background" type="TileMap"]
+tile_set = SubResource("TileSet_8y5xa")
+format = 2
