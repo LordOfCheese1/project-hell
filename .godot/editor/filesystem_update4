@@ -1,15 +1,2 @@
-res://prefabs/world/close_background.tscn
-res://scripts/classes/projectile_class.gd
-res://prefabs/projectiles/dagger_beam.tscn
-res://scripts/projectiles/dagger_beam.gd
-res://scripts/items/dagger.gd
-res://scenes/testing.tscn
-res://prefabs/world/walls.tscn
-res://prefabs/items/dagger.tscn
-res://prefabs/components/item_grab_area.tscn
 res://prefabs/entities/player.tscn
-res://prefabs/components/attackbox.tscn
-res://prefabs/components/hitbox.tscn
-res://prefabs/items/flamethrower.tscn
-res://scenes/levels/00_hellgates.tscn
-res://scripts/classes/item_class.gd
+res://shaders/Entity.gdshader

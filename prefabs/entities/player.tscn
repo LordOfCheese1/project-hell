@@ -1,10 +1,112 @@
-[gd_scene load_steps=8 format=3 uid="uid://rtq5jolpm2ji"]
+[gd_scene load_steps=15 format=3 uid="uid://rtq5jolpm2ji"]
 
 [ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
 [ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
+[ext_resource type="Shader" path="res://shaders/Entity.gdshader" id="2_642b5"]
 [ext_resource type="Script" path="res://scripts/entities/player/player_leg.gd" id="2_wmahh"]
 [ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdk66"]
+shader = ExtResource("2_642b5")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvqw3"]
+shader = ExtResource("2_642b5")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fel67"]
+shader = ExtResource("2_642b5")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 1.0
+
+[sub_resource type="Animation" id="Animation_h3ryb"]
+resource_name = "Hurt"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leg_left:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leg_right:material:shader_parameter/fac")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("upper_body:material:shader_parameter/fac")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4qvqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leg_left:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leg_right:material:shader_parameter/fac")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("upper_body:material:shader_parameter/fac")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcmac"]
+_data = {
+"Hurt": SubResource("Animation_h3ryb"),
+"RESET": SubResource("Animation_4qvqf")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oag7"]
 radius = 3.0
@@ -19,12 +121,14 @@ script = ExtResource("1_knm7x")
 [node name="body" type="Node2D" parent="."]
 
 [node name="leg_left" type="Sprite2D" parent="body"]
+material = SubResource("ShaderMaterial_sdk66")
 position = Vector2(-2, 5)
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 script = ExtResource("2_wmahh")
 
 [node name="leg_right" type="Sprite2D" parent="body"]
+material = SubResource("ShaderMaterial_xvqw3")
 position = Vector2(2, 5)
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
@@ -32,7 +136,13 @@ flip_h = true
 script = ExtResource("2_wmahh")
 
 [node name="upper_body" type="Sprite2D" parent="body"]
+material = SubResource("ShaderMaterial_fel67")
 texture = ExtResource("3_ur0jm")
+
+[node name="body_anim" type="AnimationPlayer" parent="body"]
+libraries = {
+"": SubResource("AnimationLibrary_lcmac")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
