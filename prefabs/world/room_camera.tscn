@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8d1xxb5mriec"]
+
+[ext_resource type="Script" path="res://scripts/world/room_camera.gd" id="1_gavag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a8ry"]
+size = Vector2(16, 16)
+
+[node name="room_camera" type="Area2D"]
+script = ExtResource("1_gavag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6a8ry")
+debug_color = Color(1, 0, 0.545098, 0.419608)

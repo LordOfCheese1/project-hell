@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq6jk1bdbr4vb"]
+[gd_scene load_steps=3 format=3 uid="uid://cq6jk1bdbr4vb"]
 
 [ext_resource type="Script" path="res://scripts/world/game_camera.gd" id="1_r68ue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqu36"]
+size = Vector2(1, 1)
 
 [node name="game_camera" type="Camera2D"]
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 script = ExtResource("1_r68ue")
+
+[node name="room_detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_detect"]
+shape = SubResource("RectangleShape2D_pqu36")
+debug_color = Color(0, 1, 0.0509804, 0.419608)
+
+[connection signal="area_entered" from="room_detect" to="." method="_on_room_detect_area_entered"]

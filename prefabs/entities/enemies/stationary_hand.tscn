@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c34s84tvv8odc"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/stationary_hand.gd" id="1_tqp3g"]
+
+[node name="stationary_hand" type="CharacterBody2D"]
+script = ExtResource("1_tqp3g")

@@ -1,9 +1,8 @@
 extends Camera2D
 
-
-@export var screen_size = Vector2(384, 256)
 @export var follow : NodePath
-var camera_offset = Vector2(0, 0)
+var cooldown = 5
+var current_room_cam : Node
 
 
 func _ready():
@@ -11,7 +10,20 @@ func _ready():
 
 
 func _process(_delta):
-	if get_node_or_null(follow) != null:
-		position = get_node(follow).position
-	position.x = snapped(position.x + (screen_size.x / 2), screen_size.x) - (screen_size.x / 2) + camera_offset.x
-	position.y = snapped(position.y + (screen_size.y / 2), screen_size.y) - (screen_size.y / 2) + camera_offset.y
+	if current_room_cam != null:
+		limit_left = current_room_cam.position.x - current_room_cam.size.x / 2
+		limit_right = current_room_cam.position.x + current_room_cam.size.x / 2
+		limit_top = current_room_cam.position.y - current_room_cam.size.y / 2
+		limit_bottom = current_room_cam.position.y + current_room_cam.size.y / 2
+	else:
+		limit_left = -65536
+		limit_right = 65536
+		limit_top = -65536
+		limit_bottom = 65536
+	position = get_node(follow).position
+	$room_detect.position = to_local(get_node(follow).position)
+
+
+func _on_room_detect_area_entered(area):
+	if area.is_in_group("room_cam"):
+		current_room_cam = area

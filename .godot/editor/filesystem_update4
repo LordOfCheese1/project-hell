@@ -14,3 +14,7 @@ res://scripts/entities/player/player_leg.gd
 res://scripts/components/hitbox.gd
 res://scripts/components/attackbox.gd
 res://prefabs/world/close_background.tscn
+res://prefabs/entities/enemies/stationary_hand.tscn
+res://scripts/world/game_camera.gd
+res://prefabs/world/room_camera.tscn
+res://scripts/world/room_camera.gd

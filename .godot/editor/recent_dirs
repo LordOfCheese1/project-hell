@@ -1,7 +1,9 @@
+res://scripts/world
 res://prefabs/world
+res://scripts/entities/enemies
+res://prefabs/entities/enemies
 res://scripts/entities/player
 res://scenes/levels
-res://scripts/world
 res://scripts/items
 res://prefabs/items
 res://scripts/components
