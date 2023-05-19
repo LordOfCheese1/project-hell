@@ -9,5 +9,5 @@ func _ready():
 
 
 func hit(damage : float):
-	emit_signal("hit")
+	emit_signal("has_been_hit")
 	get_node(entity).hp -= damage

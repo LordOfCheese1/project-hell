@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://uq64mhatfarv"]
+[gd_scene load_steps=5 format=3 uid="uid://uq64mhatfarv"]
 
 [ext_resource type="Script" path="res://scripts/projectiles/dagger_beam.gd" id="1_dool1"]
 [ext_resource type="Texture2D" uid="uid://b6nwurkpgatmf" path="res://textures/projectiles/dagger_beam.png" id="2_w8dtp"]
+[ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="3_536af"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kam4m"]
 radius = 4.0
@@ -13,6 +14,12 @@ script = ExtResource("1_dool1")
 texture = ExtResource("2_w8dtp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kam4m")
+
+[node name="attackbox" parent="." instance=ExtResource("3_536af")]
+damage = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
 shape = SubResource("CircleShape2D_kam4m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

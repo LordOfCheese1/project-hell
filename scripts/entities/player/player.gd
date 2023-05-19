@@ -81,6 +81,7 @@ func jump():
 
 
 func attempt_item_grab():
+	$item_grab_area.refresh()
 	if $item_grab_area.items_in_range != []:
 		$item_grab_area.items_in_range[0].grab(self)
 		$item_grab_area.refresh()
@@ -92,6 +93,7 @@ func attempt_item_use():
 
 
 func attempt_attach():
+	$item_grab_area.refresh()
 	var attached_items_amt = 0
 	for i in grabbed_items:
 		if i.has_attachment:

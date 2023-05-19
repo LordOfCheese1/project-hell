@@ -12,3 +12,5 @@ res://prefabs/items/flamethrower.tscn
 res://scenes/levels/00_hellgates.tscn
 res://prefabs/world/close_background.tscn
 res://prefabs/projectiles/dagger_beam.tscn
+res://scripts/components/hitbox.gd
+res://scripts/components/item_grab_area.gd
