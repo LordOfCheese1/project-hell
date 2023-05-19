@@ -1,2 +1,14 @@
 res://prefabs/entities/player.tscn
 res://shaders/Entity.gdshader
+res://shaders/flash.gdshader
+res://scripts/entities/player/player.gd
+res://scenes/testing.tscn
+res://prefabs/world/walls.tscn
+res://prefabs/items/dagger.tscn
+res://prefabs/components/item_grab_area.tscn
+res://prefabs/components/attackbox.tscn
+res://prefabs/components/hitbox.tscn
+res://prefabs/items/flamethrower.tscn
+res://scenes/levels/00_hellgates.tscn
+res://prefabs/world/close_background.tscn
+res://prefabs/projectiles/dagger_beam.tscn

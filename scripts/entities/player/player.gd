@@ -99,3 +99,7 @@ func attempt_attach():
 	if len(grabbed_items) > 1 && attached_items_amt < 1:
 		grabbed_items[1].attach_to(grabbed_items[0])
 		$item_grab_area.refresh()
+
+
+func _on_hitbox_has_been_hit():
+	$anim.play("hit")
