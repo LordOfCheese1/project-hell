@@ -1,10 +1,8 @@
-res://prefabs/world/game_camera.tscn
-res://scripts/entities/enemies/stationary_hand.gd
-res://prefabs/entities/enemies/stationary_hand.tscn
-res://scripts/entities/player/player.gd
-res://autoloads/global_values.tscn
-res://scripts/autoloads/global_values.gd
-res://scenes/levels/00_hellgates.tscn
+res://prefabs/world/close_background.tscn
+res://scripts/classes/projectile_class.gd
+res://prefabs/projectiles/dagger_beam.tscn
+res://scripts/projectiles/dagger_beam.gd
+res://scripts/items/dagger.gd
 res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/items/dagger.tscn
@@ -13,6 +11,5 @@ res://prefabs/entities/player.tscn
 res://prefabs/components/attackbox.tscn
 res://prefabs/components/hitbox.tscn
 res://prefabs/items/flamethrower.tscn
-res://prefabs/world/close_background.tscn
-res://prefabs/items/laser_hand.tscn
-res://scripts/items/laser_hand.gd
+res://scenes/levels/00_hellgates.tscn
+res://scripts/classes/item_class.gd

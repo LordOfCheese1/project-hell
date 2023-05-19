@@ -2,6 +2,7 @@ extends "res://scripts/classes/item_class.gd"
 
 var velocity = Vector2()
 var touching_wall = false
+var projectile_path = load("res://prefabs/projectiles/dagger_beam.tscn")
 
 
 func _ready():
@@ -33,4 +34,8 @@ func _on_body_exited(body):
 
 
 func _on_used():
-	visible = !visible
+	for i in range(-3, 4):
+		var projectile = projectile_path.instantiate()
+		projectile.position = global_position
+		projectile.rotation_degrees = rotation_degrees + i * 6
+		get_tree().current_scene.add_child(projectile)
