@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2pl31u2356x"]
+
+[ext_resource type="Script" path="res://scripts/components/player_detector.gd" id="1_lbm14"]
+
+[node name="player_detector" type="Area2D"]
+script = ExtResource("1_lbm14")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,3 +1,5 @@
+res://prefabs/entities/enemies/stationary_hand.tscn
+res://scripts/entities/enemies/stationary_hand.gd
 res://scenes/testing.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/items/dagger.tscn
@@ -9,5 +11,13 @@ res://prefabs/items/flamethrower.tscn
 res://scenes/levels/00_hellgates.tscn
 res://prefabs/world/close_background.tscn
 res://prefabs/projectiles/dagger_beam.tscn
-res://prefabs/entities/enemies/stationary_hand.tscn
-res://scripts/components/item_grab_area.gd
+res://prefabs/components/player_detector.tscn
+res://scripts/components/player_detector.gd
+res://prefabs/projectiles/laser.tscn
+res://scripts/projectiles/laser.gd
+res://scripts/items/laser_hand.gd
+res://prefabs/components/particle_spawner.tscn
+res://scripts/components/particle_spawner.gd
+res://prefabs/world/particle.tscn
+res://scripts/world/particle.gd
+res://scripts/entities/player/player.gd

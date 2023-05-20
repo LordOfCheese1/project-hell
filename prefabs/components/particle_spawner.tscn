@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcx2yxnmsex4q"]
+
+[ext_resource type="Script" path="res://scripts/components/particle_spawner.gd" id="1_tqyp5"]
+
+[node name="particle_spawner" type="Node2D"]
+script = ExtResource("1_tqyp5")

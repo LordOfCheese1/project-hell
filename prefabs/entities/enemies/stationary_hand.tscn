@@ -1,10 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://c34s84tvv8odc"]
+[gd_scene load_steps=18 format=3 uid="uid://c34s84tvv8odc"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/stationary_hand.gd" id="1_tqp3g"]
 [ext_resource type="Texture2D" uid="uid://cvmmhdj2tkg8t" path="res://textures/entities/hand/lower_arm.png" id="2_lrsg5"]
+[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_y01s4"]
 [ext_resource type="Texture2D" uid="uid://cqwvkhogc2ogk" path="res://textures/entities/hand/upper_arm.png" id="3_365t1"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="4_30idu"]
 [ext_resource type="Texture2D" uid="uid://bji4iiq4yhkfe" path="res://textures/entities/hand/stationary_body.png" id="4_lplc8"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="6_0o01n"]
+[ext_resource type="PackedScene" uid="uid://dm2pl31u2356x" path="res://prefabs/components/player_detector.tscn" id="8_alf0f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x86ef"]
+shader = ExtResource("2_y01s4")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y48d1"]
+shader = ExtResource("2_y01s4")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtyx7"]
 size = Vector2(24, 10)
@@ -12,16 +25,86 @@ size = Vector2(24, 10)
 [sub_resource type="CircleShape2D" id="CircleShape2D_3th23"]
 radius = 64.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf5e3"]
+size = Vector2(24, 32)
+
+[sub_resource type="Animation" id="Animation_v1g0o"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_parts:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.4, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:material:shader_parameter/fac")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.4, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ns762"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_parts:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:material:shader_parameter/fac")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jxxj"]
+_data = {
+"RESET": SubResource("Animation_ns762"),
+"hit": SubResource("Animation_v1g0o")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rdpf"]
+radius = 70.0
+
 [node name="stationary_hand" type="CharacterBody2D"]
 script = ExtResource("1_tqp3g")
 
 [node name="hand_parts" type="Node2D" parent="."]
+material = SubResource("ShaderMaterial_x86ef")
 
 [node name="lower_arm" type="Sprite2D" parent="hand_parts"]
+use_parent_material = true
 texture = ExtResource("2_lrsg5")
 offset = Vector2(10, 0)
 
 [node name="upper_arm" type="Sprite2D" parent="hand_parts"]
+use_parent_material = true
 position = Vector2(28, 0)
 texture = ExtResource("3_365t1")
 offset = Vector2(6, 0)
@@ -29,6 +112,7 @@ offset = Vector2(6, 0)
 [node name="looker" type="Node2D" parent="."]
 
 [node name="body" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y48d1")
 position = Vector2(0, 4)
 texture = ExtResource("4_lplc8")
 
@@ -40,3 +124,23 @@ shape = SubResource("RectangleShape2D_wtyx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="item_grab_area"]
 shape = SubResource("CircleShape2D_3th23")
+
+[node name="hitbox" parent="." instance=ExtResource("6_0o01n")]
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_gf5e3")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6jxxj")
+}
+
+[node name="player_detector" parent="." instance=ExtResource("8_alf0f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+shape = SubResource("CircleShape2D_6rdpf")
+
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]
+[connection signal="player_entered" from="player_detector" to="." method="_on_player_detector_player_entered"]

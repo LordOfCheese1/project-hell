@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ooqpsh4dbtp8"]
+[gd_scene load_steps=7 format=3 uid="uid://ooqpsh4dbtp8"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_di5kh"]
 [ext_resource type="PackedScene" uid="uid://dm8txnxhwlbsf" path="res://prefabs/entities/player.tscn" id="2_of53d"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="3_jas43"]
 [ext_resource type="PackedScene" uid="uid://b7x3dajhktcv0" path="res://prefabs/items/flamethrower.tscn" id="4_6g04t"]
+[ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="5_8ymqi"]
+[ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="6_pqyu7"]
 
 [node name="testing" type="Node2D"]
 
@@ -17,7 +19,13 @@ position = Vector2(120, 143)
 position = Vector2(223, 94)
 
 [node name="dagger2" parent="." instance=ExtResource("3_jas43")]
-position = Vector2(194, 111)
+position = Vector2(169, 103)
 
 [node name="flamethrower" parent="." instance=ExtResource("4_6g04t")]
-position = Vector2(294, 191)
+position = Vector2(85, 90)
+
+[node name="stationary_hand" parent="." instance=ExtResource("5_8ymqi")]
+position = Vector2(305, 212)
+
+[node name="laser_hand" parent="." instance=ExtResource("6_pqyu7")]
+position = Vector2(263, 201)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dctxqhhdrdugx"]
+
+[ext_resource type="Script" path="res://scripts/world/particle.gd" id="1_k3qqi"]
+
+[node name="particle" type="Sprite2D"]
+script = ExtResource("1_k3qqi")

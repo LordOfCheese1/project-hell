@@ -10,6 +10,7 @@ var max_jump_buffer = 8
 var look_dir_x = 1
 var look_dir_y = 0
 var grabbed_for = 0
+var item_use_cooldown = 0
 
 
 func _ready():
@@ -59,7 +60,7 @@ func _physics_process(delta):
 	else:
 		grabbed_for = 0
 	
-	if Input.is_action_just_pressed("use_item"):
+	if Input.is_action_pressed("use_item"):
 		attempt_item_use()
 	
 	for i in range(len(grabbed_items)):
@@ -70,8 +71,11 @@ func _physics_process(delta):
 		look_dir_x = velocity.x / abs(velocity.x)
 	
 	look_dir_y = Input.get_axis("up", "down")
-	$body/upper_body.rotation_degrees = velocity.x / 6
+	$body/upper_body.rotation_degrees = (velocity.x / 6) - look_dir_x * item_use_cooldown * 1.5
 	$body/upper_body.scale.x = -look_dir_x
+	
+	if item_use_cooldown > 0:
+		item_use_cooldown -= 1
 
 
 func jump():
@@ -88,7 +92,8 @@ func attempt_item_grab():
 
 
 func attempt_item_use():
-	if grabbed_items != []:
+	if grabbed_items != [] && item_use_cooldown <= 0:
+		item_use_cooldown = 25
 		grabbed_items[0].use()
 
 
