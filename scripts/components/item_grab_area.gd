@@ -10,9 +10,10 @@ func _on_area_entered(area):
 
 
 func _on_area_exited(area):
-	if items_in_range.has(area):
+	if area.is_in_group("item"):
 		refresh()
-		items_in_range.remove_at(items_in_range.find(area))
+		if items_in_range.has(area):
+			items_in_range.remove_at(items_in_range.find(area))
 
 
 func refresh():
