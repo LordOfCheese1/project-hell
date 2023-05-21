@@ -38,4 +38,5 @@ func _on_used():
 		var projectile = projectile_path.instantiate()
 		projectile.position = global_position
 		projectile.rotation_degrees = rotation_degrees + i * 6
+		projectile.get_child(0).ignore_in_detection.append(grabbed_entity)
 		get_tree().current_scene.add_child(projectile)

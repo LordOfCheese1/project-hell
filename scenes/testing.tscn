@@ -19,13 +19,13 @@ position = Vector2(120, 143)
 position = Vector2(223, 94)
 
 [node name="dagger2" parent="." instance=ExtResource("3_jas43")]
-position = Vector2(169, 103)
+position = Vector2(265, 182)
 
 [node name="flamethrower" parent="." instance=ExtResource("4_6g04t")]
-position = Vector2(85, 90)
+position = Vector2(54, 188)
 
 [node name="stationary_hand" parent="." instance=ExtResource("5_8ymqi")]
 position = Vector2(305, 212)
 
 [node name="laser_hand" parent="." instance=ExtResource("6_pqyu7")]
-position = Vector2(263, 201)
+position = Vector2(105, 201)

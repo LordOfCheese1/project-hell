@@ -10,6 +10,7 @@ func _ready():
 
 
 func _on_area_entered(area):
-	if area.is_in_group("hitbox") && !ignore_in_detection.has(area):
-		area.hit(damage)
-		emit_signal("has_attacked")
+	if area.is_in_group("hitbox"):
+		if !ignore_in_detection.has(area.get_parent()):
+			area.hit(damage)
+			emit_signal("has_attacked")
