@@ -10,7 +10,8 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	call_deferred("free")
+	if body.get_class() == "TileMap":
+		call_deferred("free")
 
 
 func _on_attackbox_has_attacked():

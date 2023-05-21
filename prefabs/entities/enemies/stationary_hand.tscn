@@ -90,7 +90,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6rdpf"]
-radius = 70.0
+radius = 92.0
 
 [node name="stationary_hand" type="CharacterBody2D"]
 script = ExtResource("1_tqp3g")

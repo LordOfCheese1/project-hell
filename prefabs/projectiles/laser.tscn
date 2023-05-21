@@ -27,7 +27,6 @@ shape = SubResource("CircleShape2D_mo6bo")
 texture = ExtResource("2_4n136")
 freq = 0.02
 scale_amount = -0.05
-alpha_amount = -0.08
 rot_amount = 6.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

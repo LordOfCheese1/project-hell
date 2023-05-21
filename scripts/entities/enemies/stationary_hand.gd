@@ -9,7 +9,7 @@ func _ready():
 	setup_entity(10.0, 1)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var prev_part : Node
 	for i in $hand_parts.get_children():

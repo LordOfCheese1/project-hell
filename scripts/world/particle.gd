@@ -11,7 +11,7 @@ func _ready():
 	scale.x = 1
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	scale.x += scale_amount
 	scale.y = scale.x
 	rotation_degrees += rot_amount

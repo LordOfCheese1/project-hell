@@ -64,7 +64,7 @@ func _physics_process(delta):
 		attempt_item_use()
 	
 	for i in range(len(grabbed_items)):
-		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 10) + grabbed_items.find(grabbed_items[i]) * look_dir_x * -20, position.y + (look_dir_y * 10)), 0.3)
+		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 14) + grabbed_items.find(grabbed_items[i]) * look_dir_x * -28, position.y + (look_dir_y * 12)), 0.3)
 		grabbed_items[i].look_at(position + Vector2(look_dir_x * 64, look_dir_y * 64))
 	
 	if velocity.x != 0:

@@ -6,7 +6,7 @@ var current_room_cam : Node
 
 
 func _ready():
-	position = get_node(follow).position
+	pass
 
 
 func _process(_delta):
