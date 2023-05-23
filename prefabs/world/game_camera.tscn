@@ -6,7 +6,9 @@
 size = Vector2(1, 1)
 
 [node name="game_camera" type="Camera2D"]
+limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 script = ExtResource("1_r68ue")
 
 [node name="room_detect" type="Area2D" parent="."]

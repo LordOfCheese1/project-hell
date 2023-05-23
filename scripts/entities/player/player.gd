@@ -11,6 +11,7 @@ var look_dir_x = 1
 var look_dir_y = 0
 var grabbed_for = 0
 var item_use_cooldown = 0
+var max_item_use_cooldown = 25
 
 
 func _ready():
@@ -93,7 +94,7 @@ func attempt_item_grab():
 
 func attempt_item_use():
 	if grabbed_items != [] && item_use_cooldown <= 0:
-		item_use_cooldown = 25
+		item_use_cooldown = max_item_use_cooldown
 		grabbed_items[0].use()
 
 

@@ -45,6 +45,15 @@ func _physics_process(_delta):
 			lower_hand_offset.y = 24
 
 
+func _process(_delta):
+	if hp <= 0.0 && !is_dead:
+		is_dead = true
+		grabbed_items[0].is_grabbed = false
+		grabbed_items[0].grabbed_entity = null
+		grabbed_items = []
+		call_deferred("free")
+
+
 func grab_item():
 	if $item_grab_area.items_in_range != []:
 		$item_grab_area.items_in_range[0].grab(self)

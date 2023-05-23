@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/items/laser_hand.gd" id="1_5ehp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfjs"]
-size = Vector2(11, 4)
+size = Vector2(11, 8)
 
 [node name="laser_hand" type="Area2D"]
 script = ExtResource("1_5ehp0")
@@ -17,4 +17,6 @@ offset = Vector2(4, 0)
 position = Vector2(3.5, 0)
 shape = SubResource("RectangleShape2D_dgfjs")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="used" from="." to="." method="_on_used"]
