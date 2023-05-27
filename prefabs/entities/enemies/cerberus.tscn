@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgl64yjn0gxey"]
+[gd_scene load_steps=11 format=3 uid="uid://cgl64yjn0gxey"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus.gd" id="1_3nnwq"]
 [ext_resource type="Texture2D" uid="uid://b2nq02he5wqwd" path="res://textures/entities/cerberus/upper_jaw.png" id="1_dw73c"]
@@ -8,14 +8,31 @@
 [ext_resource type="Texture2D" uid="uid://i5dki44n6vvl" path="res://textures/entities/cerberus/lower_neck.png" id="5_tivh4"]
 [ext_resource type="Texture2D" uid="uid://bmjdf5sw7fu4t" path="res://textures/entities/cerberus/upper_neck.png" id="6_bpw8w"]
 [ext_resource type="Texture2D" uid="uid://dksyraukqqg4" path="res://textures/entities/cerberus/core.png" id="7_nluoi"]
+[ext_resource type="Texture2D" uid="uid://dfq8ri5c2l1cx" path="res://textures/entities/cerberus/leg.png" id="9_h8hin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8nf2w"]
+radius = 8.0
 
 [node name="cerberus" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_3nnwq")
 
 [node name="body" type="Node2D" parent="."]
 
 [node name="Core" type="Sprite2D" parent="body"]
 texture = ExtResource("7_nluoi")
+
+[node name="leg_left" type="Sprite2D" parent="body"]
+position = Vector2(-8, -3)
+texture = ExtResource("9_h8hin")
+offset = Vector2(-7, 3)
+
+[node name="leg_right" type="Sprite2D" parent="body"]
+position = Vector2(8, -3)
+texture = ExtResource("9_h8hin")
+offset = Vector2(7, 3)
+flip_h = true
 
 [node name="head_0" type="Node2D" parent="body"]
 position = Vector2(9, -1)
@@ -97,3 +114,8 @@ offset = Vector2(8, 0)
 position = Vector2(0, 1)
 texture = ExtResource("2_oerpu")
 offset = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8nf2w")
+
+[node name="looker" type="Node2D" parent="."]

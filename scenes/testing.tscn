@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dm8txnxhwlbsf" path="res://prefabs/entities/player.tscn" id="2_of53d"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="3_jas43"]
 [ext_resource type="PackedScene" uid="uid://b7x3dajhktcv0" path="res://prefabs/items/flamethrower.tscn" id="4_6g04t"]
-[ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="5_8ymqi"]
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="6_pqyu7"]
+[ext_resource type="PackedScene" uid="uid://cnbfdqipr20hv" path="res://prefabs/projectiles/cerberus_laser.tscn" id="7_n1nac"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="7_qgisn"]
 
 [node name="testing" type="Node2D"]
@@ -25,11 +25,11 @@ position = Vector2(265, 182)
 [node name="flamethrower" parent="." instance=ExtResource("4_6g04t")]
 position = Vector2(54, 188)
 
-[node name="stationary_hand" parent="." instance=ExtResource("5_8ymqi")]
-position = Vector2(305, 212)
-
 [node name="laser_hand" parent="." instance=ExtResource("6_pqyu7")]
 position = Vector2(105, 201)
 
 [node name="cerberus" parent="." instance=ExtResource("7_qgisn")]
 position = Vector2(109, 80)
+
+[node name="cerberus_laser" parent="." instance=ExtResource("7_n1nac")]
+position = Vector2(266, 55)

@@ -5,5 +5,5 @@ func _ready():
 	setup_item(Vector2(7, 0))
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	item_update()
