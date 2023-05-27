@@ -5,7 +5,7 @@ var border = 65
 
 func _physics_process(_delta):
 	if get_parent().get_parent().is_on_floor():
-		rotation_degrees += (position.x / 2) * get_parent().get_parent().velocity.x / 8
+		rotation_degrees += (position.x / 2) * get_parent().get_parent().velocity.x / 12
 		if rotation_degrees > border:
 			rotation_degrees = -(border - 1)
 		if rotation_degrees < -border:

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ljtim2mukvda"]
+
+[ext_resource type="Texture2D" uid="uid://c4kaoiqfrlxrt" path="res://textures/tiles/decal_glow_terminal.png" id="1_vuqx0"]
+[ext_resource type="Texture2D" uid="uid://bgfrgi8sxhlsk" path="res://textures/tiles/decal_dust.png" id="2_fu6qv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbqyv"]
+texture = ExtResource("1_vuqx0")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxenk"]
+texture = ExtResource("2_fu6qv")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gohk5"]
+sources/0 = SubResource("TileSetAtlasSource_pbqyv")
+sources/1 = SubResource("TileSetAtlasSource_nxenk")
+
+[node name="decal_walls" type="TileMap"]
+tile_set = SubResource("TileSet_gohk5")
+format = 2

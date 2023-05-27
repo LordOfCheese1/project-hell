@@ -1,4 +1,8 @@
+res://prefabs/entities/enemies/cerberus.tscn
+res://scripts/entities/enemies/cerberus/cerberus.gd
 res://scenes/testing.tscn
+res://scenes/levels/00_hellgates.tscn
+res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/items/dagger.tscn
 res://prefabs/components/item_grab_area.tscn
@@ -6,16 +10,8 @@ res://prefabs/entities/player.tscn
 res://prefabs/components/attackbox.tscn
 res://prefabs/components/hitbox.tscn
 res://prefabs/items/flamethrower.tscn
-res://scenes/levels/00_hellgates.tscn
-res://prefabs/world/close_background.tscn
-res://prefabs/projectiles/dagger_beam.tscn
-res://prefabs/entities/enemies/stationary_hand.tscn
-res://prefabs/projectiles/laser.tscn
-res://prefabs/components/particle_spawner.tscn
 res://prefabs/world/particle.tscn
 res://prefabs/world/game_camera.tscn
-res://scripts/classes/entity_class.gd
-res://scripts/entities/enemies/stationary_hand.gd
-res://scripts/entities/player/player.gd
-res://scripts/items/laser_hand.gd
 res://prefabs/items/laser_hand.tscn
+res://scripts/components/particle_spawner.gd
+res://scripts/entities/enemies/cerberus/cerberus_head.gd

@@ -1,9 +1,10 @@
-Sprite2D
+Line2D
 Node2D
+Sprite2D
+CharacterBody2D
+TileMap
+Node
 CollisionShape2D
 Area2D
-Line2D
 AnimationPlayer
-CharacterBody2D
 Camera2D
-TileMap

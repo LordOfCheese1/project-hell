@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgl64yjn0gxey"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus.gd" id="1_3nnwq"]
+[ext_resource type="Texture2D" uid="uid://b2nq02he5wqwd" path="res://textures/entities/cerberus/upper_jaw.png" id="1_dw73c"]
+[ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus_head.gd" id="1_omfkx"]
+[ext_resource type="Texture2D" uid="uid://cont4jiees20w" path="res://textures/entities/cerberus/screw.png" id="1_ta22d"]
+[ext_resource type="Texture2D" uid="uid://bx3x7u6pyin1q" path="res://textures/entities/cerberus/lower_jaw.png" id="2_oerpu"]
+[ext_resource type="Texture2D" uid="uid://i5dki44n6vvl" path="res://textures/entities/cerberus/lower_neck.png" id="5_tivh4"]
+[ext_resource type="Texture2D" uid="uid://bmjdf5sw7fu4t" path="res://textures/entities/cerberus/upper_neck.png" id="6_bpw8w"]
+[ext_resource type="Texture2D" uid="uid://dksyraukqqg4" path="res://textures/entities/cerberus/core.png" id="7_nluoi"]
+
+[node name="cerberus" type="CharacterBody2D"]
+script = ExtResource("1_3nnwq")
+
+[node name="body" type="Node2D" parent="."]
+
+[node name="Core" type="Sprite2D" parent="body"]
+texture = ExtResource("7_nluoi")
+
+[node name="head_0" type="Node2D" parent="body"]
+position = Vector2(9, -1)
+script = ExtResource("1_omfkx")
+
+[node name="lower_neck" type="Sprite2D" parent="body/head_0"]
+texture = ExtResource("5_tivh4")
+offset = Vector2(11, 0)
+
+[node name="upper_neck" type="Sprite2D" parent="body/head_0"]
+position = Vector2(16, 0)
+texture = ExtResource("6_bpw8w")
+offset = Vector2(11, 0)
+
+[node name="screw" type="Sprite2D" parent="body/head_0"]
+position = Vector2(39, 0)
+texture = ExtResource("1_ta22d")
+
+[node name="upper_jaw" type="Sprite2D" parent="body/head_0/screw"]
+position = Vector2(0, -1)
+texture = ExtResource("1_dw73c")
+offset = Vector2(8, 0)
+
+[node name="lower_jaw" type="Sprite2D" parent="body/head_0/screw"]
+position = Vector2(0, 1)
+texture = ExtResource("2_oerpu")
+offset = Vector2(8, 0)
+
+[node name="head_1" type="Node2D" parent="body"]
+position = Vector2(-3, -9)
+script = ExtResource("1_omfkx")
+
+[node name="lower_neck" type="Sprite2D" parent="body/head_1"]
+texture = ExtResource("5_tivh4")
+offset = Vector2(11, 0)
+
+[node name="upper_neck" type="Sprite2D" parent="body/head_1"]
+position = Vector2(16, 0)
+texture = ExtResource("6_bpw8w")
+offset = Vector2(11, 0)
+
+[node name="screw" type="Sprite2D" parent="body/head_1"]
+position = Vector2(39, 0)
+texture = ExtResource("1_ta22d")
+
+[node name="upper_jaw" type="Sprite2D" parent="body/head_1/screw"]
+position = Vector2(0, -1)
+texture = ExtResource("1_dw73c")
+offset = Vector2(8, 0)
+
+[node name="lower_jaw" type="Sprite2D" parent="body/head_1/screw"]
+position = Vector2(0, 1)
+texture = ExtResource("2_oerpu")
+offset = Vector2(8, 0)
+
+[node name="head_2" type="Node2D" parent="body"]
+position = Vector2(-9, -2)
+script = ExtResource("1_omfkx")
+
+[node name="lower_neck" type="Sprite2D" parent="body/head_2"]
+texture = ExtResource("5_tivh4")
+offset = Vector2(11, 0)
+
+[node name="upper_neck" type="Sprite2D" parent="body/head_2"]
+position = Vector2(16, 0)
+texture = ExtResource("6_bpw8w")
+offset = Vector2(11, 0)
+
+[node name="screw" type="Sprite2D" parent="body/head_2"]
+position = Vector2(39, 0)
+texture = ExtResource("1_ta22d")
+
+[node name="upper_jaw" type="Sprite2D" parent="body/head_2/screw"]
+position = Vector2(0, -1)
+texture = ExtResource("1_dw73c")
+offset = Vector2(8, 0)
+
+[node name="lower_jaw" type="Sprite2D" parent="body/head_2/screw"]
+position = Vector2(0, 1)
+texture = ExtResource("2_oerpu")
+offset = Vector2(8, 0)

@@ -19,7 +19,8 @@ func _physics_process(delta):
 
 func spawn_particle():
 	var particle = particle_path.instantiate()
-	particle.global_position = global_position
+	particle.rotation_degrees = randi_range(0, 360)
+	particle.global_position = Vector2(global_position.x + randi_range(-1, 1), global_position.y + randi_range(-1, 1))
 	particle.scale_amount = scale_amount
 	particle.alpha_amount = alpha_amount
 	particle.rot_amount = rot_amount
