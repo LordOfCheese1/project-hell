@@ -106,6 +106,7 @@ func attempt_attach():
 			attached_items_amt += 1
 	if len(grabbed_items) > 1 && attached_items_amt < 1:
 		grabbed_items[1].attach_to(grabbed_items[0])
+		gv.spawn_explosion(12, grabbed_items[0].global_position, load("res://textures/particles/spark.png"), -0.06, -0.06, 4, 0, 0, 80)
 		$item_grab_area.refresh()
 
 

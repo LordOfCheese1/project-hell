@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://1qqvne5hfbdf"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/poison_spew.gd" id="1_pmaih"]
+[ext_resource type="Texture2D" uid="uid://0l73ison3vt2" path="res://textures/projectiles/poison_spew.png" id="2_earfe"]
+[ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="3_gngdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgbar"]
+radius = 6.0
+
+[node name="poison_spew" type="Area2D"]
+script = ExtResource("1_pmaih")
+
+[node name="attackbox" parent="." instance=ExtResource("3_gngdu")]
+damage = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
+shape = SubResource("CircleShape2D_mgbar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_earfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mgbar")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="has_attacked" from="attackbox" to="." method="_on_attackbox_has_attacked"]

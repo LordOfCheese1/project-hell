@@ -2,7 +2,7 @@ extends "res://scripts/classes/entity_class.gd"
 
 var lower_hand_offset = Vector2(0, -64)
 var spotted_player = false
-var attack_cooldown = 80
+var attack_cooldown = 90
 
 
 func _ready():

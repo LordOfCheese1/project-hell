@@ -8,13 +8,15 @@ var particle_path = load("res://prefabs/world/particle.tscn")
 @export var alpha_amount : float
 @export var rot_amount : float
 @export var scale_limit : float
+var is_emitting = true
 
 
 func _physics_process(delta):
 	time += delta
 	if time > freq:
 		time = 0
-		spawn_particle()
+		if is_emitting:
+			spawn_particle()
 
 
 func spawn_particle():

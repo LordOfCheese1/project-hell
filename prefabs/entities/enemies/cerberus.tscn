@@ -1,17 +1,66 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgl64yjn0gxey"]
+[gd_scene load_steps=20 format=3 uid="uid://cgl64yjn0gxey"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus.gd" id="1_3nnwq"]
 [ext_resource type="Texture2D" uid="uid://b2nq02he5wqwd" path="res://textures/entities/cerberus/upper_jaw.png" id="1_dw73c"]
 [ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus_head.gd" id="1_omfkx"]
 [ext_resource type="Texture2D" uid="uid://cont4jiees20w" path="res://textures/entities/cerberus/screw.png" id="1_ta22d"]
+[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_82via"]
 [ext_resource type="Texture2D" uid="uid://bx3x7u6pyin1q" path="res://textures/entities/cerberus/lower_jaw.png" id="2_oerpu"]
 [ext_resource type="Texture2D" uid="uid://i5dki44n6vvl" path="res://textures/entities/cerberus/lower_neck.png" id="5_tivh4"]
 [ext_resource type="Texture2D" uid="uid://bmjdf5sw7fu4t" path="res://textures/entities/cerberus/upper_neck.png" id="6_bpw8w"]
 [ext_resource type="Texture2D" uid="uid://dksyraukqqg4" path="res://textures/entities/cerberus/core.png" id="7_nluoi"]
 [ext_resource type="Texture2D" uid="uid://dfq8ri5c2l1cx" path="res://textures/entities/cerberus/leg.png" id="9_h8hin"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="11_tdslw"]
+[ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="11_xurt3"]
+[ext_resource type="Texture2D" uid="uid://4mdiqwqi0gwj" path="res://textures/particles/poison.png" id="12_0k43f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pg77e"]
+shader = ExtResource("2_82via")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/fac = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nf2w"]
 radius = 8.0
+
+[sub_resource type="Animation" id="Animation_0x2nf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sub82"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:material:shader_parameter/fac")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.4, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd7ql"]
+_data = {
+"RESET": SubResource("Animation_0x2nf"),
+"hit": SubResource("Animation_sub82")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sini3"]
+size = Vector2(22, 22)
 
 [node name="cerberus" type="CharacterBody2D"]
 collision_layer = 2
@@ -19,98 +68,129 @@ collision_mask = 2
 script = ExtResource("1_3nnwq")
 
 [node name="body" type="Node2D" parent="."]
+material = SubResource("ShaderMaterial_pg77e")
 
 [node name="Core" type="Sprite2D" parent="body"]
+use_parent_material = true
 texture = ExtResource("7_nluoi")
 
 [node name="leg_left" type="Sprite2D" parent="body"]
+use_parent_material = true
 position = Vector2(-8, -3)
 texture = ExtResource("9_h8hin")
 offset = Vector2(-7, 3)
 
 [node name="leg_right" type="Sprite2D" parent="body"]
+use_parent_material = true
 position = Vector2(8, -3)
 texture = ExtResource("9_h8hin")
 offset = Vector2(7, 3)
 flip_h = true
 
 [node name="head_0" type="Node2D" parent="body"]
+use_parent_material = true
 position = Vector2(9, -1)
 script = ExtResource("1_omfkx")
 
 [node name="lower_neck" type="Sprite2D" parent="body/head_0"]
+use_parent_material = true
 texture = ExtResource("5_tivh4")
 offset = Vector2(11, 0)
 
 [node name="upper_neck" type="Sprite2D" parent="body/head_0"]
+use_parent_material = true
 position = Vector2(16, 0)
 texture = ExtResource("6_bpw8w")
 offset = Vector2(11, 0)
 
 [node name="screw" type="Sprite2D" parent="body/head_0"]
+use_parent_material = true
 position = Vector2(39, 0)
 texture = ExtResource("1_ta22d")
 
 [node name="upper_jaw" type="Sprite2D" parent="body/head_0/screw"]
+use_parent_material = true
 position = Vector2(0, -1)
 texture = ExtResource("1_dw73c")
 offset = Vector2(8, 0)
 
 [node name="lower_jaw" type="Sprite2D" parent="body/head_0/screw"]
+use_parent_material = true
 position = Vector2(0, 1)
 texture = ExtResource("2_oerpu")
 offset = Vector2(8, 0)
 
 [node name="head_1" type="Node2D" parent="body"]
+use_parent_material = true
 position = Vector2(-3, -9)
 script = ExtResource("1_omfkx")
 
 [node name="lower_neck" type="Sprite2D" parent="body/head_1"]
+use_parent_material = true
 texture = ExtResource("5_tivh4")
 offset = Vector2(11, 0)
 
 [node name="upper_neck" type="Sprite2D" parent="body/head_1"]
+use_parent_material = true
 position = Vector2(16, 0)
 texture = ExtResource("6_bpw8w")
 offset = Vector2(11, 0)
 
 [node name="screw" type="Sprite2D" parent="body/head_1"]
+use_parent_material = true
 position = Vector2(39, 0)
 texture = ExtResource("1_ta22d")
 
 [node name="upper_jaw" type="Sprite2D" parent="body/head_1/screw"]
+use_parent_material = true
 position = Vector2(0, -1)
 texture = ExtResource("1_dw73c")
 offset = Vector2(8, 0)
 
 [node name="lower_jaw" type="Sprite2D" parent="body/head_1/screw"]
+use_parent_material = true
 position = Vector2(0, 1)
 texture = ExtResource("2_oerpu")
 offset = Vector2(8, 0)
 
+[node name="particle_spawner" parent="body/head_1/screw" instance=ExtResource("11_xurt3")]
+position = Vector2(4, 0)
+texture = ExtResource("12_0k43f")
+freq = 0.1
+scale_amount = -0.02
+alpha_amount = -0.04
+rot_amount = 2.5
+scale_limit = 0.5
+
 [node name="head_2" type="Node2D" parent="body"]
+use_parent_material = true
 position = Vector2(-9, -2)
 script = ExtResource("1_omfkx")
 
 [node name="lower_neck" type="Sprite2D" parent="body/head_2"]
+use_parent_material = true
 texture = ExtResource("5_tivh4")
 offset = Vector2(11, 0)
 
 [node name="upper_neck" type="Sprite2D" parent="body/head_2"]
+use_parent_material = true
 position = Vector2(16, 0)
 texture = ExtResource("6_bpw8w")
 offset = Vector2(11, 0)
 
 [node name="screw" type="Sprite2D" parent="body/head_2"]
+use_parent_material = true
 position = Vector2(39, 0)
 texture = ExtResource("1_ta22d")
 
 [node name="upper_jaw" type="Sprite2D" parent="body/head_2/screw"]
+use_parent_material = true
 position = Vector2(0, -1)
 texture = ExtResource("1_dw73c")
 offset = Vector2(8, 0)
 
 [node name="lower_jaw" type="Sprite2D" parent="body/head_2/screw"]
+use_parent_material = true
 position = Vector2(0, 1)
 texture = ExtResource("2_oerpu")
 offset = Vector2(8, 0)
@@ -119,3 +199,17 @@ offset = Vector2(8, 0)
 shape = SubResource("CircleShape2D_8nf2w")
 
 [node name="looker" type="Node2D" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cd7ql")
+}
+
+[node name="hitbox" parent="." instance=ExtResource("11_tdslw")]
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(1, -3)
+shape = SubResource("RectangleShape2D_sini3")
+
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

@@ -1,8 +1,10 @@
+res://autoloads
+res://scripts/autoloads
 res://scripts/projectiles
 res://prefabs/projectiles
+res://prefabs/world
 res://scripts/entities/enemies/cerberus
 res://prefabs/entities/enemies
-res://prefabs/world
 res://scenes/levels
 res://scripts/world
 res://scripts
@@ -10,8 +12,6 @@ res://scripts/components
 res://prefabs/components
 res://scripts/items
 res://prefabs/items
-res://autoloads
-res://scripts/autoloads
 res://scripts/entities/enemies
 res://scripts/entities/player
 res://scripts/entities

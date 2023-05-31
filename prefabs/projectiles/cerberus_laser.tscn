@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnbfdqipr20hv"]
+[gd_scene load_steps=3 format=3 uid="uid://cnbfdqipr20hv"]
 
 [ext_resource type="Script" path="res://scripts/projectiles/cerberus_laser.gd" id="1_bcexo"]
 [ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="2_ki4io"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmggj"]
-size = Vector2(1, 4)
-
 [node name="cerberus_laser" type="Area2D"]
 script = ExtResource("1_bcexo")
+
+[node name="attackbox" parent="." instance=ExtResource("2_ki4io")]
+damage = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
 
 [node name="visuals" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
@@ -17,11 +19,4 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="wall_detect" type="RayCast2D" parent="."]
-rotation = -0.0013993
 target_position = Vector2(1152, 0)
-
-[node name="attackbox" parent="." instance=ExtResource("2_ki4io")]
-damage = 1.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
-shape = SubResource("RectangleShape2D_rmggj")
