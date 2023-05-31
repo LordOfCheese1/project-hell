@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ooqpsh4dbtp8"]
+[gd_scene load_steps=9 format=3 uid="uid://ooqpsh4dbtp8"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_di5kh"]
 [ext_resource type="PackedScene" uid="uid://dm8txnxhwlbsf" path="res://prefabs/entities/player.tscn" id="2_of53d"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="6_pqyu7"]
 [ext_resource type="PackedScene" uid="uid://cnbfdqipr20hv" path="res://prefabs/projectiles/cerberus_laser.tscn" id="7_n1nac"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="7_qgisn"]
+
+[sub_resource type="EventAsset" id="EventAsset_0ps51"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/test"
+guid = "{8e971e6f-dc40-4ed9-a55f-58ce314edefb}"
+name = "test"
 
 [node name="testing" type="Node2D"]
 
@@ -33,3 +41,8 @@ position = Vector2(109, 80)
 
 [node name="cerberus_laser" parent="." instance=ExtResource("7_n1nac")]
 position = Vector2(266, 55)
+
+[node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
+play_event = 1
+stop_event = 3
+event = SubResource("EventAsset_0ps51")

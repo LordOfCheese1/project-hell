@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 gv="*res://autoloads/global_values.tscn"
 sv="*res://autoloads/saved_values.tscn"
+RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 
 [display]
 
@@ -27,6 +28,32 @@ window/size/viewport_height=256
 window/size/window_width_override=1920
 window/size/window_height_override=1280
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
+
+[fmod]
+
+settings/banks_path="res://FMOD data/Desktop"
+settings/fmod_output_type=0
+settings/fmod_debug_flags=0
+settings/fmod_debug_mode=1
+settings/banks_to_load_at_startup=Array[String](["res://FMOD data/Desktop/Master.bank"])
+settings/banks_preload_samples=false
+settings/banks_flags=0
+settings/sample_rate=48000
+settings/speaker_mode=3
+settings/dsp_buffer_length=512
+settings/dsp_buffer_count=4
+settings/real_channel_count=32
+settings/virtual_channel_count=128
+settings/enable_live_update=true
+settings/live_update_port=9264
+settings/enable_memory_tracking=false
+settings/encryption_key=""
+settings/distance_scale_2d=1.0
+settings/init_with_3d_righthanded=true
 
 [input]
 
@@ -85,7 +112,7 @@ use_item={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.611765, 0.54902, 0.568627, 1)
-textures/canvas_textures/default_texture_filter=0
