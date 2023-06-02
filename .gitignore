@@ -4,6 +4,7 @@
 export.cfg
 export_presets.cfg
 .godot/editor/
+addons/FMOD/editor/resources
 
 # Imported translations (automatically generated from CSV files)
 *.translation
