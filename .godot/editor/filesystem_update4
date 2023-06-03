@@ -1,5 +1,13 @@
+res://addons/FMOD/editor/resources/banks/{098dd144-3df2-0676-3a00-320110383a68}.tres
+res://addons/FMOD/editor/resources/banks/{9190f190-4c89-4a34-bc49-b8ffe1cb3cf0}.tres
+res://addons/FMOD/editor/resources/busses/{d603fc5d-d5d7-475c-ae34-53dc1fda83a4}.tres
+res://addons/FMOD/editor/resources/busses/{4cc134c8-cc52-4cc4-9948-977095682b9c}.tres
+res://addons/FMOD/editor/resources/banks/{e534798d-bdd9-4dcd-ac96-7105966b9f2d}.tres
 res://addons/FMOD/editor/cache/fmod_project_cache.tres
+res://scripts/entities/player/player.gd
+res://scripts/world/walls.gd
 res://scenes/testing.tscn
+res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres
 res://scenes/levels/00_hellgates.tscn
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
@@ -14,3 +22,5 @@ res://prefabs/world/decal_walls.tscn
 res://prefabs/world/particle.tscn
 res://prefabs/world/particle_explosion.tscn
 res://autoloads/saved_values.tscn
+res://scenes/MusicTrigger.gd
+res://scenes/Enum.gd

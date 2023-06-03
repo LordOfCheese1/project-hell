@@ -14,6 +14,7 @@ var item_use_cooldown = 0
 var max_item_use_cooldown = 25
 
 
+
 func _ready():
 	gv.player = self
 	setup_entity(5.0, 2)
@@ -70,6 +71,7 @@ func _physics_process(delta):
 	
 	if velocity.x != 0:
 		look_dir_x = velocity.x / abs(velocity.x)
+		
 	
 	look_dir_y = Input.get_axis("up", "down")
 	$body/upper_body.rotation_degrees = (velocity.x / 6) - look_dir_x * item_use_cooldown * 1.5
@@ -112,3 +114,9 @@ func attempt_attach():
 
 func _on_hitbox_has_been_hit():
 	$anim.play("hit")
+
+
+
+
+
+
