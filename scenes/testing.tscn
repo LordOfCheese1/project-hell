@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cnbfdqipr20hv" path="res://prefabs/projectiles/cerberus_laser.tscn" id="7_n1nac"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="7_qgisn"]
 [ext_resource type="EventAsset" uid="uid://cvlfign0hqkry" path="res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres" id="8_iibss"]
-[ext_resource type="Script" path="res://scenes/MusicTrigger.gd" id="9_cwcog"]
-[ext_resource type="Script" path="res://scenes/Enum.gd" id="10_hdtly"]
+[ext_resource type="Script" path="res://scenes/MusicTrigger1.gd" id="9_ddcqd"]
+[ext_resource type="Script" path="res://scenes/TriggerArea.gd" id="10_ws5oi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rhki"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikcy0"]
 
 [node name="testing" type="Node2D"]
 
@@ -40,18 +40,32 @@ position = Vector2(109, 80)
 position = Vector2(266, 55)
 
 [node name="MusicManager" type="Area2D" parent="."]
-modulate = Color(0.490196, 1, 1, 1)
-position = Vector2(199, 163)
-script = ExtResource("9_cwcog")
+position = Vector2(198, 165)
+scale = Vector2(1, 0.800002)
+script = ExtResource("9_ddcqd")
 event = ExtResource("8_iibss")
-musicChangeTo = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicManager"]
-modulate = Color(0.337255, 0.321569, 1, 1)
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_7rhki")
+[node name="TriggerArea1" type="Area2D" parent="MusicManager"]
+disable_mode = 2
+script = ExtResource("10_ws5oi")
+areaName = "music 2"
 
-[node name="Enum" type="Node2D" parent="MusicManager"]
-script = ExtResource("10_hdtly")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicManager/TriggerArea1"]
+modulate = Color(0.384314, 0.384314, 1, 1)
+shape = SubResource("RectangleShape2D_ikcy0")
+
+[node name="TriggerArea2" type="Area2D" parent="MusicManager"]
+position = Vector2(77, 53.7498)
+disable_mode = 2
+script = ExtResource("10_ws5oi")
+areaName = "music 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicManager/TriggerArea2"]
+modulate = Color(0.384314, 0.384314, 1, 1)
+shape = SubResource("RectangleShape2D_ikcy0")
 
 [connection signal="body_entered" from="MusicManager" to="MusicManager" method="_on_body_entered"]
+[connection signal="area_Name" from="MusicManager/TriggerArea1" to="MusicManager" method="_on_trigger_area_1_area_name"]
+[connection signal="body_entered" from="MusicManager/TriggerArea1" to="MusicManager" method="_on_trigger_area_1_body_entered"]
+[connection signal="area_Name" from="MusicManager/TriggerArea2" to="MusicManager" method="_on_trigger_area_2_area_name"]
+[connection signal="body_entered" from="MusicManager/TriggerArea2" to="MusicManager" method="_on_trigger_area_2_body_entered"]

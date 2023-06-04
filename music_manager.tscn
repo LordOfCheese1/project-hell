@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://35g3qctjjexb"]
+
+[ext_resource type="Script" path="res://scenes/MusicTrigger.gd" id="1_1tkyy"]
+[ext_resource type="EventAsset" uid="uid://cvlfign0hqkry" path="res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres" id="2_8bvd5"]
+[ext_resource type="Script" path="res://scenes/Enum.gd" id="3_pfu4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rhki"]
+
+[node name="MusicManager" type="Area2D"]
+modulate = Color(0.490196, 1, 1, 1)
+position = Vector2(199, 163)
+script = ExtResource("1_1tkyy")
+event = ExtResource("2_8bvd5")
+param_id = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.337255, 0.321569, 1, 1)
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7rhki")
+
+[node name="Enum" type="Node2D" parent="."]
+script = ExtResource("3_pfu4v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
