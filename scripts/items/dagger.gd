@@ -13,7 +13,7 @@ func _physics_process(delta):
 	item_update()
 	position += velocity * delta
 	
-	if !touching_wall && grabbed_entity == null:
+	if !touching_wall && grabbed_entity == null && is_attached_to == null:
 		velocity.y += gravity_pull * delta
 		rotation_degrees += velocity.y / 10
 	else:

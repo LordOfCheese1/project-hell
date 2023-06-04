@@ -79,6 +79,11 @@ func _physics_process(delta):
 		item_use_cooldown -= 1
 
 
+func _process(delta):
+	if Input.is_action_just_pressed("test"):
+		sv.switch_scene("res://scenes/levels/00_hellgates.tscn")
+
+
 func jump():
 	jump_held_for = 2
 	velocity.y = -10
@@ -112,3 +117,13 @@ func attempt_attach():
 
 func _on_hitbox_has_been_hit():
 	$anim.play("hit")
+
+
+func request_grabbed_items():
+	var requested_items = []
+	for i in grabbed_items:
+		if i.self_attachment != null:
+			requested_items.append([i.scene_file_path, i.self_attachment.scene_file_path])
+		else:
+			requested_items.append(i.scene_file_path)
+	return requested_items

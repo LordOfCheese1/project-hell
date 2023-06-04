@@ -1,5 +1,7 @@
-res://scenes/testing.tscn
+res://autoloads/saved_values.tscn
+res://scripts/autoloads/saved_values.gd
 res://scenes/levels/00_hellgates.tscn
+res://scenes/testing.tscn
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/items/dagger.tscn
@@ -12,9 +14,6 @@ res://prefabs/entities/enemies/cerberus.tscn
 res://prefabs/world/decal_walls.tscn
 res://prefabs/world/particle.tscn
 res://prefabs/world/particle_explosion.tscn
-res://autoloads/global_values.tscn
-res://prefabs/entities/enemies/stationary_hand.tscn
-res://prefabs/projectiles/poison_spew.tscn
-res://prefabs/world/bg_walls.tscn
-res://autoloads/saved_values.tscn
-res://scripts/autoloads/saved_values.gd
+res://scripts/classes/item_class.gd
+res://scripts/items/dagger.gd
+res://scripts/items/laser_hand.gd

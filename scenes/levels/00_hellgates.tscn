@@ -77,10 +77,8 @@ position = Vector2(843, 984)
 [node name="player" parent="entities" instance=ExtResource("2_1ot01")]
 position = Vector2(192, 8)
 
-[node name="items" type="Node2D" parent="."]
-
-[node name="dagger" parent="items" instance=ExtResource("4_xdqfv")]
+[node name="dagger" parent="." instance=ExtResource("4_xdqfv")]
 position = Vector2(686, 644)
 
-[node name="laser_hand" parent="items" instance=ExtResource("9_8qi1i")]
+[node name="laser_hand" parent="." instance=ExtResource("9_8qi1i")]
 position = Vector2(1033, 740)

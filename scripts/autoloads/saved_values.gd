@@ -1,9 +1,59 @@
 extends Node2D
 
-# "pl" is an acronym for "player"
+var has_switched_scene = false
 
+
+func _ready():
+	pass
+
+
+# "pl" is an acronym for "player"
 # Values that should be kept after rebooting and scene switching may be stored here. The stored values here load when the game launches for the first time.
-var save_values = {
-	"pl_carried_items" : [],
+var values = {
+	"pl_grabbed_items" : [],
 	"pl_health" : 10.0,
 }
+
+
+func _process(delta):
+	if has_switched_scene == true:
+		has_switched_scene = false
+		if gv.player != null:
+			load_values()
+
+
+func save_values(to_file = false):
+	values["pl_grabbed_items"] = gv.player.request_grabbed_items()
+	values["pl_health"] = gv.player.hp
+
+
+func load_values(from_file = false):
+	gv.player.hp = values["pl_health"]
+	#item transferral
+	var give_to_player = []
+	for i in values["pl_grabbed_items"]:
+		if typeof(i) == TYPE_ARRAY:
+			var to_attach = []
+			for x in i:
+				var item = load(x).instantiate()
+				item.position = gv.player.position
+				get_tree().current_scene.add_child(item)
+				to_attach.append(item)
+			to_attach[1].attach_to(to_attach[0])
+			give_to_player.append(to_attach[0])
+		elif typeof(i) == TYPE_STRING:
+			var item = load(i).instantiate()
+			item.position = gv.player.position
+			get_tree().current_scene.add_child(item)
+			give_to_player.append(item)
+	for i in give_to_player:
+		gv.player.grabbed_items.append(i)
+		i.is_grabbed = true
+		i.grabbed_entity = gv.player
+
+
+func switch_scene(scene : String):
+	save_values(false)
+	has_switched_scene = true
+	gv.player = null
+	get_tree().change_scene_to_file(scene)
