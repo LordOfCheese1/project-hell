@@ -14,14 +14,14 @@ func _ready():
 
 func _on_trigger_area_1_area_name(areaName):
 	MusicArea1 = areaName
-
-
 func _on_trigger_area_1_body_entered(body):
 	instance.set_parameter_by_name_with_label("area", MusicArea1, false)
 
 
 func _on_trigger_area_2_area_name(areaName):
 	MusicArea2 = areaName
-
 func _on_trigger_area_2_body_entered(body):
 	instance.set_parameter_by_name_with_label("area", MusicArea2, false)
+	
+	
+	
