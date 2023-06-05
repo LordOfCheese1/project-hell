@@ -1,10 +1,14 @@
 extends Area2D
 
-@export var areaName = ""
+@export var paramName1 = ""
+@export var paramName2 = ""
 
-signal area_Name(areaName)
+signal param_Name(paramName1, paramName2)
 
 func _ready():
-	emit_signal("area_Name", areaName)
+	emit_signal("param_Name", paramName1, paramName2)
 
  
+
+
+

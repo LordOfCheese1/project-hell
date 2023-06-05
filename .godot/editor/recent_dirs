@@ -1,3 +1,4 @@
+res://prefabs/components
 res://
 res://FMOD data/Desktop
 res://autoloads
@@ -11,7 +12,6 @@ res://scenes/levels
 res://scripts/world
 res://scripts
 res://scripts/components
-res://prefabs/components
 res://scripts/items
 res://prefabs/items
 res://scripts/entities/enemies
