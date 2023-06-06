@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7n8smuya8opb"]
+
+[ext_resource type="Texture2D" uid="uid://71ypxcparhqy" path="res://textures/tiles/lava_bottom.png" id="1_gcbaa"]
+[ext_resource type="Script" path="res://scripts/obstacles/lava_bottom.gd" id="1_qd2un"]
+[ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="2_annp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2bv"]
+size = Vector2(16, 16)
+
+[node name="lava_bottom" type="Area2D"]
+script = ExtResource("1_qd2un")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gcbaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vx2bv")
+
+[node name="attackbox" parent="." instance=ExtResource("2_annp8")]
+damage = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
+shape = SubResource("RectangleShape2D_vx2bv")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.8, 0.8)
+
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

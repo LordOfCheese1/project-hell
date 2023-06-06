@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq0xs2ghowpav"]
+
+[ext_resource type="Script" path="res://scripts/world/tiled_obstacles.gd" id="1_qc6xr"]
+[ext_resource type="Texture2D" uid="uid://bbp3kms7bewcq" path="res://textures/tiles/lava.png" id="1_wwj2d"]
+[ext_resource type="Texture2D" uid="uid://71ypxcparhqy" path="res://textures/tiles/lava_bottom.png" id="2_7x5fq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj7fk"]
+texture = ExtResource("1_wwj2d")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehnmm"]
+texture = ExtResource("2_7x5fq")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_msoil"]
+sources/0 = SubResource("TileSetAtlasSource_xj7fk")
+sources/1 = SubResource("TileSetAtlasSource_ehnmm")
+
+[node name="tiled_obstacles" type="TileMap"]
+tile_set = SubResource("TileSet_msoil")
+format = 2
+script = ExtResource("1_qc6xr")

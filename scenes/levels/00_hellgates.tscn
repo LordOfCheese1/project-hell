@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yclkd52njo2e"]
+[gd_scene load_steps=13 format=3 uid="uid://bteu5mwcxlb3l"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]

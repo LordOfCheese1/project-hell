@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://f17hcev0cvv2"]
+[gd_scene load_steps=16 format=3 uid="uid://f17hcev0cvv2"]
 
 [ext_resource type="Texture2D" uid="uid://4n5awn1whb3b" path="res://textures/tiles/bg_pipes.png" id="1_lai07"]
 [ext_resource type="Texture2D" uid="uid://dwwh3eq1rptiu" path="res://textures/tiles/bg_press.png" id="2_i4nny"]
 [ext_resource type="Texture2D" uid="uid://10poanqvrl1r" path="res://textures/tiles/bg_bricks.png" id="3_urf3q"]
 [ext_resource type="Texture2D" uid="uid://c5lpie2m02esc" path="res://textures/tiles/industial_bg.png" id="4_8le4n"]
 [ext_resource type="Texture2D" uid="uid://bd63f8y8qs60n" path="res://textures/tiles/bg_grating.png" id="5_bd7tn"]
+[ext_resource type="Texture2D" uid="uid://b0aii7voi7s2h" path="res://textures/tiles/bg_scaffolding.png" id="6_qnx1m"]
+[ext_resource type="Texture2D" uid="uid://n3lf1ld2bbuj" path="res://textures/tiles/bg_bricks2.png" id="7_8pdc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45bwi"]
 texture = ExtResource("1_lai07")
@@ -46,12 +48,30 @@ texture = ExtResource("5_bd7tn")
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_de66a"]
+texture = ExtResource("6_qnx1m")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sj6wd"]
+texture = ExtResource("7_8pdc5")
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_8y5xa"]
 sources/0 = SubResource("TileSetAtlasSource_45bwi")
 sources/1 = SubResource("TileSetAtlasSource_vkncv")
 sources/2 = SubResource("TileSetAtlasSource_m3ayb")
 sources/3 = SubResource("TileSetAtlasSource_pfd1a")
 sources/4 = SubResource("TileSetAtlasSource_77s5w")
+sources/5 = SubResource("TileSetAtlasSource_de66a")
+sources/6 = SubResource("TileSetAtlasSource_sj6wd")
 
 [node name="bg_walls" type="TileMap"]
 tile_set = SubResource("TileSet_8y5xa")

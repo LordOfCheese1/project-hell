@@ -1,7 +1,9 @@
+res://prefabs/world
+res://scripts/obstacles
+res://prefabs/obstacles
+res://scripts/world
 res://scripts/items
 res://prefabs/items
-res://scripts/world
-res://prefabs/world
 res://autoloads
 res://scripts/autoloads
 res://scripts/projectiles
