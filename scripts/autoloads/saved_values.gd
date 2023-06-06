@@ -1,6 +1,7 @@
 extends Node2D
 
 var has_switched_scene = false
+var temp_pos_save = Vector2()
 
 
 func _ready():
@@ -18,8 +19,9 @@ var values = {
 func _process(delta):
 	if has_switched_scene == true:
 		has_switched_scene = false
-		if gv.player != null:
-			load_values()
+		load_values()
+		gv.player.position = temp_pos_save
+		temp_pos_save = Vector2(0, 0)
 
 
 func save_values(to_file = false):
@@ -52,8 +54,8 @@ func load_values(from_file = false):
 		i.grabbed_entity = gv.player
 
 
-func switch_scene(scene : String):
+func switch_scene(scene : String, player_pos):
+	temp_pos_save = player_pos
 	save_values(false)
 	has_switched_scene = true
-	gv.player = null
 	get_tree().change_scene_to_file(scene)

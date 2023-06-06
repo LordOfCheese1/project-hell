@@ -28,7 +28,6 @@ func attach_to(target : Node):
 	target.has_attachment = true
 	is_attached_to = target
 	target.self_attachment = self
-	print(is_attached_to)
 	if grabbed_entity != null:
 		if grabbed_entity.grabbed_items.has(self):
 			grabbed_entity.grabbed_items.remove_at(grabbed_entity.grabbed_items.find(self))

@@ -1,12 +1,12 @@
 extends Camera2D
 
 @export var follow : NodePath
-var cooldown = 5
+var smoothing_cooldown = 10
 var current_room_cam : Node
 
 
 func _ready():
-	pass
+	position_smoothing_enabled = false
 
 
 func _process(_delta):
@@ -22,6 +22,11 @@ func _process(_delta):
 		limit_bottom = 65536
 	position = get_node(follow).position
 	$room_detect.position = to_local(get_node(follow).position)
+	if smoothing_cooldown > 0:
+		smoothing_cooldown -= 1
+	else:
+		if !position_smoothing_enabled:
+			position_smoothing_enabled = true
 
 
 func _on_room_detect_area_entered(area):

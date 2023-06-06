@@ -18,7 +18,7 @@ func _physics_process(_delta):
 			i.position = prev_part.transform.x * 28
 			if gv.player != null:
 				i.look_at(gv.player.position)
-		else:
+		elif gv.player != null:
 			i.look_at(gv.player.position + lower_hand_offset)
 		i.rotation_degrees = lerp(prev_rot, i.rotation_degrees, 0.1)
 		

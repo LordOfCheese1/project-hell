@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqv4d3fj5oq15"]
+
+[ext_resource type="Script" path="res://scripts/items/dasher.gd" id="1_y1f0i"]
+[ext_resource type="Texture2D" uid="uid://bhbkn2tdnxdit" path="res://textures/items/dasher.png" id="2_xpjt7"]
+[ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="3_txdie"]
+[ext_resource type="Texture2D" uid="uid://c44csjm000xau" path="res://textures/particles/lighting_spark.png" id="4_e22rk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc6fu"]
+size = Vector2(12, 8)
+
+[node name="dasher" type="Area2D"]
+script = ExtResource("1_y1f0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xpjt7")
+offset = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_nc6fu")
+
+[node name="particle_spawner" parent="." instance=ExtResource("3_txdie")]
+position = Vector2(10, 0)
+texture = ExtResource("4_e22rk")
+freq = 0.02
+scale_amount = -0.06
+rot_amount = 3.0
+
+[connection signal="used" from="." to="." method="_on_used"]

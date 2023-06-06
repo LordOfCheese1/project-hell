@@ -17,7 +17,7 @@ func _physics_process(delta):
 		velocity.y += gravity_pull * delta
 		rotation_degrees += velocity.y / 10
 	else:
-		velocity = Vector2(0, 0)
+		velocity = Vector2(6, 0)
 
 
 func _on_used():
