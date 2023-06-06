@@ -7,11 +7,12 @@ size = Vector2(1, 1)
 
 [node name="game_camera" type="Camera2D"]
 limit_smoothed = true
-script = ExtResource( "1_r68ue" )
+position_smoothing_speed = 8.0
+script = ExtResource("1_r68ue")
 
 [node name="room_detect" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_detect"]
-shape = SubResource( "RectangleShape2D_pqu36" )
+shape = SubResource("RectangleShape2D_pqu36")
 
 [connection signal="area_entered" from="room_detect" to="." method="_on_room_detect_area_entered"]

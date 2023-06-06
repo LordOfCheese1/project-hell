@@ -1,2 +1,1 @@
-res://scenes/levels/00_hellgates.tscn
-res://scripts/world/game_camera.gd
+res://prefabs/components/player_detector.tscn
