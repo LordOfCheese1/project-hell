@@ -1,0 +1,8 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dxlwi5i8soflo"]
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/playerFootstep"
+guid = "{99ec1245-6192-40b6-a3af-6754e1884d63}"
+name = "playerFootstep"

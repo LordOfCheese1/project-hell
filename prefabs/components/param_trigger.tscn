@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqld4su03sqg"]
+
+[ext_resource type="Script" path="res://scripts/components/TriggerArea.gd" id="1_nyqwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdog5"]
+
+[node name="ParamTrigger" type="Area2D"]
+disable_mode = 2
+script = ExtResource("1_nyqwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vdog5")

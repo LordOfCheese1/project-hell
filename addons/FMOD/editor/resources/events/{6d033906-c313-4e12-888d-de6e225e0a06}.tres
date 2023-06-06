@@ -1,0 +1,30 @@
+[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://bsnhude3rimi6"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_qbk0c"]
+data1 = 1431423629
+data2 = 425412405
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_q5t34"]
+name = "area"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_qbk0c")
+maximum = 1.0
+flags = 24
+guid = "{a7e22802-7519-4acc-aed2-d20f7518e1e6}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_m7uxm"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_q5t34")
+labels = ["music 1", "music 2"]
+path = "parameter:/area"
+guid = "{a7e22802-7519-4acc-aed2-d20f7518e1e6}"
+name = "area"
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{a7e22802-7519-4acc-aed2-d20f7518e1e6}": SubResource("ParameterAsset_m7uxm")
+}
+path = "event:/music test"
+guid = "{6d033906-c313-4e12-888d-de6e225e0a06}"
+name = "music test"
