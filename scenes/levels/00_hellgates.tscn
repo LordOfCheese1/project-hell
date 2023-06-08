@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bteu5mwcxlb3l"]
+[gd_scene load_steps=14 format=3 uid="uid://bteu5mwcxlb3l"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="8_pl13o"]
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="9_8qi1i"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="11_0sfts"]
+[ext_resource type="PackedScene" uid="uid://b0rvmqbtxvwhg" path="res://prefabs/items/laser_gun.tscn" id="13_pxpuk"]
 
 [node name="00_hellgates" type="Node2D"]
 
@@ -88,4 +89,7 @@ position = Vector2(192, 8)
 position = Vector2(686, 644)
 
 [node name="laser_hand" parent="." instance=ExtResource("9_8qi1i")]
-position = Vector2(1033, 740)
+position = Vector2(868, 733)
+
+[node name="laser_gun" parent="." instance=ExtResource("13_pxpuk")]
+position = Vector2(977, 677)

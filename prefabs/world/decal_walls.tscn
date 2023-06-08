@@ -1,14 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://ljtim2mukvda"]
+[gd_scene load_steps=12 format=3 uid="uid://ljtim2mukvda"]
 
 [ext_resource type="Texture2D" uid="uid://c4kaoiqfrlxrt" path="res://textures/tiles/decal_glow_terminal.png" id="1_vuqx0"]
+[ext_resource type="Texture2D" uid="uid://oejb4pxt5q6y" path="res://textures/tiles/decal_snakebird.png" id="2_oh332"]
 [ext_resource type="Texture2D" uid="uid://c2tn5gu0uhkux" path="res://textures/tiles/decal_hole_in_wall.png" id="3_drcqu"]
 [ext_resource type="Texture2D" uid="uid://ctm82yowoheo4" path="res://textures/tiles/decal_slice_in_wall.png" id="4_e780p"]
+[ext_resource type="Texture2D" uid="uid://gngcipvoqpre" path="res://textures/tiles/decal_knightpanda.png" id="5_kbmy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbqyv"]
 texture = ExtResource("1_vuqx0")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dr1b"]
+texture = ExtResource("2_oh332")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsd0k"]
 texture = ExtResource("3_drcqu")
@@ -21,10 +28,17 @@ texture = ExtResource("4_e780p")
 1:1/0 = 0
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bc4w"]
+texture = ExtResource("5_kbmy5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gohk5"]
 sources/0 = SubResource("TileSetAtlasSource_pbqyv")
 sources/2 = SubResource("TileSetAtlasSource_jsd0k")
 sources/3 = SubResource("TileSetAtlasSource_s0e0e")
+sources/1 = SubResource("TileSetAtlasSource_6dr1b")
+sources/4 = SubResource("TileSetAtlasSource_7bc4w")
 
 [node name="decal_walls" type="TileMap"]
 tile_set = SubResource("TileSet_gohk5")

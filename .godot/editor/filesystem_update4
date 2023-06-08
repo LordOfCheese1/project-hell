@@ -1,7 +1,5 @@
-res://addons/FMOD/editor/cache/fmod_project_cache.tres
-res://scripts/components/MusicTrigger1.gd
-res://scenes/testing.tscn
 res://prefabs/world/game_camera.tscn
+res://addons/FMOD/editor/cache/fmod_project_cache.tres
 res://prefabs/world/particle.tscn
 res://prefabs/components/hitbox.tscn
 res://prefabs/components/item_grab_area.tscn
@@ -9,4 +7,11 @@ res://prefabs/components/particle_spawner.tscn
 res://prefabs/components/player_detector.tscn
 res://scenes/levels/00_hellgates.tscn
 res://scenes/levels/01_lavapipes.tscn
+res://scenes/testing.tscn
 res://prefabs/components/param_trigger.tscn
+res://prefabs/world/decal_walls.tscn
+res://prefabs/entities/enemies/devil.tscn
+res://scripts/entities/enemies/devil.gd
+res://prefabs/items/laser_gun.tscn
+res://scripts/items/laser_gun.gd
+res://prefabs/projectiles/cerberus_laser.tscn

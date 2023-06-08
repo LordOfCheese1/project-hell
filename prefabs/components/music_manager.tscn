@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/components/MusicTrigger1.gd" id="1_qn8sq"]
 
+
 [node name="MusicManager" type="Node2D"]
 script = ExtResource("1_qn8sq")

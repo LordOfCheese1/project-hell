@@ -1,3 +1,7 @@
+res://scripts/items
+res://prefabs/items
+res://scripts/entities/enemies
+res://prefabs/entities/enemies
 res://scripts/components
 res://prefabs/components
 res://FmodData/Desktop
@@ -6,17 +10,13 @@ res://prefabs/world
 res://scripts/obstacles
 res://prefabs/obstacles
 res://scripts/world
-res://scripts/items
-res://prefabs/items
 res://autoloads
 res://scripts/autoloads
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies/cerberus
-res://prefabs/entities/enemies
 res://scenes/levels
 res://scripts
-res://scripts/entities/enemies
 res://scripts/entities/player
 res://scripts/entities
 res://prefabs/entities
