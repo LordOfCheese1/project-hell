@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4lsuwvd1l5g7"]
+[gd_scene load_steps=7 format=3 uid="uid://c4lsuwvd1l5g7"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/devil.gd" id="1_io2t5"]
 [ext_resource type="Texture2D" uid="uid://bk6cc8gs3cko6" path="res://textures/entities/devil/body.png" id="2_1j7hy"]
+[ext_resource type="Texture2D" uid="uid://oi1kyncdjsog" path="res://textures/entities/devil/jetpack.png" id="2_7cvsr"]
 [ext_resource type="Texture2D" uid="uid://d10evvr63isa8" path="res://textures/entities/devil/lower_arm.png" id="2_cdspi"]
 [ext_resource type="Texture2D" uid="uid://dry6y4fl554il" path="res://textures/entities/devil/head.png" id="3_rh5tu"]
 [ext_resource type="Texture2D" uid="uid://blxivw8vwaoyu" path="res://textures/entities/devil/upper_arm.png" id="5_u4fdb"]
@@ -21,6 +22,16 @@ offset = Vector2(0, -4)
 position = Vector2(0, -10)
 texture = ExtResource("3_rh5tu")
 offset = Vector2(0, -2)
+
+[node name="left_jet" type="Sprite2D" parent="parts/body"]
+position = Vector2(-2, -7)
+texture = ExtResource("2_7cvsr")
+offset = Vector2(0, 2)
+
+[node name="right_jet" type="Sprite2D" parent="parts/body"]
+position = Vector2(2, -7)
+texture = ExtResource("2_7cvsr")
+offset = Vector2(0, 2)
 
 [node name="lower_arm" type="Sprite2D" parent="parts"]
 position = Vector2(0, 13)
