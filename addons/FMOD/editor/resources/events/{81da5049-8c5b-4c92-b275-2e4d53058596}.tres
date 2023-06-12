@@ -1,19 +1,19 @@
 [gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://ccjb00dlwd21q"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_f271j"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_728eb"]
 data1 = 956059228
 data2 = 297952910
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_7lkvw"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_qbr6x"]
 name = "Intensity"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_f271j")
-maximum = 2.0
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_728eb")
+maximum = 4.0
 flags = 24
 guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_3cxqk"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_7lkvw")
-labels = ["LowI", "HighI", "LowRTN"]
+[sub_resource type="ParameterAsset" id="ParameterAsset_l2dir"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_qbr6x")
+labels = ["LowI", "Approach", "HighI", "LowRTN", "Victory"]
 path = "parameter:/Intensity"
 guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
 name = "Intensity"
@@ -22,7 +22,7 @@ name = "Intensity"
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
-"{dca3593d-ecf0-4192-849b-96e2691d0a49}": SubResource("ParameterAsset_3cxqk")
+"{dca3593d-ecf0-4192-849b-96e2691d0a49}": SubResource("ParameterAsset_l2dir")
 }
 path = "event:/DynamicMusicTest"
 guid = "{81da5049-8c5b-4c92-b275-2e4d53058596}"
