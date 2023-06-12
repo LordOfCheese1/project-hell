@@ -11,6 +11,7 @@ var laser_spawn_cooldown = 0
 var laser_head_rot_dir = 0
 var poison_cooldown = 200
 var orig_laser_head_rot = 0
+signal has_died
 
 
 func _ready():
@@ -66,6 +67,14 @@ func _physics_process(delta):
 
 
 func _process(_delta):
+	if hp <= 0.0 && !is_dead:
+		is_dead = true
+		grabbed_items[0].is_grabbed = false
+		grabbed_items[0].grabbed_entity = null
+		grabbed_items = []
+		emit_signal("has_died")
+		call_deferred("free")
+	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
 		spotted_player = true
 

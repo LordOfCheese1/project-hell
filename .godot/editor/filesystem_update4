@@ -1,8 +1,3 @@
-res://prefabs/entities/enemies/devil.tscn
-res://addons/FMOD/editor/cache/fmod_project_cache.tres
 res://prefabs/projectiles/laser.tscn
-res://scenes/levels/00_hellgates.tscn
-res://scenes/levels/01_lavapipes.tscn
-res://prefabs/projectiles/dagger_beam.tscn
-res://scripts/entities/enemies/devil.gd
-res://scripts/entities/player/player.gd
+res://addons/FMOD/editor/cache/fmod_project_cache.tres
+res://scripts/entities/enemies/cerberus/cerberus.gd
