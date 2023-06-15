@@ -34,9 +34,9 @@ func _on_body_exited(body):
 
 
 func _on_used():
-	for i in range(-3, 4):
+	for i in range(8):
 		var projectile = projectile_path.instantiate()
 		projectile.position = global_position
-		projectile.rotation_degrees = rotation_degrees + i * 6
+		projectile.rotation_degrees = rotation_degrees + randi_range(-5, 5)
 		projectile.get_child(0).ignore_in_detection.append(grabbed_entity)
 		get_tree().current_scene.add_child(projectile)

@@ -55,7 +55,7 @@ func _process(_delta):
 
 
 func grab_item():
-	if $item_grab_area.items_in_range != []:
+	if $item_grab_area.items_in_range != [] && $item_grab_area.items_in_range[0].grabbed_entity == null:
 		$item_grab_area.items_in_range[0].grab(self)
 		$item_grab_area.refresh()
 

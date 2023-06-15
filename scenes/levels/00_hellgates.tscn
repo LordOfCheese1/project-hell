@@ -137,7 +137,7 @@ position = Vector2(192, 8)
 position = Vector2(686, 644)
 
 [node name="laser_hand" parent="." instance=ExtResource("9_8qi1i")]
-position = Vector2(931, 718)
+position = Vector2(987, 740)
 
 [node name="dev_item" parent="." instance=ExtResource("13_rc87h")]
 position = Vector2(195, 597)

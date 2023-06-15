@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0jlhjyiwaryn"]
+
+[ext_resource type="Script" path="res://scripts/world/lava.gd" id="1_4w2ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yw2l"]
+size = Vector2(16, 16)
+
+[node name="lava" type="Area2D"]
+script = ExtResource("1_4w2ky")
+
+[node name="tile" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8yw2l")
