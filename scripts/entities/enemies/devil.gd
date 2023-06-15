@@ -1,12 +1,14 @@
-extends CharacterBody2D
+extends "res://scripts/classes/entity_class.gd"
+
+func _ready():
+	setup_entity(20, 0, 1)
 
 
 func _physics_process(delta):
 	move_and_slide()
 	
-	
-	velocity.y = lerp(velocity.y, (gv.player.position.y - 48) - position.y, 0.1)
-	velocity.x = lerp(velocity.x, gv.player.position.x - position.x, 0.1)
+	$looker.look_at(Vector2(gv.player.position.x, gv.player.posiiton.y - 64))
+	velocity = $looker.transform.x * 80
 	
 	
 	var prev_rots = [0.0, 0.0]

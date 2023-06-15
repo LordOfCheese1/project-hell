@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://wdixisal4syo"]
+
+[ext_resource type="Script" path="res://scripts/components/pathfinder_tile.gd" id="1_5nvh1"]
+[ext_resource type="Texture2D" uid="uid://b6nwurkpgatmf" path="res://textures/projectiles/dagger_beam.png" id="2_bcvre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ttt4"]
+size = Vector2(14, 14)
+
+[node name="pathfinder_tile" type="Area2D"]
+script = ExtResource("1_5nvh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ttt4")
+
+[node name="sprite" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+z_index = 24
+texture = ExtResource("2_bcvre")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

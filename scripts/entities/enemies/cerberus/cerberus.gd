@@ -15,7 +15,7 @@ signal has_died
 
 
 func _ready():
-	setup_entity(22, 0)
+	setup_entity(22, 0, 2)
 	$body/head_1/screw/particle_spawner.is_emitting = false
 
 

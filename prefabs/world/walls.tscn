@@ -959,8 +959,8 @@ texture = ExtResource("3_sk11l")
 8:4/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSet" id="TileSet_a6n7p"]
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 131
+physics_layer_0/collision_mask = 131
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "hellwall"
 terrain_set_0/terrain_0/color = Color(0.984314, 0, 0.898039, 1)

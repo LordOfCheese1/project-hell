@@ -6,7 +6,7 @@ var attack_cooldown = 90
 
 
 func _ready():
-	setup_entity(10.0, 1)
+	setup_entity(10.0, 1, 1)
 
 
 func _physics_process(_delta):
