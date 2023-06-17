@@ -1,8 +1,11 @@
 extends "res://scripts/classes/projectile_class.gd"
 
 
+var starting_velocity = 230.0
+
+
 func _ready():
-	velocity = transform.x * (230 + randi_range(-20, 20))
+	velocity = transform.x * (starting_velocity + randi_range(-20, 20))
 
 
 func _physics_process(delta):

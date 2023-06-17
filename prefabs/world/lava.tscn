@@ -6,6 +6,7 @@
 size = Vector2(16, 16)
 
 [node name="lava" type="Area2D"]
+position = Vector2(8, 8)
 script = ExtResource("1_4w2ky")
 
 [node name="tile" type="Polygon2D" parent="."]

@@ -12,6 +12,7 @@ var look_dir_y = 0
 var grabbed_for = 0
 var item_use_cooldown = 0
 var max_item_use_cooldown = 25
+var scrap = 0
 
 
 func _ready():

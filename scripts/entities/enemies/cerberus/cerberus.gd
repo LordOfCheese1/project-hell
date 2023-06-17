@@ -68,6 +68,7 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if hp <= 0.0 && !is_dead:
+		die(9)
 		is_dead = true
 		grabbed_items = []
 		emit_signal("has_died")

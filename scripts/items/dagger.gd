@@ -36,7 +36,11 @@ func _on_body_exited(body):
 func _on_used():
 	for i in range(8):
 		var projectile = projectile_path.instantiate()
-		projectile.position = global_position
+		projectile.starting_velocity = 50 + i * 20
+		projectile.position = global_position + transform.x * 4
 		projectile.rotation_degrees = rotation_degrees + randi_range(-5, 5)
-		projectile.get_child(0).ignore_in_detection.append(grabbed_entity)
+		if is_attached_to == null:
+			projectile.get_child(0).ignore_in_detection.append(grabbed_entity)
+		else:
+			projectile.get_child(0).ignore_in_detection.append(is_attached_to.grabbed_entity)
 		get_tree().current_scene.add_child(projectile)
