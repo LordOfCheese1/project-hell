@@ -13,3 +13,6 @@ res://prefabs/world/decal_walls.tscn
 res://prefabs/items/dev_item.tscn
 res://prefabs/world/scrap.tscn
 res://scripts/entities/enemies/devil.gd
+res://prefabs/items/bomb_gun.tscn
+res://scripts/items/bomb_gun.gd
+res://prefabs/projectiles/poison_spew.tscn

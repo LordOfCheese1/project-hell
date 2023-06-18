@@ -1,7 +1,7 @@
-res://scripts/entities/enemies
-res://prefabs/entities/enemies
 res://scripts/items
 res://prefabs/items
+res://scripts/entities/enemies
+res://prefabs/entities/enemies
 res://scripts/world
 res://prefabs/world
 res://prefabs/components
