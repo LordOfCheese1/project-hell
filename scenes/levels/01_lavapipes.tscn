@@ -14,6 +14,7 @@
 [ext_resource type="EventAsset" uid="uid://ccjb00dlwd21q" path="res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres" id="11_d6e4r"]
 
 [node name="01_lavapipes" type="Node2D"]
+metadata/_edit_horizontal_guides_ = []
 
 [node name="game_camera" parent="." instance=ExtResource("1_vfg0a")]
 position = Vector2(192, 128)
@@ -81,6 +82,9 @@ size = Vector2(384, 1024)
 
 [node name="devil" parent="entities" instance=ExtResource("10_arfwx")]
 position = Vector2(609, 607)
+
+[node name="devil2" parent="entities" instance=ExtResource("10_arfwx")]
+position = Vector2(641, 603)
 
 [node name="player" parent="entities" instance=ExtResource("2_vajox")]
 position = Vector2(5, 103)

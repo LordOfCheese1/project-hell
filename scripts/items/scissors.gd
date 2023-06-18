@@ -15,7 +15,13 @@ func _physics_process(delta):
 	
 	if $lower_blade.rotation_degrees < 4:
 		target_angle = 45
+		$attackbox/CollisionShape2D.disabled = true
+	
+	if grabbed_entity != null:
+		if len($attackbox.ignore_in_detection) < 1:
+			$attackbox.ignore_in_detection.append(grabbed_entity)
 
 
 func _on_used():
 	target_angle = 0
+	$attackbox/CollisionShape2D.disabled = false

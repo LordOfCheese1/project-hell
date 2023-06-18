@@ -54,8 +54,9 @@ func _process(delta):
 		print(grabbed_items)
 		die(6)
 		is_dead = true
-		grabbed_items[len(grabbed_items) - 1].is_grabbed = false
-		grabbed_items[len(grabbed_items) - 1].grabbed_entity = null
+		if len(grabbed_items) > 0:
+			grabbed_items[len(grabbed_items) - 1].is_grabbed = false
+			grabbed_items[len(grabbed_items) - 1].grabbed_entity = null
 		grabbed_items = []
 		call_deferred("free")
 
