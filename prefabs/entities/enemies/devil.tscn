@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4lsuwvd1l5g7"]
+[gd_scene load_steps=12 format=3 uid="uid://c4lsuwvd1l5g7"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/devil.gd" id="1_io2t5"]
 [ext_resource type="Texture2D" uid="uid://bk6cc8gs3cko6" path="res://textures/entities/devil/body.png" id="2_1j7hy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dry6y4fl554il" path="res://textures/entities/devil/head.png" id="3_rh5tu"]
 [ext_resource type="Texture2D" uid="uid://blxivw8vwaoyu" path="res://textures/entities/devil/upper_arm.png" id="5_u4fdb"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="7_xqjcs"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="8_ldxgw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gexj2"]
 radius = 4.0
@@ -14,6 +15,10 @@ height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bujgx"]
 radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_axbq3"]
+radius = 5.0
+height = 28.0
 
 [node name="devil" type="CharacterBody2D"]
 collision_layer = 2
@@ -63,3 +68,12 @@ shape = SubResource("CapsuleShape2D_gexj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="item_grab_area"]
 shape = SubResource("CircleShape2D_bujgx")
+
+[node name="hitbox" parent="." instance=ExtResource("8_ldxgw")]
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_axbq3")
+
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

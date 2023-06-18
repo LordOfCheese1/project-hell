@@ -5,7 +5,7 @@ var attack_cooldown = 2
 
 
 func _ready():
-	setup_entity(20, 1, 1)
+	setup_entity(5, 1, 1)
 
 
 func _physics_process(delta):
@@ -49,6 +49,17 @@ func _physics_process(delta):
 	$parts/body/right_jet.rotation_degrees = lerp($parts/body/right_jet.rotation_degrees, -abs(velocity.x), 0.1)
 
 
+func _process(delta):
+	if hp <= 0 && !is_dead:
+		print(grabbed_items)
+		die(6)
+		is_dead = true
+		grabbed_items[len(grabbed_items) - 1].is_grabbed = false
+		grabbed_items[len(grabbed_items) - 1].grabbed_entity = null
+		grabbed_items = []
+		call_deferred("free")
+
+
 func grab_item():
 	if $item_grab_area.items_in_range != [] && $item_grab_area.items_in_range[0].grabbed_entity == null:
 		$item_grab_area.items_in_range[0].grab(self)
@@ -58,3 +69,7 @@ func grab_item():
 func attack():
 	if grabbed_items != []:
 		grabbed_items[0].use()
+
+
+func _on_hitbox_has_been_hit():
+	velocity = $looker.transform.x * -100

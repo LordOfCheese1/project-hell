@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8bg3vwk5iipb"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/disguised_block.gd" id="1_uq605"]
+[ext_resource type="Texture2D" uid="uid://cjpo3uybn0el8" path="res://textures/entities/disguised_industrial.png" id="2_0loto"]
+[ext_resource type="Texture2D" uid="uid://deuvdtswkdihm" path="res://textures/entities/disguised/spring.png" id="3_bdvug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k33yr"]
+size = Vector2(16, 16)
+
+[node name="disguised_block" type="CharacterBody2D"]
+script = ExtResource("1_uq605")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0loto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k33yr")
+
+[node name="Spring" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("3_bdvug")

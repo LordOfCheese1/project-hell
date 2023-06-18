@@ -62,12 +62,16 @@ func _physics_process(delta):
 	else:
 		grabbed_for = 0
 	
-	if Input.is_action_pressed("use_item"):
+	if Input.is_action_pressed("use_item") && !Input.is_action_pressed("grab"):
 		attempt_item_use()
+	elif Input.is_action_just_pressed("use_item") && Input.is_action_pressed("grab"):
+		drop_item()
 	
 	for i in range(len(grabbed_items)):
-		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 14) + grabbed_items.find(grabbed_items[i]) * look_dir_x * -28, position.y + (look_dir_y * 12)), 0.3)
+		grabbed_items[i].position = lerp(grabbed_items[i].position, Vector2(position.x + (look_dir_x * 14) + grabbed_items.find(grabbed_items[i]) * look_dir_x * -28, position.y + (look_dir_y * 14)), 0.3)
+		var prev_rot = grabbed_items[i].rotation_degrees
 		grabbed_items[i].look_at(position + Vector2(look_dir_x * 64, look_dir_y * 64))
+		grabbed_items[i].rotation_degrees = lerp(prev_rot, grabbed_items[i].rotation_degrees, 0.2)
 	
 	if velocity.x != 0:
 		look_dir_x = velocity.x / abs(velocity.x)
@@ -78,10 +82,6 @@ func _physics_process(delta):
 	
 	if item_use_cooldown > 0:
 		item_use_cooldown -= 1
-
-
-func _process(_delta):
-	pass
 
 
 func jump():
@@ -113,6 +113,13 @@ func attempt_attach():
 		grabbed_items[1].attach_to(grabbed_items[0])
 		gv.spawn_explosion(12, grabbed_items[0].global_position, load("res://textures/particles/spark.png"), -0.06, -0.06, 4, 0, 0, 80)
 		$item_grab_area.refresh()
+
+
+func drop_item():
+	if len(grabbed_items) > 0:
+		grabbed_items[0].grabbed_entity = null
+		grabbed_items[0].is_grabbed = false
+		grabbed_items.remove_at(0)
 
 
 func _on_hitbox_has_been_hit():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ljtim2mukvda"]
+[gd_scene load_steps=20 format=3 uid="uid://ljtim2mukvda"]
 
 [ext_resource type="Texture2D" uid="uid://c4kaoiqfrlxrt" path="res://textures/tiles/decal_glow_terminal.png" id="1_vuqx0"]
 [ext_resource type="Texture2D" uid="uid://oejb4pxt5q6y" path="res://textures/tiles/decal_snakebird.png" id="2_oh332"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ctm82yowoheo4" path="res://textures/tiles/decal_slice_in_wall.png" id="4_e780p"]
 [ext_resource type="Texture2D" uid="uid://gngcipvoqpre" path="res://textures/tiles/decal_knightpanda.png" id="5_kbmy5"]
 [ext_resource type="Texture2D" uid="uid://bhg1yk34paqmn" path="res://textures/tiles/decal_evil_smiley.png" id="6_ed11q"]
+[ext_resource type="Texture2D" uid="uid://cjfg30diq1nxk" path="res://textures/tiles/decal_devil.png" id="7_nb2cd"]
+[ext_resource type="Texture2D" uid="uid://vje1be82ygnx" path="res://textures/tiles/decal_rwlizard.png" id="8_46vyf"]
+[ext_resource type="Texture2D" uid="uid://bcq1cafs8l5vu" path="res://textures/tiles/decal_rwvulture.png" id="9_ejmam"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbqyv"]
 texture = ExtResource("1_vuqx0")
@@ -39,6 +42,21 @@ texture = ExtResource("6_ed11q")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4osfh"]
+texture = ExtResource("7_nb2cd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n5e5p"]
+texture = ExtResource("8_46vyf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5l1r1"]
+texture = ExtResource("9_ejmam")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gohk5"]
 sources/0 = SubResource("TileSetAtlasSource_pbqyv")
 sources/2 = SubResource("TileSetAtlasSource_jsd0k")
@@ -46,6 +64,9 @@ sources/3 = SubResource("TileSetAtlasSource_s0e0e")
 sources/1 = SubResource("TileSetAtlasSource_6dr1b")
 sources/4 = SubResource("TileSetAtlasSource_7bc4w")
 sources/5 = SubResource("TileSetAtlasSource_ea4r5")
+sources/6 = SubResource("TileSetAtlasSource_4osfh")
+sources/7 = SubResource("TileSetAtlasSource_n5e5p")
+sources/8 = SubResource("TileSetAtlasSource_5l1r1")
 
 [node name="decal_walls" type="TileMap"]
 tile_set = SubResource("TileSet_gohk5")

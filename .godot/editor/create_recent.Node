@@ -1,12 +1,12 @@
 CollisionShape2D
 Sprite2D
+CharacterBody2D
 Area2D
 Polygon2D
 MeshInstance2D
 Node2D
 Line2D
 RayCast2D
-CharacterBody2D
 VisibleOnScreenEnabler2D
 VisibleOnScreenNotifier2D
 TileMap
