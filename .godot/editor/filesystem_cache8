@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1687080542
+::res://::1687080855
 icon.svg::CompressedTexture2D::8929984005984467337::1684162967::1687079744::1::::<><>::
 ::res://addons/::1686147919
 ::res://addons/FMOD/::1686147921
@@ -115,9 +115,9 @@ tiled_obstacles.tscn::PackedScene::5948902372307050561::1686251761::0::1::::<><>
 walls.tscn::PackedScene::4558830632626586802::1687079282::0::1::::<><>::uid://j275ccufwqny<>uid://gu5a164rn2g4<>res://scripts/world/walls.gd<>uid://lxjqsn0bnu6o
 ::res://scenes/::1687079282
 testing.tscn::PackedScene::1012544315837758723::1687079282::0::1::::<><>::uid://b57ljljuvefk1<>uid://dm8txnxhwlbsf<>uid://c4lsuwvd1l5g7<>uid://cvpqflbnwisw4
-::res://scenes/levels/::1687079731
+::res://scenes/levels/::1687080815
 00_hellgates.tscn::PackedScene::3729534801892371535::1687079731::0::1::::<><>::uid://b57ljljuvefk1<>uid://cq6jk1bdbr4vb<>uid://f17hcev0cvv2<>uid://dm8txnxhwlbsf<>uid://ljtim2mukvda<>uid://bjfx2asn44yol<>uid://c8d1xxb5mriec<>uid://b14gfsdlfvhmm<>uid://cqjmokvbmo81b<>uid://c34s84tvv8odc<>uid://bd1culmdmnt3w<>res://scripts/components/TriggerArea.gd<>uid://cgl64yjn0gxey<>uid://c2le1sh0qkxs<>uid://cvpqflbnwisw4
-01_lavapipes.tscn::PackedScene::581235018068036988::1687079731::0::1::::<><>::uid://f17hcev0cvv2<>uid://b57ljljuvefk1<>uid://cq6jk1bdbr4vb<>uid://ljtim2mukvda<>uid://dm8txnxhwlbsf<>uid://cqjmokvbmo81b<>uid://c8d1xxb5mriec<>uid://bqv4d3fj5oq15<>uid://c4lsuwvd1l5g7
+01_lavapipes.tscn::PackedScene::581235018068036988::1687080815::0::1::::<><>::uid://f17hcev0cvv2<>uid://b57ljljuvefk1<>uid://cq6jk1bdbr4vb<>uid://ljtim2mukvda<>uid://dm8txnxhwlbsf<>uid://cqjmokvbmo81b<>uid://c8d1xxb5mriec<>uid://bqv4d3fj5oq15<>uid://c4lsuwvd1l5g7<>uid://cvpqflbnwisw4<>uid://ccjb00dlwd21q
 ::res://scripts/::1686071900
 ::res://scripts/autoloads/::1686081313
 global_values.gd::GDScript::-1::1686081313::0::1::::<>Node2D<>::
