@@ -1,6 +1,5 @@
 extends "res://scripts/classes/entity_class.gd"
 
-
 var spotted_player = false
 var desired_x_velocity = 0.0
 var is_lasering = false
@@ -113,3 +112,5 @@ func spawn_poison():
 
 func _on_hitbox_has_been_hit():
 	$anim.play("hit")
+	if !spotted_player:
+		spotted_player = true

@@ -1,7 +1,7 @@
 extends "res://scripts/classes/entity_class.gd"
 
 var spotted_player = false
-var attack_cooldown = 2
+var attack_cooldown = 30
 
 
 func _ready():
@@ -29,9 +29,9 @@ func _physics_process(delta):
 	
 	
 	if attack_cooldown > 0:
-		attack_cooldown -= delta
+		attack_cooldown -= 1
 	else:
-		attack_cooldown = 0.5
+		attack_cooldown = 30
 		attack()
 	
 	

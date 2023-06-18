@@ -62,6 +62,8 @@ func grab_item():
 
 
 func _on_hitbox_has_been_hit():
+	if !spotted_player:
+		spotted_player = true
 	lower_hand_offset = Vector2(($looker.transform.x.x / abs($looker.transform.x.x)) * -128, 0)
 	$anim.play("hit")
 
