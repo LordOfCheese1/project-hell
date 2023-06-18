@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ijs4dlp405ga"]
+[gd_scene load_steps=12 format=3 uid="uid://ijs4dlp405ga"]
 
 [ext_resource type="PackedScene" uid="uid://f17hcev0cvv2" path="res://prefabs/world/bg_walls.tscn" id="1_iword"]
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_nef1f"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c8d1xxb5mriec" path="res://prefabs/world/room_camera.tscn" id="5_8rmt2"]
 [ext_resource type="PackedScene" uid="uid://bqv4d3fj5oq15" path="res://prefabs/items/dasher.tscn" id="8_7ht4n"]
 [ext_resource type="PackedScene" uid="uid://c4lsuwvd1l5g7" path="res://prefabs/entities/enemies/devil.tscn" id="10_arfwx"]
+[ext_resource type="PackedScene" uid="uid://cvpqflbnwisw4" path="res://prefabs/components/music_manager.tscn" id="10_tyvdp"]
+[ext_resource type="EventAsset" uid="uid://ccjb00dlwd21q" path="res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres" id="11_d6e4r"]
 
 [node name="01_lavapipes" type="Node2D"]
 
@@ -84,3 +86,8 @@ position = Vector2(5, 103)
 
 [node name="dasher" parent="." instance=ExtResource("8_7ht4n")]
 position = Vector2(436, 734)
+
+[node name="MusicManager" parent="." instance=ExtResource("10_tyvdp")]
+event = ExtResource("11_d6e4r")
+
+[connection signal="tree_exited" from="MusicManager" to="MusicManager" method="_on_tree_exited"]

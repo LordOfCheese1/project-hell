@@ -161,4 +161,5 @@ shape = SubResource("RectangleShape2D_i737q")
 [connection signal="body_entered" from="entities/cerberus/Area2D" to="MusicManager" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="entities/cerberus/Area2D" to="MusicManager" method="_on_area_2d_body_exited"]
 [connection signal="param_Name" from="entities/cerberus/Area2D" to="MusicManager" method="_on_area_2d_param_name"]
+[connection signal="tree_exited" from="MusicManager" to="MusicManager" method="_on_tree_exited"]
 [connection signal="body_entered" from="ApproachTrigger" to="MusicManager" method="_on_approach_trigger_body_entered"]

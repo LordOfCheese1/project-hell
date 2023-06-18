@@ -42,3 +42,7 @@ func _on_cerberus_has_died():
 func _on_approach_trigger_body_entered(body):
 	if body.is_in_group("Player"):
 		instance.set_parameter_by_name_with_label("Intensity", fmodParam4, false)
+
+
+func _on_tree_exited():
+	instance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
