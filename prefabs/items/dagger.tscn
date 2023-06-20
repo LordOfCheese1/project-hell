@@ -1,18 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b14gfsdlfvhmm"]
+[gd_scene load_steps=6 format=3 uid="uid://b14gfsdlfvhmm"]
 
 [ext_resource type="Script" path="res://scripts/items/dagger.gd" id="1_710lg"]
 [ext_resource type="Texture2D" uid="uid://ldtlqltqfngi" path="res://textures/items/dagger.png" id="2_0cr1f"]
+[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_wfbpk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvvxi"]
+resource_local_to_scene = true
+shader = ExtResource("2_wfbpk")
+shader_parameter/color = Color(1, 0.980392, 0.968627, 1)
+shader_parameter/fac = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45om3"]
-size = Vector2(16, 4)
+size = Vector2(24, 4)
 
 [node name="dagger" type="Area2D"]
 script = ExtResource("1_710lg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cvvxi")
 texture = ExtResource("2_0cr1f")
+offset = Vector2(7, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_45om3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

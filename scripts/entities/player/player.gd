@@ -82,6 +82,8 @@ func _physics_process(delta):
 	
 	if item_use_cooldown > 0:
 		item_use_cooldown -= 1
+	
+	entity_update()
 
 
 func jump():
@@ -123,7 +125,7 @@ func drop_item():
 
 
 func _on_hitbox_has_been_hit():
-	$anim.play("hit")
+	hit()
 
 
 func request_grabbed_items():

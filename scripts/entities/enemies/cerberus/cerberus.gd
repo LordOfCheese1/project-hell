@@ -63,6 +63,7 @@ func _physics_process(delta):
 	$body/leg_left.rotation_degrees = lerp($body/leg_left.rotation_degrees, -$body.rotation_degrees * 2, 0.15)
 	$body/leg_right.rotation_degrees = lerp($body/leg_right.rotation_degrees, -$body.rotation_degrees * 2, 0.15)
 	
+	entity_update()
 
 
 func _process(_delta):
@@ -111,6 +112,6 @@ func spawn_poison():
 
 
 func _on_hitbox_has_been_hit():
-	$anim.play("hit")
+	hit()
 	if !spotted_player:
 		spotted_player = true

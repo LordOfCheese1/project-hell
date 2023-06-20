@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cgl64yjn0gxey"]
+[gd_scene load_steps=17 format=3 uid="uid://cgl64yjn0gxey"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/cerberus/cerberus.gd" id="1_3nnwq"]
 [ext_resource type="Texture2D" uid="uid://b2nq02he5wqwd" path="res://textures/entities/cerberus/upper_jaw.png" id="1_dw73c"]
@@ -21,43 +21,6 @@ shader_parameter/fac = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nf2w"]
 radius = 8.0
-
-[sub_resource type="Animation" id="Animation_0x2nf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("body:material:shader_parameter/fac")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_sub82"]
-resource_name = "hit"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("body:material:shader_parameter/fac")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.4, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd7ql"]
-_data = {
-"RESET": SubResource("Animation_0x2nf"),
-"hit": SubResource("Animation_sub82")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sini3"]
 size = Vector2(22, 22)
@@ -199,11 +162,6 @@ offset = Vector2(8, 0)
 shape = SubResource("CircleShape2D_8nf2w")
 
 [node name="looker" type="Node2D" parent="."]
-
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_cd7ql")
-}
 
 [node name="hitbox" parent="." instance=ExtResource("11_tdslw")]
 entity = NodePath("..")

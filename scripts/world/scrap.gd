@@ -21,8 +21,8 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("wall") && velocity.y > 0:
-		velocity.y = velocity.y * -0.95
-		velocity.x = velocity.x * -0.95
+		velocity.y = velocity.y * -0.85
+		velocity.x = velocity.x * -0.85
 	
 	if body.is_in_group("player"):
 		body.scrap += 1

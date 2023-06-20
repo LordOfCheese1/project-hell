@@ -43,6 +43,8 @@ func _physics_process(_delta):
 			attack_cooldown = 90
 			grabbed_items[0].use()
 			lower_hand_offset.y = 24
+	
+	entity_update()
 
 
 func _process(_delta):
@@ -65,7 +67,7 @@ func _on_hitbox_has_been_hit():
 	if !spotted_player:
 		spotted_player = true
 	lower_hand_offset = Vector2(($looker.transform.x.x / abs($looker.transform.x.x)) * -128, 0)
-	$anim.play("hit")
+	hit()
 
 
 func _on_player_detector_player_entered():

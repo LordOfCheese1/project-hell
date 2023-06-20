@@ -37,7 +37,7 @@ func attach_to(target : Node):
 func use():
 	emit_signal("used")
 	if self_attachment != null:
-		await get_tree().create_timer(0.1).timeout
+		#await get_tree().create_timer(0.1).timeout
 		self_attachment.use()
 
 

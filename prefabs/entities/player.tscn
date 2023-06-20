@@ -1,55 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm8txnxhwlbsf"]
+[gd_scene load_steps=10 format=3 uid="uid://dm8txnxhwlbsf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
-[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_5xrd2"]
 [ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
 [ext_resource type="Script" path="res://scripts/entities/player/player_leg.gd" id="2_wmahh"]
 [ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
 [ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="7_332ni"]
-
-[sub_resource type="Animation" id="Animation_4qvqf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/fac")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_h3ryb"]
-resource_name = "hit"
-length = 0.3
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/fac")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.4, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcmac"]
-_data = {
-"RESET": SubResource("Animation_4qvqf"),
-"hit": SubResource("Animation_h3ryb")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_janvo"]
-shader = ExtResource("2_5xrd2")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/fac = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oag7"]
 radius = 3.0
@@ -64,14 +20,7 @@ size = Vector2(8, 14)
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_knm7x")
 
-[node name="anim" type="AnimationPlayer" parent="."]
-root_node = NodePath("../body")
-libraries = {
-"": SubResource("AnimationLibrary_lcmac")
-}
-
 [node name="body" type="Node2D" parent="."]
-material = SubResource("ShaderMaterial_janvo")
 
 [node name="leg_left" type="Sprite2D" parent="body"]
 use_parent_material = true

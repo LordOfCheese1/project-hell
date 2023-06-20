@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://yhmfafbvbbfc"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/bug.gd" id="1_fvy1t"]
+[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_poqe1"]
+[ext_resource type="Texture2D" uid="uid://dac1ksxgaw1rf" path="res://textures/entities/bug/body.png" id="2_t2pms"]
+[ext_resource type="Texture2D" uid="uid://k6ww885lqia4" path="res://textures/entities/bug/leg_part.png" id="4_fju3j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxk8c"]
+shader = ExtResource("2_poqe1")
+shader_parameter/color = Color(0.960784, 0.917647, 0.517647, 1)
+shader_parameter/fac = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2y17w"]
+radius = 4.0
+
+[node name="bug" type="CharacterBody2D"]
+position = Vector2(15, 16)
+script = ExtResource("1_fvy1t")
+
+[node name="body" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qxk8c")
+texture = ExtResource("2_t2pms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2y17w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="leg" type="Node2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="lower_leg" type="Sprite2D" parent="leg"]
+texture = ExtResource("4_fju3j")
+offset = Vector2(2, 0)
+
+[node name="upper_leg" type="Sprite2D" parent="leg"]
+position = Vector2(5, 0)
+texture = ExtResource("4_fju3j")
+offset = Vector2(2, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

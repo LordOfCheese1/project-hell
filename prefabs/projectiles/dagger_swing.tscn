@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://nyld353nb1i6"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/dagger_swing.gd" id="1_kmvxn"]
+[ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="3_tcgk4"]
+[ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="4_lf6gs"]
+[ext_resource type="Texture2D" uid="uid://b6nwurkpgatmf" path="res://textures/projectiles/dagger_beam.png" id="4_tl6gw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyfeg"]
+radius = 4.0
+height = 24.0
+
+[node name="dagger_swing" type="Area2D"]
+script = ExtResource("1_kmvxn")
+
+[node name="attackbox" parent="." instance=ExtResource("4_lf6gs")]
+damage = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
+position = Vector2(12, 0)
+rotation = 1.57057
+shape = SubResource("CapsuleShape2D_cyfeg")
+
+[node name="particle_spawner" parent="." instance=ExtResource("3_tcgk4")]
+position = Vector2(20, 0)
+texture = ExtResource("4_tl6gw")
+freq = 0.01
+scale_amount = -0.04
+rot_amount = 5.0

@@ -29,31 +29,37 @@ metadata/_edit_horizontal_guides_ = []
 [node name="parts" type="Node2D" parent="."]
 
 [node name="body" type="Sprite2D" parent="parts"]
+use_parent_material = true
 position = Vector2(0, 12)
 texture = ExtResource("2_1j7hy")
 offset = Vector2(0, -4)
 
 [node name="head" type="Sprite2D" parent="parts/body"]
+use_parent_material = true
 position = Vector2(0, -10)
 texture = ExtResource("3_rh5tu")
 offset = Vector2(0, -2)
 
 [node name="left_jet" type="Sprite2D" parent="parts/body"]
+use_parent_material = true
 position = Vector2(-2, -7)
 texture = ExtResource("2_7cvsr")
 offset = Vector2(0, 2)
 
 [node name="right_jet" type="Sprite2D" parent="parts/body"]
+use_parent_material = true
 position = Vector2(2, -7)
 texture = ExtResource("2_7cvsr")
 offset = Vector2(0, 2)
 
 [node name="lower_arm" type="Sprite2D" parent="parts"]
+use_parent_material = true
 position = Vector2(0, 13)
 texture = ExtResource("2_cdspi")
 offset = Vector2(8, 0)
 
 [node name="upper_arm" type="Sprite2D" parent="parts"]
+use_parent_material = true
 position = Vector2(17, 13)
 texture = ExtResource("5_u4fdb")
 offset = Vector2(5, 0)

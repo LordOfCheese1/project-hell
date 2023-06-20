@@ -2,14 +2,14 @@ extends "res://scripts/classes/projectile_class.gd"
 
 
 func _ready():
-	velocity.x = transform.x.x * 200
-	velocity.y = -80
+	velocity = transform.x * 200
+	velocity.y = velocity.y - 30
 	$Sprite2D.scale = Vector2(0.1, 0.1)
 
 
 func _physics_process(delta):
 	projectile_update(delta)
-	velocity.y += 400 * delta
+	velocity.y += 550 * delta
 	velocity.x = lerp(velocity.x, 0.0, 0.02)
 	
 	
