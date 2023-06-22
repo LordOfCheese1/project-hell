@@ -71,6 +71,7 @@ func _process(_delta):
 		die(9)
 		is_dead = true
 		grabbed_items = []
+		mm.switch_param("Approach")
 		call_deferred("free")
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:

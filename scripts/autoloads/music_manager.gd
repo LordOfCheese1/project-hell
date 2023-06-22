@@ -11,4 +11,7 @@ func _ready():
 
 func switch_param(value : String):
 	instance.set_parameter_by_name_with_label("Intensity", value, false)
-	print("switched_track")
+
+
+func switch_scene(value : String):
+	instance.set_parameter_by_name_with_label("Level", value, false)

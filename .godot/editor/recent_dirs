@@ -1,3 +1,5 @@
+res://scripts/world
+res://prefabs/world
 res://autoloads
 res://scripts/autoloads
 res://scripts/projectiles
@@ -6,8 +8,6 @@ res://scripts/entities/enemies
 res://prefabs/entities/enemies
 res://scripts/items
 res://prefabs/items
-res://scripts/world
-res://prefabs/world
 res://prefabs/components
 res://scripts/components
 res://FmodData/Desktop

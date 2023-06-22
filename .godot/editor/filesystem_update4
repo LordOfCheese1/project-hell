@@ -16,6 +16,9 @@ res://prefabs/items/scissors.tscn
 res://prefabs/entities/enemies/bug.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/projectiles/dagger_swing.tscn
-res://scripts/autoloads/music_manager.gd
 res://scripts/entities/enemies/cerberus/cerberus.gd
+res://scripts/autoloads/music_manager.gd
+res://scripts/world/level.gd
+res://prefabs/world/param_change_trigger.tscn
+res://scripts/world/param_change_trigger.gd
 res://scripts/entities/player/player.gd
