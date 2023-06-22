@@ -10,7 +10,7 @@ var laser_spawn_cooldown = 0
 var laser_head_rot_dir = 0
 var poison_cooldown = 200
 var orig_laser_head_rot = 0
-signal has_died
+#fmod stuffs
 
 
 func _ready():
@@ -71,11 +71,10 @@ func _process(_delta):
 		die(9)
 		is_dead = true
 		grabbed_items = []
-		emit_signal("has_died")
 		call_deferred("free")
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
-		spotted_player = true
+		spot_player()
 
 
 func start_laser():
@@ -111,7 +110,11 @@ func spawn_poison():
 	get_tree().current_scene.add_child(poison_inst)
 
 
+func spot_player():
+	spotted_player = true
+
+
 func _on_hitbox_has_been_hit():
 	hit()
 	if !spotted_player:
-		spotted_player = true
+		spot_player()

@@ -34,10 +34,12 @@ func _physics_process(_delta):
 	for i in grabbed_items:
 		i.position = $hand_parts/upper_arm.global_position + $hand_parts/upper_arm.transform.x * 10
 		if gv.player != null:
+			var prev_rot = i.rotation_degrees
 			if spotted_player:
 				i.look_at(gv.player.position)
 			else:
 				i.look_at(unspotted_lookat)
+			i.rotation_degrees = lerp(prev_rot, i.rotation_degrees, 0.2)
 	
 	if grabbed_items == []:
 		grab_item()
