@@ -9,5 +9,6 @@ func _ready():
 	instance.start()
 
 
-func switch_track(value : String):
+func switch_param(value : String):
 	instance.set_parameter_by_name_with_label("Intensity", value, false)
+	print("switched_track")

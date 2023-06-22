@@ -112,6 +112,7 @@ func spawn_poison():
 
 func spot_player():
 	spotted_player = true
+	mm.switch_param("HighI")
 
 
 func _on_hitbox_has_been_hit():
