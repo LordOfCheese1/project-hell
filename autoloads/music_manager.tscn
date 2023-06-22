@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cukvd5btye2yg"]
+[gd_scene load_steps=3 format=3 uid="uid://cukvd5btye2yg"]
 
 [ext_resource type="Script" path="res://scripts/autoloads/music_manager.gd" id="1_qaea8"]
+[ext_resource type="EventAsset" uid="uid://cq0on7x7yadv" path="res://addons/FMOD/editor/resources/events/{646dfa94-8f7c-44d6-b0d2-5068c25050f7}.tres" id="2_rjyt2"]
 
 [node name="music_manager" type="Node2D"]
 script = ExtResource("1_qaea8")
+event = ExtResource("2_rjyt2")

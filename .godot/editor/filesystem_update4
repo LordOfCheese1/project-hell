@@ -1,6 +1,7 @@
 res://scenes/levels/00_hellgates.tscn
 res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres
 res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres
+res://addons/FMOD/editor/resources/events/{646dfa94-8f7c-44d6-b0d2-5068c25050f7}.tres
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/projectiles/dagger_beam.tscn
 res://prefabs/world/walls.tscn
@@ -14,11 +15,4 @@ res://prefabs/items/scissors.tscn
 res://prefabs/entities/enemies/bug.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/projectiles/dagger_swing.tscn
-res://prefabs/items/dagger.tscn
-res://prefabs/projectiles/laser.tscn
-res://autoloads/screen_effects.tscn
-res://prefabs/entities/enemies/cerberus.tscn
-res://scripts/entities/enemies/cerberus/cerberus.gd
 res://autoloads/music_manager.tscn
-res://scripts/autoloads/music_manager.gd
-res://scripts/entities/enemies/stationary_hand.gd
