@@ -1,0 +1,29 @@
+[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://cq0on7x7yadv"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_1o3bw"]
+data1 = 956059228
+data2 = 297952910
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_tp32q"]
+name = "Intensity"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_1o3bw")
+maximum = 4.0
+flags = 24
+guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_mm0y0"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_tp32q")
+labels = ["LowI", "Approach", "HighI", "LowRTN", "Victory"]
+path = "parameter:/Intensity"
+guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
+name = "Intensity"
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{dca3593d-ecf0-4192-849b-96e2691d0a49}": SubResource("ParameterAsset_mm0y0")
+}
+path = "event:/Intro.Cerberus"
+guid = "{646dfa94-8f7c-44d6-b0d2-5068c25050f7}"
+name = "Intro.Cerberus"
