@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://yhmfafbvbbfc"]
+[gd_scene load_steps=8 format=3 uid="uid://yhmfafbvbbfc"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/bug.gd" id="1_fvy1t"]
 [ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_poqe1"]
 [ext_resource type="Texture2D" uid="uid://dac1ksxgaw1rf" path="res://textures/entities/bug/body.png" id="2_t2pms"]
 [ext_resource type="Texture2D" uid="uid://k6ww885lqia4" path="res://textures/entities/bug/leg_part.png" id="4_fju3j"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="5_ehgkc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qxk8c"]
+resource_local_to_scene = true
 shader = ExtResource("2_poqe1")
 shader_parameter/color = Color(0.960784, 0.917647, 0.517647, 1)
 shader_parameter/fac = 0.0
@@ -14,7 +16,8 @@ shader_parameter/fac = 0.0
 radius = 4.0
 
 [node name="bug" type="CharacterBody2D"]
-position = Vector2(15, 16)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_fvy1t")
 
 [node name="body" type="Sprite2D" parent="."]
@@ -40,4 +43,11 @@ position = Vector2(5, 0)
 texture = ExtResource("4_fju3j")
 offset = Vector2(2, 0)
 
+[node name="hitbox" parent="." instance=ExtResource("5_ehgkc")]
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_2y17w")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

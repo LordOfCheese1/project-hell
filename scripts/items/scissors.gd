@@ -7,7 +7,7 @@ func _ready():
 	setup_item(Vector2(6, 0))
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	item_update()
 	
 	$upper_blade.rotation_degrees = lerp($upper_blade.rotation_degrees, float(-target_angle), 0.3)
@@ -16,12 +16,12 @@ func _physics_process(delta):
 	if $lower_blade.rotation_degrees < 4:
 		target_angle = 45
 		$attackbox/CollisionShape2D.disabled = true
-	
-	if grabbed_entity != null:
-		if len($attackbox.ignore_in_detection) < 1:
-			$attackbox.ignore_in_detection.append(grabbed_entity)
-
 
 func _on_used():
 	target_angle = 0
 	$attackbox/CollisionShape2D.disabled = false
+
+
+func _on_grabbed():
+	$attackbox.ignore_in_detection.clear()
+	$attackbox.ignore_in_detection.append(grabbed_entity)

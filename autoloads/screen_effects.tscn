@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://63w3i30jmtd8"]
+
+[ext_resource type="Script" path="res://scripts/autoloads/screen_effects.gd" id="1_kednk"]
+
+[node name="screen_effects" type="CanvasLayer"]
+script = ExtResource("1_kednk")

@@ -1,3 +1,5 @@
+res://scripts/autoloads
+res://autoloads
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies
@@ -12,8 +14,6 @@ res://FmodData/Desktop
 res://FmodData
 res://scripts/obstacles
 res://prefabs/obstacles
-res://autoloads
-res://scripts/autoloads
 res://scripts/entities/enemies/cerberus
 res://scenes/levels
 res://scripts

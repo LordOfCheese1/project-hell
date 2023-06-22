@@ -80,7 +80,7 @@ func _process(_delta):
 
 func start_laser():
 	orig_laser_head_rot = $body/head_0/screw.rotation_degrees
-	laser_spawn_cooldown = 5
+	laser_spawn_cooldown = 10
 	laser_attack_cooldown = 140
 	$body/head_0.is_doing_something = true
 	is_lasering = true

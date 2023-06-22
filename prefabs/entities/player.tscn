@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm8txnxhwlbsf"]
+[gd_scene load_steps=11 format=3 uid="uid://dm8txnxhwlbsf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
 [ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
 [ext_resource type="Script" path="res://scripts/entities/player/player_leg.gd" id="2_wmahh"]
 [ext_resource type="Texture2D" uid="uid://dg6722ulgtwbx" path="res://textures/entities/player/player.png" id="3_ur0jm"]
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
+[ext_resource type="Texture2D" uid="uid://djfueglvo5g7a" path="res://textures/entities/player/eyes.png" id="5_il2qx"]
 [ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="7_332ni"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oag7"]
@@ -40,6 +41,11 @@ script = ExtResource("2_wmahh")
 [node name="upper_body" type="Sprite2D" parent="body"]
 use_parent_material = true
 texture = ExtResource("3_ur0jm")
+
+[node name="eyes" type="Sprite2D" parent="body/upper_body"]
+modulate = Color(0.94902, 0.980392, 0.752941, 1)
+position = Vector2(-1, -2)
+texture = ExtResource("5_il2qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

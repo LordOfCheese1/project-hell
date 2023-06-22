@@ -113,6 +113,7 @@ player_pos = Vector2(5, 103)
 
 [node name="stationary_hand" parent="entities" instance=ExtResource("8_pl13o")]
 position = Vector2(989, 740)
+unspotted_lookat = Vector2(-48, 0)
 
 [node name="cerberus" parent="entities" instance=ExtResource("11_0sfts")]
 position = Vector2(843, 984)
@@ -156,4 +157,6 @@ shape = SubResource("RectangleShape2D_i737q")
 [node name="MusicManager" parent="." instance=ExtResource("15_5faxf")]
 event = SubResource("EventAsset_h3tn5")
 
+[connection signal="has_died" from="entities/cerberus" to="MusicManager" method="_on_cerberus_has_died"]
+[connection signal="body_entered" from="ApproachTrigger" to="MusicManager" method="_on_approach_trigger_body_entered"]
 [connection signal="tree_exited" from="MusicManager" to="MusicManager" method="_on_tree_exited"]

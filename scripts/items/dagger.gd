@@ -4,12 +4,13 @@ var velocity = Vector2()
 var touching_wall = false
 var projectile_path = load("res://prefabs/projectiles/dagger_swing.tscn")
 var prev_dir = -1
-var target_rot = 0.0
+var target_rot = -100
 var flash_fac = 0.0
 
 
 func _ready():
-	setup_item(Vector2(2, 0))
+	$Sprite2D.scale.y = -1
+	setup_item(Vector2(4, 0))
 
 
 func _physics_process(delta):
@@ -27,6 +28,9 @@ func _physics_process(delta):
 	$Sprite2D.rotation_degrees = lerp(float($Sprite2D.rotation_degrees), float(target_rot), 0.25)
 	flash_fac = lerp(flash_fac, 0.0, 0.1)
 	$Sprite2D.material.set_shader_parameter("fac", flash_fac)
+	
+	$CollisionShape2D.position = $Sprite2D.position + $Sprite2D.transform.x * 7
+	$CollisionShape2D.rotation_degrees = $Sprite2D.rotation_degrees
 
 
 func _on_body_entered(body):

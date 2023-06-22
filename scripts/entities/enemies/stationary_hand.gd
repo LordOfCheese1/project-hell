@@ -3,23 +3,30 @@ extends "res://scripts/classes/entity_class.gd"
 var lower_hand_offset = Vector2(0, -64)
 var spotted_player = false
 var attack_cooldown = 90
+@export var unspotted_lookat : Vector2
 
 
 func _ready():
 	setup_entity(10.0, 1, 1)
+	unspotted_lookat = position + unspotted_lookat
 
 
 func _physics_process(_delta):
-	
 	var prev_part : Node
 	for i in $hand_parts.get_children():
 		var prev_rot = i.rotation_degrees
 		if prev_part != null:
 			i.position = prev_part.transform.x * 28
 			if gv.player != null:
-				i.look_at(gv.player.position)
+				if spotted_player:
+					i.look_at(gv.player.position)
+				else:
+					i.look_at(unspotted_lookat)
 		elif gv.player != null:
-			i.look_at(gv.player.position + lower_hand_offset)
+			if spotted_player:
+				i.look_at(gv.player.position + lower_hand_offset)
+			else:
+				i.look_at(unspotted_lookat + lower_hand_offset)
 		i.rotation_degrees = lerp(prev_rot, i.rotation_degrees, 0.1)
 		
 		prev_part = i
@@ -27,14 +34,20 @@ func _physics_process(_delta):
 	for i in grabbed_items:
 		i.position = $hand_parts/upper_arm.global_position + $hand_parts/upper_arm.transform.x * 10
 		if gv.player != null:
-			i.look_at(gv.player.position)
+			if spotted_player:
+				i.look_at(gv.player.position)
+			else:
+				i.look_at(unspotted_lookat)
 	
 	if grabbed_items == []:
 		grab_item()
 	
 	lower_hand_offset = lerp(lower_hand_offset, Vector2(0, -64), 0.1)
 	if gv.player != null:
-		$looker.look_at(gv.player.position)
+		if spotted_player:
+			$looker.look_at(gv.player.position)
+		else:
+			$looker.look_at(unspotted_lookat)
 	
 	if spotted_player:
 		if attack_cooldown > 0:

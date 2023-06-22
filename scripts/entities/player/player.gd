@@ -13,11 +13,12 @@ var grabbed_for = 0
 var item_use_cooldown = 0
 var max_item_use_cooldown = 25
 var scrap = 0
+var max_hp = 15.0
 
 
 func _ready():
 	gv.player = self
-	setup_entity(5.0, 2)
+	setup_entity(15, 2, 0)
 	add_to_group("player")
 
 
@@ -64,7 +65,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("use_item") && !Input.is_action_pressed("grab"):
 		attempt_item_use()
-	elif Input.is_action_just_pressed("use_item") && Input.is_action_pressed("grab"):
+	
+	if Input.is_action_just_pressed("drop"):
 		drop_item()
 	
 	for i in range(len(grabbed_items)):
@@ -83,7 +85,12 @@ func _physics_process(delta):
 	if item_use_cooldown > 0:
 		item_use_cooldown -= 1
 	
+	$body/upper_body/eyes.modulate.a = hp / max_hp
+	
 	entity_update()
+	
+	if Input.is_action_just_pressed("test"):
+		hp -= 1
 
 
 func jump():

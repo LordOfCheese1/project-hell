@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ljtim2mukvda"]
+[gd_scene load_steps=22 format=3 uid="uid://ljtim2mukvda"]
 
 [ext_resource type="Texture2D" uid="uid://c4kaoiqfrlxrt" path="res://textures/tiles/decal_glow_terminal.png" id="1_vuqx0"]
 [ext_resource type="Texture2D" uid="uid://oejb4pxt5q6y" path="res://textures/tiles/decal_snakebird.png" id="2_oh332"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cjfg30diq1nxk" path="res://textures/tiles/decal_devil.png" id="7_nb2cd"]
 [ext_resource type="Texture2D" uid="uid://vje1be82ygnx" path="res://textures/tiles/decal_rwlizard.png" id="8_46vyf"]
 [ext_resource type="Texture2D" uid="uid://bcq1cafs8l5vu" path="res://textures/tiles/decal_rwvulture.png" id="9_ejmam"]
+[ext_resource type="Texture2D" uid="uid://dp45gfh8stji8" path="res://textures/tiles/decal_bigspinningcube.png" id="10_ntgtt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbqyv"]
 texture = ExtResource("1_vuqx0")
@@ -57,6 +58,11 @@ texture = ExtResource("9_ejmam")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2hdx"]
+texture = ExtResource("10_ntgtt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gohk5"]
 sources/0 = SubResource("TileSetAtlasSource_pbqyv")
 sources/2 = SubResource("TileSetAtlasSource_jsd0k")
@@ -67,6 +73,7 @@ sources/5 = SubResource("TileSetAtlasSource_ea4r5")
 sources/6 = SubResource("TileSetAtlasSource_4osfh")
 sources/7 = SubResource("TileSetAtlasSource_n5e5p")
 sources/8 = SubResource("TileSetAtlasSource_5l1r1")
+sources/9 = SubResource("TileSetAtlasSource_r2hdx")
 
 [node name="decal_walls" type="TileMap"]
 tile_set = SubResource("TileSet_gohk5")

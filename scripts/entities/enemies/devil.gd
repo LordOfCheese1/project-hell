@@ -1,7 +1,7 @@
 extends "res://scripts/classes/entity_class.gd"
 
 var spotted_player = false
-var attack_cooldown = 30
+var attack_cooldown = 50
 var target_pos = Vector2(0, 0)
 
  
@@ -10,7 +10,7 @@ func _ready():
 	target_pos = Vector2(position.x, position.y + 80)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 	
 	var old_rot = 0.0
@@ -42,7 +42,7 @@ func _physics_process(delta):
 		if attack_cooldown > 0:
 			attack_cooldown -= 1
 		else:
-			attack_cooldown = 30
+			attack_cooldown = 50
 			attack()
 	
 	
@@ -66,7 +66,7 @@ func _physics_process(delta):
 	entity_update()
 
 
-func _process(delta):
+func _process(_delta):
 	if hp <= 0 && !is_dead:
 		print(grabbed_items)
 		die(6)

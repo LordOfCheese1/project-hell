@@ -16,7 +16,7 @@ var values = {
 }
 
 
-func _process(delta):
+func _process(_delta):
 	if has_switched_scene == true:
 		has_switched_scene = false
 		load_values()

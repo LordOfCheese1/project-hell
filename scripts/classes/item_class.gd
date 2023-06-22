@@ -1,5 +1,6 @@
 extends Area2D
 
+signal grabbed
 signal used
 var is_grabbed = false
 var gravity_pull = 550
@@ -15,6 +16,7 @@ func grab(entity : Node):
 	grabbed_entity = entity
 	if len(grabbed_entity.grabbed_items) < grabbed_entity.max_grab:
 		grabbed_entity.grabbed_items.append(self)
+	emit_signal("grabbed")
 
 
 func destroy():
