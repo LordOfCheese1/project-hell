@@ -6,7 +6,7 @@ var instance : EventInstance
 
 func _ready():
 	instance = RuntimeManager.create_instance(event)
-	instance.start()
+	#instance.start() # Remove/Comment this out if you want your game to have no music
 
 
 func switch_param(value : String):

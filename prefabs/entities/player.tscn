@@ -63,4 +63,6 @@ entity = NodePath("..")
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cx5uv")
 
+[node name="hit" type="AudioStreamPlayer" parent="."]
+
 [connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

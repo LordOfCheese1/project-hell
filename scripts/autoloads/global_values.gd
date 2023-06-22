@@ -17,3 +17,9 @@ func spawn_explosion(particle_amount : int, particle_pos : Vector2, particle_tex
 		particle_inst.gravity = gravity
 		particle_inst.starting_velocity = starting_velocity
 		get_tree().current_scene.add_child(particle_inst)
+
+
+func hitstop(time : float):
+	get_tree().paused = true
+	await get_tree().create_timer(time, true, false, true).timeout
+	get_tree().paused = false
