@@ -1,11 +1,11 @@
-AudioStreamPlayer
-Node2D
+Sprite2D
 CollisionShape2D
 Area2D
+AudioStreamPlayer
+Node2D
 StudioEventEmitter2D
 CanvasLayer
 VisibleOnScreenEnabler2D
-Sprite2D
 Timer
 CharacterBody2D
 Polygon2D

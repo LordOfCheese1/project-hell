@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bobr2sn1umqrf"]
+
+[ext_resource type="Script" path="res://scripts/items/bugbomb_gun.gd" id="1_5vl5o"]
+[ext_resource type="Texture2D" uid="uid://gjd5mku56ju2" path="res://textures/items/bug_gun/gun.png" id="2_1t1ci"]
+[ext_resource type="Texture2D" uid="uid://dde3clgok41aw" path="res://textures/projectiles/bomb.png" id="3_ulkpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y51nd"]
+size = Vector2(13, 10)
+
+[node name="bugbomb_gun" type="Area2D"]
+script = ExtResource("1_5vl5o")
+
+[node name="bomb" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+texture = ExtResource("3_ulkpu")
+offset = Vector2(5, 0)
+
+[node name="gun" type="Sprite2D" parent="."]
+texture = ExtResource("2_1t1ci")
+offset = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_y51nd")
+
+[connection signal="used" from="." to="." method="_on_used"]

@@ -68,7 +68,6 @@ func _physics_process(_delta):
 
 func _process(_delta):
 	if hp <= 0 && !is_dead:
-		print(grabbed_items)
 		die(6)
 		is_dead = true
 		if len(grabbed_items) > 0:
