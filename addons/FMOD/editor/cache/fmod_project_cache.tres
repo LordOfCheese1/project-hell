@@ -54,15 +54,15 @@ event_tree = [{
 }, {
 "children": [],
 "item_type": 1,
-"node_name": "Intro.Cerberus",
-"path": "event:/Intro.Cerberus",
-"resource": ExtResource("7_7kdc0")
+"node_name": "GlobalMusic",
+"path": "event:/GlobalMusic",
+"resource": ExtResource("7_6dpm7")
 }, {
 "children": [],
 "item_type": 1,
-"node_name": "music test",
-"path": "event:/music test",
-"resource": ExtResource("7_6dpm7")
+"node_name": "Intro.Cerberus",
+"path": "event:/Intro.Cerberus",
+"resource": ExtResource("7_7kdc0")
 }, {
 "children": [],
 "item_type": 1,

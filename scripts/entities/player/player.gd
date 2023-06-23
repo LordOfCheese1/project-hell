@@ -20,7 +20,6 @@ var sounds = {
 
 
 func _ready():
-	mm.switch_param("LowI")
 	gv.player = self
 	setup_entity(15, 2, 0)
 	add_to_group("player")
