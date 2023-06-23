@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="9_8qi1i"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="11_0sfts"]
 [ext_resource type="PackedScene" uid="uid://c2le1sh0qkxs" path="res://prefabs/items/dev_item.tscn" id="13_rc87h"]
-[ext_resource type="PackedScene" uid="uid://dpnv4hnksxgld" path="res://prefabs/world/param_change_trigger.tscn" id="14_723kw"]
+[ext_resource type="PackedScene" uid="uid://bobr2sn1umqrf" path="res://prefabs/items/bugbomb_gun.tscn" id="14_r8k36"]
 
 [node name="00_hellgates" type="Node2D"]
 script = ExtResource("1_nwqmu")
@@ -73,13 +73,6 @@ size = Vector2(16, 32)
 scene = "res://scenes/levels/01_lavapipes.tscn"
 player_pos = Vector2(5, 103)
 
-[node name="music_triggers" type="Node2D" parent="environment"]
-
-[node name="param_change_trigger" parent="environment/music_triggers" instance=ExtResource("14_723kw")]
-position = Vector2(536, 680)
-scale = Vector2(3, 3)
-param = "HighI"
-
 [node name="entities" type="Node2D" parent="."]
 
 [node name="stationary_hand" parent="entities" instance=ExtResource("8_pl13o")]
@@ -100,3 +93,6 @@ position = Vector2(987, 740)
 
 [node name="dev_item" parent="." instance=ExtResource("13_rc87h")]
 position = Vector2(357, 613)
+
+[node name="bugbomb_gun" parent="." instance=ExtResource("14_r8k36")]
+position = Vector2(183, 597)

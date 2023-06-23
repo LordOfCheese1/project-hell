@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nj6qqyp2iu2p"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/patrol_bot.gd" id="1_6al07"]
+
+[node name="patrol_bot" type="CharacterBody2D"]
+script = ExtResource("1_6al07")

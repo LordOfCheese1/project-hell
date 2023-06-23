@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project-hell"
-run/main_scene="res://scenes/testing.tscn"
+run/main_scene="res://scenes/playtest_level.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
 

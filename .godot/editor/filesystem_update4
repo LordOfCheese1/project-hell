@@ -22,3 +22,8 @@ res://prefabs/projectiles/cerberus_laser.tscn
 res://prefabs/projectiles/bomb.tscn
 res://prefabs/world/param_change_trigger.tscn
 res://scripts/entities/enemies/cerberus/cerberus.gd
+res://prefabs/items/laser_hand.tscn
+res://scripts/items/laser_hand.gd
+res://prefabs/entities/enemies/patrol_bot.tscn
+res://scripts/entities/player/player.gd
+res://scenes/playtest_level.tscn

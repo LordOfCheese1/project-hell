@@ -1,3 +1,6 @@
+res://scenes
+res://scripts/entities/enemies
+res://prefabs/entities/enemies
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/items
@@ -6,8 +9,6 @@ res://scripts/world
 res://prefabs/world
 res://autoloads
 res://scripts/autoloads
-res://scripts/entities/enemies
-res://prefabs/entities/enemies
 res://prefabs/components
 res://scripts/components
 res://FmodData/Desktop
@@ -19,4 +20,3 @@ res://scenes/levels
 res://scripts
 res://scripts/entities/player
 res://scripts/entities
-res://prefabs/entities

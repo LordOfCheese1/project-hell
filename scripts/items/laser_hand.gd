@@ -6,7 +6,7 @@ var touching_wall = false
 
 
 func _ready():
-	setup_item(Vector2(0, 0))
+	setup_item(Vector2(4, 0))
 
 
 func _physics_process(delta):
