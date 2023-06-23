@@ -10,6 +10,6 @@ func _ready():
 	$CollisionShape2D.shape = square_shape
 
 
-#func _on_body_entered(body):
-	#if body.is_in_group("player"):
-		#mm.switch_param(param)
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		mm.switch_level_param(param)

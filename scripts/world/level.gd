@@ -4,5 +4,4 @@ extends Node2D
 
 
 func _ready():
-	pass
 	mm.switch_fmod_event(param_name)

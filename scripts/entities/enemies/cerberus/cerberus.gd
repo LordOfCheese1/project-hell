@@ -72,8 +72,8 @@ func _process(_delta):
 		is_dead = true
 		grabbed_items = []
 		mm.switch_boss_param("Victory")
+		mm.switch_fmod_event("LVL1", 3.0)
 		call_deferred("free")
-		#mm.switch_fmod_event("LVL1") #need to wait 3 seconds before executing
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
 		spot_player()
