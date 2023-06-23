@@ -5,5 +5,4 @@ extends Node2D
 
 func _ready():
 	pass
-	#Currently commented out because a Level param does not actually exist yet
-	#mm.switch_level(param_name)
+	mm.switch_fmod_event(param_name)

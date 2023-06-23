@@ -71,8 +71,9 @@ func _process(_delta):
 		die(9)
 		is_dead = true
 		grabbed_items = []
-		mm.switch_param("Approach")
+		mm.switch_boss_param("Victory")
 		call_deferred("free")
+		#mm.switch_fmod_event("LVL1") #need to wait 3 seconds before executing
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
 		spot_player()
@@ -113,7 +114,7 @@ func spawn_poison():
 
 func spot_player():
 	spotted_player = true
-	mm.switch_param("HighI")
+	mm.switch_fmod_event("LVL1Boss")
 
 
 func _on_hitbox_has_been_hit():

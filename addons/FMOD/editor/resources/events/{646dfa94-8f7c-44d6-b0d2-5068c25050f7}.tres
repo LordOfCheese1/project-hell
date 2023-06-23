@@ -1,28 +1,47 @@
-[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://cq0on7x7yadv"]
+[gd_resource type="EventAsset" load_steps=7 format=3 uid="uid://cq0on7x7yadv"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_1o3bw"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_dxxye"]
+data1 = 3567570915
+data2 = 2623563397
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_cd4oy"]
+name = "Level"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_dxxye")
+maximum = 2.0
+flags = 24
+guid = "{90e817ee-c91b-4fdb-b5d3-07edf560abd3}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_8gcjm"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_cd4oy")
+labels = ["LVL1", "LVL2", "LVL3"]
+path = "parameter:/Level"
+guid = "{90e817ee-c91b-4fdb-b5d3-07edf560abd3}"
+name = "Level"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_dkow3"]
 data1 = 956059228
 data2 = 297952910
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_tp32q"]
-name = "Intensity"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_1o3bw")
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_2chlp"]
+name = "musicParam"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_dkow3")
 maximum = 4.0
 flags = 24
 guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_mm0y0"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_tp32q")
-labels = ["LowI", "Approach", "HighI", "LowRTN", "Victory"]
-path = "parameter:/Intensity"
+[sub_resource type="ParameterAsset" id="ParameterAsset_ktcay"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_2chlp")
+labels = ["Level", "LevelVariation", "Boss", "BossLowHealth", "Victory"]
+path = "parameter:/MusicParam"
 guid = "{dca3593d-ecf0-4192-849b-96e2691d0a49}"
-name = "Intensity"
+name = "musicParam"
 
 [resource]
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
-"{dca3593d-ecf0-4192-849b-96e2691d0a49}": SubResource("ParameterAsset_mm0y0")
+"{90e817ee-c91b-4fdb-b5d3-07edf560abd3}": SubResource("ParameterAsset_8gcjm"),
+"{dca3593d-ecf0-4192-849b-96e2691d0a49}": SubResource("ParameterAsset_ktcay")
 }
 path = "event:/Intro.Cerberus"
 guid = "{646dfa94-8f7c-44d6-b0d2-5068c25050f7}"
