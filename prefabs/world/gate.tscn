@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cui8or72o8h26"]
+
+[ext_resource type="Script" path="res://scripts/world/gate.gd" id="1_cotrr"]
+[ext_resource type="Texture2D" uid="uid://cudb5bmdq04nv" path="res://textures/environment/gate/scaffolding.png" id="2_4cx4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36jno"]
+size = Vector2(32, 16)
+
+[node name="gate" type="StaticBody2D"]
+script = ExtResource("1_cotrr")
+size = 5
+
+[node name="scaffolding" type="Sprite2D" parent="."]
+texture = ExtResource("2_4cx4f")
+
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_36jno")

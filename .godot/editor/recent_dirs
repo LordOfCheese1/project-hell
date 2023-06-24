@@ -1,3 +1,9 @@
+res://scripts/world
+res://prefabs/world
+C:/Gamedev/Godot4/Exports/project-hell/playtest/linux
+res://scripts/entities
+res://prefabs/entities
+C:/Gamedev/Godot4/Exports/project-hell/playtest
 res://scenes
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
@@ -5,8 +11,6 @@ res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/items
 res://prefabs/items
-res://scripts/world
-res://prefabs/world
 res://autoloads
 res://scripts/autoloads
 res://prefabs/components
@@ -16,7 +20,3 @@ res://FmodData
 res://scripts/obstacles
 res://prefabs/obstacles
 res://scripts/entities/enemies/cerberus
-res://scenes/levels
-res://scripts
-res://scripts/entities/player
-res://scripts/entities

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqnydfp2fbfol"]
+
+[ext_resource type="Texture2D" uid="uid://r3wh2ie8u4rb" path="res://textures/entities/scrap_container.png" id="1_jykl2"]
+[ext_resource type="Script" path="res://scripts/entities/scrap_container.gd" id="1_u6imv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_671wl"]
+size = Vector2(20, 12)
+
+[node name="scrap_container" type="CharacterBody2D"]
+script = ExtResource("1_u6imv")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jykl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_671wl")

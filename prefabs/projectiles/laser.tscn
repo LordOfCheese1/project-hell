@@ -12,7 +12,7 @@ radius = 4.0
 script = ExtResource("1_k6spx")
 
 [node name="attackbox" parent="." instance=ExtResource("3_j7a37")]
-damage = 1.0
+damage = 1.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
 shape = SubResource("CircleShape2D_mo6bo")

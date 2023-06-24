@@ -7,7 +7,7 @@
 script = ExtResource("1_bcexo")
 
 [node name="attackbox" parent="." instance=ExtResource("2_ki4io")]
-damage = 1.5
+damage = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
 
