@@ -17,12 +17,12 @@ func _ready():
 	$CollisionShape2D.shape.size.y = size * 16
 
 
-func _process(delta):
+func _process(_delta):
 	if get_node_or_null(entity_to_defeat) == null && !should_open:
 		should_open = true
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if should_open:
 		for i in $blocks.get_children():
 			if i .scale.x > 0:

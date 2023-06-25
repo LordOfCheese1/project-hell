@@ -5,7 +5,7 @@ var passed_time = 0
 var instanced_by = null
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	rotation_degrees = lerp(rotation_degrees, goal_rot, 0.3)
 	passed_time += 1
 	if passed_time > 16:

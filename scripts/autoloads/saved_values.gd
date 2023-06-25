@@ -11,8 +11,12 @@ func _ready():
 # "pl" is an acronym for "player"
 # Values that should be kept after rebooting and scene switching may be stored here. The stored values here load when the game launches for the first time.
 var values = {
+	#player-related values
 	"pl_grabbed_items" : [],
 	"pl_health" : 10.0,
+	
+	#settings
+	"music_is_playing" : false
 }
 
 

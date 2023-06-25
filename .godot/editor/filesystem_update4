@@ -14,9 +14,11 @@ res://prefabs/world/scrap.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/projectiles/cerberus_laser.tscn
 res://prefabs/projectiles/dagger_swing.tscn
-res://prefabs/projectiles/laser.tscn
-res://prefabs/entities/scrap_container.tscn
-res://prefabs/items/scissors.tscn
+res://prefabs/items/laser_gun.tscn
+res://scripts/items/dagger.gd
+res://scripts/items/laser_gun.gd
+res://scripts/items/laser_hand.gd
+res://scripts/items/bomb_gun.gd
 res://scripts/items/scissors.gd
-res://prefabs/world/gate.tscn
-res://scripts/world/gate.gd
+res://prefabs/entities/enemies/wallsitter.tscn
+res://scripts/entities/enemies/wallsitter.gd

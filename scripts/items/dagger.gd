@@ -35,7 +35,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("wall"):
-		position.y -= velocity.y / 60
+		position.y -= velocity.y * 0.017
 		touching_wall = true
 
 

@@ -1,14 +1,14 @@
 CollisionShape2D
+VisibleOnScreenEnabler2D
 Sprite2D
-Node2D
-StaticBody2D
 CharacterBody2D
 Label
+Node2D
+StaticBody2D
 Area2D
 AudioStreamPlayer
 StudioEventEmitter2D
 CanvasLayer
-VisibleOnScreenEnabler2D
 Timer
 Polygon2D
 MeshInstance2D

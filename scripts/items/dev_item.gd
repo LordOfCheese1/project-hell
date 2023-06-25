@@ -15,7 +15,7 @@ func _physics_process(_delta):
 			gv.spawn_explosion(30, get_global_mouse_position(), load("res://textures/environment/decals/movement_graffiti.png"), -0.05, 5, -0.05, 0, 0, 100)
 
 
-func _process(delta):
+func _process(_delta):
 	visible = is_grabbed
 
 
