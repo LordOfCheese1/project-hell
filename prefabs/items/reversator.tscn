@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4egreb60j48f"]
+
+[ext_resource type="Script" path="res://scripts/items/reversator.gd" id="1_pp47a"]
+[ext_resource type="Texture2D" uid="uid://cuf267pbq8q3e" path="res://textures/items/snow_gun.png" id="2_5xuka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uduv"]
+size = Vector2(16, 6)
+
+[node name="reversator" type="Area2D"]
+script = ExtResource("1_pp47a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5xuka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6uduv")
+
+[connection signal="used" from="." to="." method="_on_used"]

@@ -1,3 +1,5 @@
+res://scripts/items
+res://prefabs/items
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
 res://scripts/world
@@ -9,8 +11,6 @@ C:/Gamedev/Godot4/Exports/project-hell/playtest
 res://scenes
 res://scripts/projectiles
 res://prefabs/projectiles
-res://scripts/items
-res://prefabs/items
 res://autoloads
 res://scripts/autoloads
 res://prefabs/components

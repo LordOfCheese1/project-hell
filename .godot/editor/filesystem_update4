@@ -22,3 +22,8 @@ res://scripts/items/bomb_gun.gd
 res://scripts/items/scissors.gd
 res://prefabs/entities/enemies/wallsitter.tscn
 res://scripts/entities/enemies/wallsitter.gd
+res://scripts/entities/enemies/devil.gd
+res://prefabs/world/gate.tscn
+res://scripts/world/gate.gd
+res://prefabs/items/reversator.tscn
+res://scripts/items/reversator.gd

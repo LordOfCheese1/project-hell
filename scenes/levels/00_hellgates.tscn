@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bteu5mwcxlb3l"]
+[gd_scene load_steps=17 format=3 uid="uid://bteu5mwcxlb3l"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c2le1sh0qkxs" path="res://prefabs/items/dev_item.tscn" id="13_rc87h"]
 [ext_resource type="PackedScene" uid="uid://b0rvmqbtxvwhg" path="res://prefabs/items/laser_gun.tscn" id="14_50s6w"]
 [ext_resource type="PackedScene" uid="uid://cui8or72o8h26" path="res://prefabs/world/gate.tscn" id="15_36l11"]
+[ext_resource type="PackedScene" uid="uid://c4egreb60j48f" path="res://prefabs/items/reversator.tscn" id="16_efu1s"]
 
 [node name="00_hellgates" type="Node2D"]
 script = ExtResource("1_nwqmu")
@@ -124,3 +125,6 @@ position = Vector2(357, 613)
 
 [node name="laser_gun" parent="." instance=ExtResource("14_50s6w")]
 position = Vector2(1619, 932)
+
+[node name="reversator" parent="." instance=ExtResource("16_efu1s")]
+position = Vector2(200, 566)

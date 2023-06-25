@@ -7,6 +7,8 @@
 size = Vector2(32, 16)
 
 [node name="gate" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_cotrr")
 size = 5
 

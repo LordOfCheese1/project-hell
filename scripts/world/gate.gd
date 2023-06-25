@@ -24,13 +24,11 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	if should_open:
-		for i in $blocks.get_children():
-			if i .scale.x > 0:
-				i.scale.x -= ($blocks.get_children().find(i) + 1) * 0.02
-				i.scale.y = i.scale.x
-				i.rotation_degrees += ($blocks.get_children().find(i) + 1) * 2
+		if len($blocks.get_children()) > 0:
+			if $blocks.get_child(0).scale.x > 0.0:
+				$blocks.get_child(0).scale -= Vector2(0.1, 0.1)
 			else:
-				i.call_deferred("free")
+				$blocks.get_child(0).call_deferred("free")
 		$scaffolding.scale.y = lerp($scaffolding.scale.y, 0.0, 0.1)
 		if $blocks.get_child_count() == 0:
 			call_deferred("free")
