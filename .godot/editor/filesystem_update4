@@ -24,3 +24,6 @@ res://prefabs/items/laser_gun.tscn
 res://prefabs/entities/enemies/wallsitter.tscn
 res://prefabs/entities/player.tscn
 res://autoloads/screen_effects.tscn
+res://scripts/entities/enemies/cerberus/cerberus.gd
+res://autoloads/music_manager.tscn
+res://autoloads/global_values.tscn

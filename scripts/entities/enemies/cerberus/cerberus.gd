@@ -74,9 +74,15 @@ func _process(_delta):
 		mm.switch_boss_param("Victory")
 		mm.switch_fmod_event("LVL1", 3.0)
 		call_deferred("free")
+		print("cerberus dead")
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
 		spot_player()
+	
+	#switch boss music to v2 when cerberus is at Low health
+	if hp <= 10 && !is_dead:
+		mm.switch_boss_param("LowHealth")
+		
 
 
 func start_laser():
