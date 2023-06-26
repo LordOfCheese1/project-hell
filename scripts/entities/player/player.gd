@@ -20,6 +20,7 @@ var sounds = {
 
 
 func _ready():
+	$particle_spawner.alt_parent = $merge_icon
 	gv.player = self
 	setup_entity(15, 2, 0)
 	add_to_group("player")
@@ -60,7 +61,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("grab"):
 		grabbed_for += 1
-		if grabbed_for > 90:
+		if grabbed_for > 60:
 			grabbed_for = 0
 			attempt_attach()
 	else:
@@ -89,6 +90,28 @@ func _physics_process(delta):
 		item_use_cooldown -= 1
 	
 	$body/upper_body/eyes.modulate.a = hp / max_hp
+	
+	var prev_alpha = $merge_icon.modulate.a
+	
+	if len(grabbed_items) == 2:
+		if grabbed_for > 1:
+			$progress_bar.rotation_degrees = grabbed_for * 6
+			$particle_spawner.position = $progress_bar.transform.x * 12
+			$particle_spawner.is_emitting = true
+			$merge_icon.modulate.a = 1.0
+		else:
+			$particle_spawner.is_emitting = false
+			$merge_icon.modulate.a = 0.0
+	else:
+		$particle_spawner.is_emitting = false
+		$merge_icon.modulate.a = 0.0
+	
+	$merge_icon.modulate.a = lerp(prev_alpha, $merge_icon.modulate.a, 0.2)
+	if $merge_icon.modulate.a < 0.25:
+		for i in $merge_icon.get_children():
+			i.call_deferred("free")
+	
+	se.visibility = lerp(se.visibility, (max_hp - hp) / 15, 0.1)
 	
 	entity_update()
 	
@@ -123,8 +146,7 @@ func attempt_attach():
 			attached_items_amt += 1
 	if len(grabbed_items) > 1 && attached_items_amt < 1:
 		grabbed_items[1].attach_to(grabbed_items[0])
-		gv.spawn_explosion(12, grabbed_items[0].global_position, load("res://textures/particles/spark.png"), -0.06, -0.06, 4, 0, 0, 80)
-		$item_grab_area.refresh()
+		gv.spawn_explosion(24, grabbed_items[0].global_position, load("res://textures/particles/lighting_spark.png"), -0.05, -0.05, 4, 0, 0, 80)
 
 
 func drop_item():

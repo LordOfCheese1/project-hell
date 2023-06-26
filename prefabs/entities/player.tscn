@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm8txnxhwlbsf"]
+[gd_scene load_steps=14 format=3 uid="uid://dm8txnxhwlbsf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
 [ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://mj1c3xxottsc" path="res://prefabs/components/item_grab_area.tscn" id="3_w1yh2"]
 [ext_resource type="Texture2D" uid="uid://djfueglvo5g7a" path="res://textures/entities/player/eyes.png" id="5_il2qx"]
 [ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="7_332ni"]
+[ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="8_fe7xh"]
+[ext_resource type="Texture2D" uid="uid://brwfmqdilsn5r" path="res://textures/icons/dot.png" id="9_p7poj"]
+[ext_resource type="Texture2D" uid="uid://bt3gimkvsm186" path="res://textures/icons/merge_icon.png" id="10_irf6q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oag7"]
 radius = 3.0
@@ -64,5 +67,19 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cx5uv")
 
 [node name="hit" type="AudioStreamPlayer" parent="."]
+
+[node name="progress_bar" type="Node2D" parent="."]
+position = Vector2(0, -24)
+
+[node name="particle_spawner" parent="." instance=ExtResource("8_fe7xh")]
+position = Vector2(0, -24)
+texture = ExtResource("9_p7poj")
+freq = 0.02
+scale_amount = -0.01
+
+[node name="merge_icon" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(0, -24)
+texture = ExtResource("10_irf6q")
 
 [connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

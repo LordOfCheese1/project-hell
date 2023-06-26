@@ -1,3 +1,5 @@
+res://autoloads
+res://shaders
 res://scripts/items
 res://prefabs/items
 res://scripts/entities/enemies
@@ -11,7 +13,6 @@ C:/Gamedev/Godot4/Exports/project-hell/playtest
 res://scenes
 res://scripts/projectiles
 res://prefabs/projectiles
-res://autoloads
 res://scripts/autoloads
 res://prefabs/components
 res://scripts/components
@@ -19,4 +20,3 @@ res://FmodData/Desktop
 res://FmodData
 res://scripts/obstacles
 res://prefabs/obstacles
-res://scripts/entities/enemies/cerberus

@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://63w3i30jmtd8"]
+[gd_scene load_steps=4 format=3 uid="uid://63w3i30jmtd8"]
 
 [ext_resource type="Script" path="res://scripts/autoloads/screen_effects.gd" id="1_kednk"]
+[ext_resource type="Shader" path="res://shaders/gradient.gdshader" id="2_6ogu3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gl3l8"]
+shader = ExtResource("2_6ogu3")
+shader_parameter/vignette_intensity = 0.85
+shader_parameter/vignette_opacity = 0.0
+shader_parameter/vignette_rgb = Color(0.701961, 0.203922, 0.243137, 1)
 
 [node name="screen_effects" type="CanvasLayer"]
 script = ExtResource("1_kednk")
+
+[node name="blood_gradient" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gl3l8")
+offset_right = 384.0
+offset_bottom = 256.0

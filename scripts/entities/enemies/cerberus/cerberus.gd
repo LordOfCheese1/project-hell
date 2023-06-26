@@ -94,13 +94,14 @@ func end_laser():
 
 
 func spawn_laser():
-	laser_head_rot_dir = ((gv.player.position.x - position.x) / abs(gv.player.position.x - position.x))
-	laser_spawn_cooldown = 5
-	var laser_inst = laser_path.instantiate()
-	laser_inst.rotation_degrees = $body/head_0/screw.rotation_degrees
-	laser_inst.global_position = $body/head_0/screw.global_position
-	laser_inst.get_child(0).ignore_in_detection.append(self)
-	get_tree().current_scene.add_child(laser_inst)
+	if laser_attack_cooldown < 130:
+		laser_head_rot_dir = ((gv.player.position.x - position.x) / abs(gv.player.position.x - position.x))
+		laser_spawn_cooldown = 5
+		var laser_inst = laser_path.instantiate()
+		laser_inst.rotation_degrees = $body/head_0/screw.rotation_degrees
+		laser_inst.global_position = $body/head_0/screw.global_position
+		laser_inst.get_child(0).ignore_in_detection.append(self)
+		get_tree().current_scene.add_child(laser_inst)
 
 
 func spawn_poison():

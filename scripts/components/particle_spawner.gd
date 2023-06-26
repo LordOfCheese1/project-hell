@@ -9,6 +9,7 @@ var particle_path = load("res://prefabs/world/particle.tscn")
 @export var rot_amount : float
 @export var scale_limit : float
 var is_emitting = true
+var alt_parent = null
 
 
 func _physics_process(delta):
@@ -22,10 +23,16 @@ func _physics_process(delta):
 func spawn_particle():
 	var particle = particle_path.instantiate()
 	particle.rotation_degrees = randi_range(0, 360)
-	particle.global_position = Vector2(global_position.x + randi_range(-1, 1), global_position.y + randi_range(-1, 1))
+	if alt_parent == null:
+		particle.global_position = Vector2(global_position.x + randi_range(-1, 1), global_position.y + randi_range(-1, 1))
+	else:
+		particle.position = Vector2(position.x + randi_range(-1, 1), position.y + randi_range(-1, 1))
 	particle.scale_amount = scale_amount
 	particle.alpha_amount = alpha_amount
 	particle.rot_amount = rot_amount
 	particle.scale_limit = scale_limit
 	particle.texture = texture
-	get_tree().current_scene.add_child(particle)
+	if alt_parent != null:
+		alt_parent.add_child(particle)
+	else:
+		get_tree().current_scene.add_child(particle)
