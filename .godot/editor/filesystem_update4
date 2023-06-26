@@ -25,3 +25,4 @@ res://shaders/gradient.gdshader
 res://scripts/autoloads/screen_effects.gd
 res://scripts/entities/enemies/cerberus/cerberus.gd
 res://scripts/autoloads/global_values.gd
+res://scripts/entities/enemies/devil.gd

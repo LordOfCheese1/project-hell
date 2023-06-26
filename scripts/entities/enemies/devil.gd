@@ -17,7 +17,7 @@ func _physics_process(_delta):
 	old_rot = $looker.rotation_degrees
 	if spotted_player:
 		target_pos = Vector2(gv.player.position.x, gv.player.position.y - 64)
-		$looker.look_at(Vector2(gv.player.position.x, gv.player.position.y - 64))
+		$looker.look_at(Vector2(gv.player.position.x + ((position.x - gv.player.position.x) / abs(position.x - gv.player.position.x)) * 48, gv.player.position.y - 64))
 		$looker.rotation_degrees += randi_range(-10, 10)
 	$looker.rotation_degrees = lerp(old_rot, $looker.rotation_degrees, 0.1)
 	
