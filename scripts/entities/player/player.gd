@@ -92,8 +92,12 @@ func _physics_process(delta):
 	$body/upper_body/eyes.modulate.a = hp / max_hp
 	
 	var prev_alpha = $merge_icon.modulate.a
+	var amt_merged_items = 0
+	for i in grabbed_items:
+		if i.has_attachment:
+			amt_merged_items += 1
 	
-	if len(grabbed_items) == 2:
+	if len(grabbed_items) == 2 && amt_merged_items == 0:
 		if grabbed_for > 1:
 			$progress_bar.rotation_degrees = grabbed_for * 6
 			$particle_spawner.position = $progress_bar.transform.x * 12
