@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjpo3uybn0el8" path="res://textures/entities/disguised_industrial.png" id="2_0loto"]
 [ext_resource type="Texture2D" uid="uid://deuvdtswkdihm" path="res://textures/entities/disguised/spring.png" id="3_bdvug"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k33yr"]
 size = Vector2(16, 16)
 

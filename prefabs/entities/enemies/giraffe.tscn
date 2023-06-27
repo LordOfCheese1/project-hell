@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cam3jddb7aawg"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/giraffe.gd" id="1_n0rtq"]
+[ext_resource type="Texture2D" uid="uid://dtjdjpvdw1c5m" path="res://textures/entities/giraffe/head.png" id="2_umf4u"]
+
+[sub_resource type="Curve" id="Curve_58dpc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.579646, 0.171779), 0.0, 0.0, 0, 0, Vector2(1, 0.361963), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="giraffe" type="CharacterBody2D"]
+script = ExtResource("1_n0rtq")
+
+[node name="looker" type="Node2D" parent="."]
+
+[node name="neck" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -8, 0, -16, 0, -24, 0, -32, 0, -40, 0, -48, 0, -56, 0, -64)
+width = 12.0
+width_curve = SubResource("Curve_58dpc")
+default_color = Color(0.0941176, 0.0941176, 0.129412, 1)
+end_cap_mode = 2
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+texture = ExtResource("2_umf4u")
+offset = Vector2(5, 0)

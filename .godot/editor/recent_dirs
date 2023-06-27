@@ -1,9 +1,9 @@
+res://scripts/entities/enemies
+res://prefabs/entities/enemies
 res://autoloads
 res://shaders
 res://scripts/items
 res://prefabs/items
-res://scripts/entities/enemies
-res://prefabs/entities/enemies
 res://scripts/world
 res://prefabs/world
 C:/Gamedev/Godot4/Exports/project-hell/playtest/linux
