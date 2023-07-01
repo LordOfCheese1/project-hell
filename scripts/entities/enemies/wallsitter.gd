@@ -11,7 +11,7 @@ func _ready():
 	attack_cooldown = frequency
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if position.distance_to(gv.player.position) < 384:
 		is_on_screen = true
 	else:

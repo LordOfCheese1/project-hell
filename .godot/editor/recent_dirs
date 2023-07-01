@@ -1,3 +1,5 @@
+res://scripts/world
+res://prefabs/world
 C:/Gamedev/Godot4/Exports/project-hell/modloader-test
 res://autoloads
 res://scripts/entities/enemies
@@ -6,8 +8,6 @@ res://scripts/autoloads
 res://shaders
 res://scripts/items
 res://prefabs/items
-res://scripts/world
-res://prefabs/world
 C:/Gamedev/Godot4/Exports/project-hell/playtest/linux
 res://scripts/entities
 res://prefabs/entities
@@ -20,4 +20,3 @@ res://scripts/components
 res://FmodData/Desktop
 res://FmodData
 res://scripts/obstacles
-res://prefabs/obstacles

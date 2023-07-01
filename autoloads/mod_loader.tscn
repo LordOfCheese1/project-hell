@@ -1,16 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://brv3mue0gdgf7"]
+[gd_scene load_steps=2 format=3 uid="uid://brv3mue0gdgf7"]
 
 [ext_resource type="Script" path="res://scripts/autoloads/mod_loader.gd" id="1_we27f"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2qnp5"]
-font_size = 12
-
 [node name="mod_loader" type="Node2D"]
 script = ExtResource("1_we27f")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_2qnp5")

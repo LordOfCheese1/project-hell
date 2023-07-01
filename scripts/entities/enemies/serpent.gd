@@ -10,7 +10,7 @@ func _ready():
 	for i in range(points):
 		$body/neck.add_point(Vector2(0, 0))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var target_pos = Vector2(0, 0)
 	for i in range(len($body/neck.points)):
 		target_pos.y = clamp(gv.player.position.y - to_global($body/neck.points[i]).y, -256, 0) * (i + 1) * 0.1 - 48
@@ -20,8 +20,8 @@ func _physics_process(delta):
 	
 	$body/head.position = $body/neck.points[len($body/neck.points) - 1]
 	var prev_head_rot = $body/head.rotation_degrees
-	$body/head.look_at(Vector2(gv.player.position.x, gv.player.position.y - points * 4))
-	$body/head.rotation_degrees = lerp(prev_head_rot, $body/head.rotation_degrees, 0.1)
+	$body/head.look_at(gv.player.position)
+	$body/head.rotation_degrees = lerp(prev_head_rot, $body/head.rotation_degrees, 0.05)
 	if gv.player.position.x > to_global($body/head.position).x:
 		$body/head.scale.y = lerp($body/head.scale.y, 1.0, 0.2)
 	else:

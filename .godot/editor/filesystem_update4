@@ -19,3 +19,9 @@ res://prefabs/world/decal_walls.tscn
 res://autoloads/mod_loader.tscn
 res://scripts/autoloads/mod_loader.gd
 res://scripts/testing/test_mod.gd
+res://scripts/entities/enemies/serpent.gd
+res://prefabs/world/spring.tscn
+res://scripts/world/spring.gd
+res://scripts/autoloads/screen_effects.gd
+res://scripts/entities/enemies/wallsitter.gd
+res://scripts/entities/enemies/giraffe.gd

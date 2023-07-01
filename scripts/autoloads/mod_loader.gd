@@ -6,7 +6,6 @@ var mods = [
 
 
 func _ready():
-	$CanvasLayer/Label.text = str(OS.get_executable_path().get_base_dir())
 	load_mods()
 	enable_mods()
 

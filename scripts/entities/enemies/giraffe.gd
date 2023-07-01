@@ -10,7 +10,7 @@ func _ready():
 		$neck.add_point(Vector2(0, 0))
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var target_pos = Vector2(0, 0)
 	for i in range(len($neck.points)):
 		target_pos.y = clamp(gv.player.position.y - to_global($neck.points[i]).y, -256, 0) * (i + 1) * 0.1 - 48

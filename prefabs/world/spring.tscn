@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://brsgvbfsb8ox7"]
+
+[ext_resource type="Script" path="res://scripts/world/spring.gd" id="1_34j1o"]
+[ext_resource type="Texture2D" uid="uid://ccwfhi4du6i4d" path="res://textures/environment/spring/base.png" id="1_r1o4p"]
+[ext_resource type="Texture2D" uid="uid://dguiykrp7fgjx" path="res://textures/environment/spring/surface.png" id="2_ex48d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlq7"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwwtb"]
+size = Vector2(46, 6)
+
+[node name="spring" type="StaticBody2D"]
+script = ExtResource("1_34j1o")
+
+[node name="surface" type="Sprite2D" parent="."]
+texture = ExtResource("2_ex48d")
+offset = Vector2(0, -4)
+
+[node name="base" type="Sprite2D" parent="."]
+texture = ExtResource("1_r1o4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gnlq7")
+
+[node name="entity_detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entity_detector"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_qwwtb")
+
+[connection signal="body_entered" from="entity_detector" to="." method="_on_entity_detector_body_entered"]
