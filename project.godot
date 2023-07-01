@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="project-hell"
-run/main_scene="res://scenes/playtest_level.tscn"
+run/main_scene="res://scenes/levels/00_hellgates.tscn"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
 
@@ -19,9 +20,10 @@ config/icon="res://icon.svg"
 
 gv="*res://autoloads/global_values.tscn"
 sv="*res://autoloads/saved_values.tscn"
-RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 mm="*res://autoloads/music_manager.tscn"
 se="*res://autoloads/screen_effects.tscn"
+ml="*res://autoloads/mod_loader.tscn"
+RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 
 [display]
 

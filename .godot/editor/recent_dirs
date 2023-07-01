@@ -1,6 +1,8 @@
+C:/Gamedev/Godot4/Exports/project-hell/modloader-test
+res://autoloads
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
-res://autoloads
+res://scripts/autoloads
 res://shaders
 res://scripts/items
 res://prefabs/items
@@ -13,7 +15,6 @@ C:/Gamedev/Godot4/Exports/project-hell/playtest
 res://scenes
 res://scripts/projectiles
 res://prefabs/projectiles
-res://scripts/autoloads
 res://prefabs/components
 res://scripts/components
 res://FmodData/Desktop

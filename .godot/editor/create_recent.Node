@@ -1,6 +1,10 @@
-Sprite2D
+CanvasLayer
+CanvasGroup
+Label
+AudioStreamPlayer
 Node2D
 Line2D
+Sprite2D
 CharacterBody2D
 ColorRect
 TextureProgressBar
@@ -8,11 +12,8 @@ RayCast2D
 CollisionShape2D
 Area2D
 VisibleOnScreenEnabler2D
-Label
 StaticBody2D
-AudioStreamPlayer
 StudioEventEmitter2D
-CanvasLayer
 Timer
 Polygon2D
 MeshInstance2D

@@ -6,10 +6,6 @@ res://scenes/levels/01_lavapipes.tscn
 res://prefabs/projectiles/dagger_beam.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/entities/enemies/devil.tscn
-res://scenes/testing.tscn
-res://prefabs/entities/enemies/stationary_hand.tscn
-res://prefabs/world/decal_walls.tscn
-res://prefabs/items/dev_item.tscn
 res://prefabs/world/scrap.tscn
 res://prefabs/projectiles/cerberus_laser.tscn
 res://prefabs/projectiles/dagger_swing.tscn
@@ -17,5 +13,9 @@ res://prefabs/items/laser_gun.tscn
 res://prefabs/entities/player.tscn
 res://autoloads/music_manager.tscn
 res://prefabs/entities/enemies/giraffe.tscn
-res://scripts/entities/enemies/giraffe.gd
-res://scripts/autoloads/saved_values.gd
+res://autoloads/saved_values.tscn
+res://prefabs/entities/enemies/serpent.tscn
+res://prefabs/world/decal_walls.tscn
+res://autoloads/mod_loader.tscn
+res://scripts/autoloads/mod_loader.gd
+res://scripts/testing/test_mod.gd

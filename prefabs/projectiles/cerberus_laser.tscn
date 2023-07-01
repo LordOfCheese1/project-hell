@@ -21,3 +21,5 @@ end_cap_mode = 2
 [node name="wall_detect" type="RayCast2D" parent="."]
 target_position = Vector2(1152, 0)
 collision_mask = 2
+
+[node name="zap" type="AudioStreamPlayer" parent="."]

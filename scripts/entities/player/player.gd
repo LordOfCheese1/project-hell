@@ -15,7 +15,7 @@ var max_item_use_cooldown = 25
 var scrap = 0
 var max_hp = 15.0
 var sounds = {
-	"hit" : [load("res://sfx/entities/player/hit/player_hit_0.wav"), load("res://sfx/entities/player/hit/player_hit_1.wav"), load("res://sfx/entities/player/hit/player_hit_2.wav"), load("res://sfx/entities/player/hit/player_hit_3.wav")]
+	"hit" : [load("res://sfx/entities/player/hit/player_hit_0.wav")]
 }
 
 
@@ -163,7 +163,7 @@ func drop_item():
 func _on_hitbox_has_been_hit():
 	hit()
 	gv.hitstop(0.1)
-	$hit.stream = sounds["hit"][randi_range(0, 3)]
+	$hit.stream = sounds["hit"][randi_range(0, 0)]
 	$hit.play(0.0)
 
 
