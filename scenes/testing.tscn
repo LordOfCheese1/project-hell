@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ooqpsh4dbtp8"]
+[gd_scene load_steps=5 format=3 uid="uid://ooqpsh4dbtp8"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_di5kh"]
 [ext_resource type="PackedScene" uid="uid://dm8txnxhwlbsf" path="res://prefabs/entities/player.tscn" id="2_of53d"]
 [ext_resource type="PackedScene" uid="uid://cam3jddb7aawg" path="res://prefabs/entities/enemies/giraffe.tscn" id="3_ym1o6"]
+[ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="4_7dn4w"]
 
 [node name="testing" type="Node2D"]
 
@@ -15,3 +16,6 @@ points = 16
 
 [node name="player" parent="." groups=["Player"] instance=ExtResource("2_of53d")]
 position = Vector2(304, 204)
+
+[node name="laser_hand" parent="." instance=ExtResource("4_7dn4w")]
+position = Vector2(167, 193)

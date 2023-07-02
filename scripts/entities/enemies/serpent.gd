@@ -1,10 +1,12 @@
 extends "res://scripts/classes/entity_class.gd"
 
 @export var points = 9
+var attack_cooldown = 80
+var active_attack = 0
 
 
 func _ready():
-	setup_entity(25, 0, 1)
+	setup_entity(50, 0, 1)
 	
 	$body/neck.clear_points()
 	for i in range(points):
@@ -26,3 +28,17 @@ func _physics_process(_delta):
 		$body/head.scale.y = lerp($body/head.scale.y, 1.0, 0.2)
 	else:
 		$body/head.scale.y = lerp($body/head.scale.y, -1.0, 0.2)
+	
+	$body/head/lower_head.rotation_degrees = lerp($body/head/lower_head.rotation_degrees, 20.0 - (attack_cooldown / 4), 0.2)
+	$body/head/upper_head.rotation_degrees = lerp($body/head/upper_head.rotation_degrees, -(80.0 - attack_cooldown), 0.2)
+	
+	
+	if attack_cooldown > 0:
+		if active_attack <= 0:
+			attack_cooldown -= 1
+	else:
+		attack_cooldown = 80
+		active_attack = 60
+	
+	if active_attack > 0:
+		active_attack -= 1

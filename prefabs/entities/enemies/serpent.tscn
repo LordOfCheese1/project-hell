@@ -3,13 +3,11 @@
 [ext_resource type="Script" path="res://scripts/entities/enemies/serpent.gd" id="1_og10g"]
 [ext_resource type="Texture2D" uid="uid://b74dfdcslrp5y" path="res://textures/entities/serpent/upper_head.png" id="2_1nyja"]
 [ext_resource type="Texture2D" uid="uid://cg1288lontf1u" path="res://textures/entities/serpent/lower_head.png" id="3_3dbkm"]
+[ext_resource type="Texture2D" uid="uid://hsfydacsvaq5" path="res://textures/entities/serpent/plume.png" id="4_tfgfn"]
 
 [sub_resource type="Curve" id="Curve_dfk2k"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.774336, 0.165644), 0.0, 0.0, 0, 0, Vector2(1, 0.239264), 0.0, 0.0, 0, 0]
 point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_qqlvm"]
-colors = PackedColorArray(0.231373, 0.0823529, 0.176471, 1, 0.470588, 0.117647, 0.215686, 1)
 
 [node name="serpent" type="CharacterBody2D"]
 script = ExtResource("1_og10g")
@@ -21,11 +19,14 @@ points = 16
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 width = 32.0
 width_curve = SubResource("Curve_dfk2k")
-default_color = Color(0.470588, 0.117647, 0.215686, 1)
-gradient = SubResource("Gradient_qqlvm")
+default_color = Color(0.231373, 0.0823529, 0.176471, 1)
 end_cap_mode = 2
 
 [node name="head" type="Node2D" parent="body"]
+
+[node name="plume" type="Sprite2D" parent="body/head"]
+position = Vector2(-5, 0)
+texture = ExtResource("4_tfgfn")
 
 [node name="lower_head" type="Sprite2D" parent="body/head"]
 position = Vector2(-2, 0)

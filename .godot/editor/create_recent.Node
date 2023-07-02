@@ -1,5 +1,8 @@
+Node
 CollisionShape2D
+VisibleOnScreenEnabler2D
 Area2D
+Line2D
 Sprite2D
 StaticBody2D
 CanvasLayer
@@ -7,12 +10,10 @@ CanvasGroup
 Label
 AudioStreamPlayer
 Node2D
-Line2D
 CharacterBody2D
 ColorRect
 TextureProgressBar
 RayCast2D
-VisibleOnScreenEnabler2D
 StudioEventEmitter2D
 Timer
 Polygon2D
@@ -20,5 +21,4 @@ MeshInstance2D
 VisibleOnScreenNotifier2D
 TileMap
 AnimationPlayer
-Node
 Camera2D

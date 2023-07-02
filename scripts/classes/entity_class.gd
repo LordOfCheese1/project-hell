@@ -23,10 +23,9 @@ func setup_entity(starting_hp : float, grab_capacity : int, entity_type = 0):
 
 func entity_update():
 	material.set_shader_parameter("fac", hit_flash_fac)
-	if !get_child(0).use_parent_material:
-		for i in get_children():
-			if i.get_class() == "Node2D":
-				i.use_parent_material = true
+	for i in get_children():
+		if i.get_class() == "Node2D":
+			i.use_parent_material = true
 	
 	hit_flash_fac = lerp(float(hit_flash_fac), 0.0, 0.1)
 
