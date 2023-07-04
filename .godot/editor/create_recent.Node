@@ -1,13 +1,13 @@
-Node
+Label
 CollisionShape2D
-VisibleOnScreenEnabler2D
 Area2D
+Node
+VisibleOnScreenEnabler2D
 Line2D
 Sprite2D
 StaticBody2D
 CanvasLayer
 CanvasGroup
-Label
 AudioStreamPlayer
 Node2D
 CharacterBody2D

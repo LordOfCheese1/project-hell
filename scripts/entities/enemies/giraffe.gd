@@ -3,7 +3,6 @@ extends "res://scripts/classes/entity_class.gd"
 @export var points = 9
 @export var starting_offset = 0.0
 var attack_cooldown = 80
-var target_stinger_pos = 0.0
 var is_attacking = false
 var player_is_grabbed = false
 
@@ -42,18 +41,17 @@ func _physics_process(_delta):
 		grab_player()
 	
 	if player_is_grabbed:
-		gv.player.velocity = lerp(gv.player.velocity, Vector2(0, 0), 0.1)
-		gv.player.position = lerp(gv.player.position, $head.global_position, 0.1)
+		gv.player.velocity = Vector2(0, 0)
+		gv.player.position = lerp(gv.player.position, $head.global_position + $head.transform.x * 10, 0.4)
 	
 	entity_update()
 
 
 func grab_player():
-	gv.spawn_explosion(24, $head.global_position + $head.transform.x * 6, load("res://textures/particles/small_lighting_spark.png"), -0.05, -0.05, 4, 0, 0, 40)
-	if $head.global_position.distance_to(gv.player.position) < 48:
+	gv.spawn_explosion(24, $head.global_position + $head.transform.x * 6, load("res://textures/particles/tooth.png"), -0.05, -0.05, 4, 0, 0, 40)
+	if $head.global_position.distance_to(gv.player.position) < 40:
 		player_is_grabbed = !player_is_grabbed
 
 
 func _on_hitbox_has_been_hit():
-	print("I'VE BEEN HIT")
 	hit()

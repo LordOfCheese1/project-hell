@@ -3,6 +3,9 @@ extends StaticBody2D
 var surface_pos = 0.0
 var bounce_amount = -400
 
+func _ready():
+	add_to_group("wall")
+
 
 func _physics_process(_delta):
 	if surface_pos < 0:

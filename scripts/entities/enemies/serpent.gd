@@ -3,6 +3,7 @@ extends "res://scripts/classes/entity_class.gd"
 @export var points = 9
 var attack_cooldown = 80
 var active_attack = 0
+var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
 
 
 func _ready():
@@ -39,6 +40,16 @@ func _physics_process(_delta):
 	else:
 		attack_cooldown = 80
 		active_attack = 60
+		chomp_attack()
 	
 	if active_attack > 0:
 		active_attack -= 1
+
+
+func chomp_attack():
+	var orig_head_transform = $body/head.transform.x
+	for i in range(9):
+		var chomp_inst = chomp_path.instantiate()
+		chomp_inst.position = $body/head.global_position + orig_head_transform * 10 + orig_head_transform * 12 * i
+		get_tree().current_scene.add_child(chomp_inst)
+		await get_tree().create_timer(0.02).timeout
