@@ -1,10 +1,10 @@
+res://scripts/world
+res://prefabs/world
 res://scripts/projectiles
 res://prefabs/projectiles
 C:/Gamedev/Godot4/Exports/project-hell/modloader-test
 res://scripts/systems
 res://scenes
-res://scripts/world
-res://prefabs/world
 res://autoloads
 res://scripts/entities/enemies
 res://prefabs/entities/enemies

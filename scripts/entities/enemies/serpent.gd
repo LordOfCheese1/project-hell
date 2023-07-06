@@ -4,6 +4,8 @@ extends "res://scripts/classes/entity_class.gd"
 var attack_cooldown = 80
 var active_attack = 0
 var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
+var current_attack_phase = 0
+var spotted_player = false
 
 
 func _ready():
@@ -14,6 +16,10 @@ func _ready():
 		$body/neck.add_point(Vector2(0, 0))
 
 func _physics_process(_delta):
+	
+	if gv.player.position.distance_to(position) < 192 && !spotted_player:
+		spot_player()
+	
 	var target_pos = Vector2(0, 0)
 	for i in range(len($body/neck.points)):
 		target_pos.y = clamp(gv.player.position.y - to_global($body/neck.points[i]).y, -256, 0) * (i + 1) * 0.1 - 48
@@ -35,7 +41,7 @@ func _physics_process(_delta):
 	
 	
 	if attack_cooldown > 0:
-		if active_attack <= 0:
+		if active_attack <= 0 && spotted_player:
 			attack_cooldown -= 1
 	else:
 		attack_cooldown = 80
@@ -44,6 +50,10 @@ func _physics_process(_delta):
 	
 	if active_attack > 0:
 		active_attack -= 1
+
+
+func spot_player():
+	spotted_player = true
 
 
 func chomp_attack():
