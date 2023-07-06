@@ -1,0 +1,8 @@
+[gd_resource type="EventAsset" format=3 uid="uid://bfa2iw4uwbw8k"]
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MixState"
+guid = "{23c6d172-bc8c-474c-a5f5-f7eeb02a1386}"
+name = "MixState"

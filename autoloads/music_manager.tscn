@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" path="res://scripts/autoloads/music_manager.gd" id="1_qaea8"]
 [ext_resource type="EventAsset" uid="uid://bsnhude3rimi6" path="res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres" id="2_ydi7u"]
-[ext_resource type="EventAsset" uid="uid://ctlch7crj7mhx" path="res://addons/FMOD/editor/resources/events/{23c6d172-bc8c-474c-a5f5-f7eeb02a1386}.tres" id="3_2jmea"]
+
+[sub_resource type="EventAsset" id="EventAsset_osx8v"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MixState"
+guid = "{23c6d172-bc8c-474c-a5f5-f7eeb02a1386}"
+name = "MixState"
 
 [node name="music_manager" type="Node2D"]
 script = ExtResource("1_qaea8")
 musicEvent = ExtResource("2_ydi7u")
-mixEvent = ExtResource("3_2jmea")
+mixEvent = SubResource("EventAsset_osx8v")
