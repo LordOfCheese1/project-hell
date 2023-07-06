@@ -165,6 +165,8 @@ func _on_hitbox_has_been_hit():
 	gv.hitstop(0.1)
 	$hit.stream = sounds["hit"][randi_range(0, 0)]
 	$hit.play(0.0)
+	mm.switch_mix_event("Hurt", 0.0)
+	mm.switch_mix_event("NotHurt", 0.5)
 
 
 func request_grabbed_items():
