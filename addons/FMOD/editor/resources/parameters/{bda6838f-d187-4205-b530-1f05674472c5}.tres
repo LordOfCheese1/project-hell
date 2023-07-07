@@ -1,17 +1,17 @@
 [gd_resource type="ParameterAsset" load_steps=3 format=3 uid="uid://bay0oa3widl0f"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_5jui5"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_i7cyy"]
 data1 = 940172974
 data2 = 2453299723
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_upfhk"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_bgg27"]
 name = "State"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_5jui5")
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_i7cyy")
 flags = 28
 guid = "{bda6838f-d187-4205-b530-1f05674472c5}"
 
 [resource]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_upfhk")
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_bgg27")
 labels = ["State"]
 path = "parameter:/State"
 guid = "{bda6838f-d187-4205-b530-1f05674472c5}"
