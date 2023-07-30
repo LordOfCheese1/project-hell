@@ -1,105 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://dleg4fbn8lmwi"]
+[gd_scene load_steps=4 format=3 uid="uid://dleg4fbn8lmwi"]
 
 [ext_resource type="Script" path="res://scripts/world/lava.gd" id="1_33sfs"]
 [ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="2_ijdyi"]
-[ext_resource type="Texture2D" uid="uid://dk7pn64nvrcb" path="res://textures/environment/lava/lava1.png" id="2_sfqom"]
-[ext_resource type="Texture2D" uid="uid://d01x5rbkccapm" path="res://textures/environment/lava/lava2.png" id="3_vv3lj"]
-[ext_resource type="Texture2D" uid="uid://681sm2ydu1vb" path="res://textures/environment/lava/lava10.png" id="4_l3mon"]
-[ext_resource type="Texture2D" uid="uid://1fh65a1qf5qg" path="res://textures/environment/lava/lava11.png" id="5_c2n8t"]
-[ext_resource type="Texture2D" uid="uid://b7prxmwo4p05u" path="res://textures/environment/lava/lava12.png" id="6_xn8vy"]
-[ext_resource type="Texture2D" uid="uid://cujvulcie8hwr" path="res://textures/environment/lava/lava13.png" id="7_fnwbd"]
-[ext_resource type="Texture2D" uid="uid://bs58g8fbhpxdj" path="res://textures/environment/lava/lava14.png" id="8_h1vwf"]
-[ext_resource type="Texture2D" uid="uid://jwic34v5owi" path="res://textures/environment/lava/lava15.png" id="9_27lrr"]
-[ext_resource type="Texture2D" uid="uid://djhwxlsw0jwkv" path="res://textures/environment/lava/lava16.png" id="10_irhpy"]
-[ext_resource type="Texture2D" uid="uid://dry6s78rlh5dq" path="res://textures/environment/lava/lava17.png" id="11_q8ht8"]
-[ext_resource type="Texture2D" uid="uid://ce28drfhly0b0" path="res://textures/environment/lava/lava18.png" id="12_v6jev"]
-[ext_resource type="Texture2D" uid="uid://d3txs6v0533ye" path="res://textures/environment/lava/lava19.png" id="13_vwq1o"]
-[ext_resource type="Texture2D" uid="uid://de06ge85k2tvg" path="res://textures/environment/lava/lava3.png" id="14_haxal"]
-[ext_resource type="Texture2D" uid="uid://bc0khjg4e331a" path="res://textures/environment/lava/lava20.png" id="15_cfj6p"]
-[ext_resource type="Texture2D" uid="uid://bxw3rrb7na5aq" path="res://textures/environment/lava/lava21.png" id="16_38mdh"]
-[ext_resource type="Texture2D" uid="uid://dsqspgcpx5eqe" path="res://textures/environment/lava/lava22.png" id="17_t7xll"]
-[ext_resource type="Texture2D" uid="uid://b2wshtr8t4qm3" path="res://textures/environment/lava/lava23.png" id="18_md05h"]
-[ext_resource type="Texture2D" uid="uid://bt1e2u5ba3sey" path="res://textures/environment/lava/lava24.png" id="19_v6lol"]
-[ext_resource type="Texture2D" uid="uid://dw8h86pxyx2u2" path="res://textures/environment/lava/lava25.png" id="20_mp1ie"]
-[ext_resource type="Texture2D" uid="uid://bohdm75o1t08n" path="res://textures/environment/lava/lava26.png" id="21_o17dq"]
-[ext_resource type="Texture2D" uid="uid://de3tci7gg5wta" path="res://textures/environment/lava/lava27.png" id="22_ufdst"]
-[ext_resource type="Texture2D" uid="uid://d23kbl3etc181" path="res://textures/environment/lava/lava28.png" id="23_1sa1r"]
-[ext_resource type="Texture2D" uid="uid://cedy3pysca3wa" path="res://textures/environment/lava/lava29.png" id="24_54vvf"]
-[ext_resource type="Texture2D" uid="uid://b4145800j8pnt" path="res://textures/environment/lava/lava4.png" id="25_v8ivl"]
-[ext_resource type="Texture2D" uid="uid://badev235hc0iv" path="res://textures/environment/lava/lava30.png" id="26_2foln"]
-[ext_resource type="Texture2D" uid="uid://dsv8uhaikj6xd" path="res://textures/environment/lava/lava31.png" id="27_6177a"]
-[ext_resource type="Texture2D" uid="uid://v65u3jaaw2n5" path="res://textures/environment/lava/lava5.png" id="28_qtdfl"]
-[ext_resource type="Texture2D" uid="uid://b5qq2mw7h0um0" path="res://textures/environment/lava/lava6.png" id="29_28dpl"]
-[ext_resource type="Texture2D" uid="uid://dg5u0bnqc3d57" path="res://textures/environment/lava/lava7.png" id="30_erxal"]
-[ext_resource type="Texture2D" uid="uid://bwla2a4jn8tn" path="res://textures/environment/lava/lava8.png" id="31_b8xe7"]
-[ext_resource type="Texture2D" uid="uid://c1ija068pmu3d" path="res://textures/environment/lava/lava9.png" id="32_hwr0b"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_u76kd"]
-frames = 32
-speed_scale = 10.0
-frame_0/texture = ExtResource("2_sfqom")
-frame_1/texture = ExtResource("3_vv3lj")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("14_haxal")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("25_v8ivl")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("25_v8ivl")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("28_qtdfl")
-frame_5/duration = 1.0
-frame_6/texture = ExtResource("29_28dpl")
-frame_6/duration = 1.0
-frame_7/texture = ExtResource("30_erxal")
-frame_7/duration = 1.0
-frame_8/texture = ExtResource("31_b8xe7")
-frame_8/duration = 1.0
-frame_9/texture = ExtResource("32_hwr0b")
-frame_9/duration = 1.0
-frame_10/texture = ExtResource("4_l3mon")
-frame_10/duration = 1.0
-frame_11/texture = ExtResource("5_c2n8t")
-frame_11/duration = 1.0
-frame_12/texture = ExtResource("6_xn8vy")
-frame_12/duration = 1.0
-frame_13/texture = ExtResource("7_fnwbd")
-frame_13/duration = 1.0
-frame_14/texture = ExtResource("8_h1vwf")
-frame_14/duration = 1.0
-frame_15/texture = ExtResource("9_27lrr")
-frame_15/duration = 1.0
-frame_16/texture = ExtResource("10_irhpy")
-frame_16/duration = 1.0
-frame_17/texture = ExtResource("11_q8ht8")
-frame_17/duration = 1.0
-frame_18/texture = ExtResource("12_v6jev")
-frame_18/duration = 1.0
-frame_19/texture = ExtResource("13_vwq1o")
-frame_19/duration = 1.0
-frame_20/texture = ExtResource("15_cfj6p")
-frame_20/duration = 1.0
-frame_21/texture = ExtResource("16_38mdh")
-frame_21/duration = 1.0
-frame_22/texture = ExtResource("17_t7xll")
-frame_22/duration = 1.0
-frame_23/texture = ExtResource("18_md05h")
-frame_23/duration = 1.0
-frame_24/texture = ExtResource("19_v6lol")
-frame_24/duration = 1.0
-frame_25/texture = ExtResource("20_mp1ie")
-frame_25/duration = 1.0
-frame_26/texture = ExtResource("21_o17dq")
-frame_26/duration = 1.0
-frame_27/texture = ExtResource("22_ufdst")
-frame_27/duration = 1.0
-frame_28/texture = ExtResource("23_1sa1r")
-frame_28/duration = 1.0
-frame_29/texture = ExtResource("24_54vvf")
-frame_29/duration = 1.0
-frame_30/texture = ExtResource("26_2foln")
-frame_30/duration = 1.0
-frame_31/texture = ExtResource("27_6177a")
-frame_31/duration = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5niru"]
 
@@ -109,7 +11,7 @@ script = ExtResource("1_33sfs")
 [node name="lava_polygon" type="Polygon2D" parent="."]
 texture_repeat = 2
 position = Vector2(0, -16)
-texture = SubResource("AnimatedTexture_u76kd")
+color = Color(0.701961, 0.203922, 0.243137, 1)
 polygon = PackedVector2Array(16, 16, 0, 16, 0, 0)
 
 [node name="line" type="Line2D" parent="."]
@@ -127,4 +29,9 @@ damage = 1.5
 position = Vector2(10, -10)
 shape = SubResource("RectangleShape2D_5niru")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

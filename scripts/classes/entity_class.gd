@@ -9,6 +9,7 @@ var max_grab = 0
 var is_dead = false
 var type = 0 #0 = friendly, 1 = enemy, 2 = boss
 var hit_flash_fac = 0.0
+var weight = 12.0
 
 
 func setup_entity(starting_hp : float, grab_capacity : int, entity_type = 0):

@@ -6,6 +6,8 @@ var points = []
 var point_velocities = []
 var spring_power = 1
 var next_update_value = Vector2()
+var entered_weight = 0.0
+var bubble_path = load("res://prefabs/world/lava_bubble.tscn")
 @export var size = Vector2(1, 0)
 @export var collider_size = Vector2(1, 1)
 
@@ -75,7 +77,7 @@ func create_enter_waves():
 		for i in points:
 			if i.x == next_update_value.x:
 				point_index = points.find(i)
-		points[point_index].y += 12
+		points[point_index].y += entered_weight
 		next_update_value = Vector2(0, 0)
 
 
@@ -90,4 +92,14 @@ func _on_body_entered(body):
 		enter_pos.x = clamp(enter_pos.x, points[2].x, points[len(points) - 1].x)
 		enter_pos.y = 0.0
 		next_update_value = enter_pos
+		entered_weight = body.weight
 		body.velocity.y = -220
+
+
+func _on_timer_timeout():
+	var bubble_inst = bubble_path.instantiate()
+	bubble_inst.position.y = 2
+	bubble_inst.position.x = randi_range(2, collider_size.x * tile_size - 2)
+	bubble_inst.position = to_global(bubble_inst.position)
+	bubble_inst.decay_time = collider_size.y * 80
+	get_tree().current_scene.add_child(bubble_inst)

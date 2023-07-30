@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bteu5mwcxlb3l"]
+[gd_scene load_steps=18 format=3 uid="uid://bteu5mwcxlb3l"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ljtim2mukvda" path="res://prefabs/world/decal_walls.tscn" id="2_bojfb"]
 [ext_resource type="PackedScene" uid="uid://c8d1xxb5mriec" path="res://prefabs/world/room_camera.tscn" id="4_wqekd"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="4_xdqfv"]
+[ext_resource type="PackedScene" uid="uid://dleg4fbn8lmwi" path="res://prefabs/world/lava.tscn" id="5_ymw6y"]
 [ext_resource type="PackedScene" uid="uid://cqjmokvbmo81b" path="res://prefabs/world/scene_switcher.tscn" id="6_853bj"]
 [ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="8_pl13o"]
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="9_8qi1i"]
@@ -90,6 +91,11 @@ player_pos = Vector2(5, 103)
 position = Vector2(778, 968)
 size = 3
 entity_to_defeat = NodePath("../../entities/cerberus")
+
+[node name="lava" parent="environment" instance=ExtResource("5_ymw6y")]
+position = Vector2(144, 736)
+size = Vector2(6, 0)
+collider_size = Vector2(6, 1)
 
 [node name="entities" type="Node2D" parent="."]
 
