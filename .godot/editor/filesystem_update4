@@ -34,3 +34,5 @@ res://scripts/items/grapple_hook.gd
 res://prefabs/world/lava_bubble.tscn
 res://scripts/world/lava_bubble.gd
 res://scripts/classes/entity_class.gd
+res://scripts/entities/player/player.gd
+res://scripts/entities/player/player_leg.gd
