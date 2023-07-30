@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://djik6bfhvtmx2"]
+
+[ext_resource type="Script" path="res://scripts/items/grapple_hook.gd" id="1_pd4se"]
+[ext_resource type="Texture2D" uid="uid://bpc8ny6f8r5oy" path="res://textures/items/grappling_hook.png" id="2_h1g1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8bb"]
+size = Vector2(16, 10)
+
+[node name="grapple_hook" type="Area2D"]
+script = ExtResource("1_pd4se")
+
+[node name="raycast" type="RayCast2D" parent="."]
+target_position = Vector2(384, 0)
+collision_mask = 128
+
+[node name="hit_indicator" type="Polygon2D" parent="."]
+color = Color(0.94902, 0.980392, 0.752941, 1)
+polygon = PackedVector2Array(-1, -1, 0, -3, 1, -1, 3, 0, 1, 1, 0, 3, -1, 1, -3, 0)
+
+[node name="line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 1.0
+default_color = Color(0.94902, 0.980392, 0.752941, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_h1g1n")
+offset = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_fq8bb")
+
+[connection signal="used" from="." to="." method="_on_used"]

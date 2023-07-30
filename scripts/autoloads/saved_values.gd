@@ -16,7 +16,7 @@ var values = {
 	"pl_health" : 10.0,
 	
 	#settings
-	"music_is_playing" : true
+	"music_is_playing" : false
 }
 
 

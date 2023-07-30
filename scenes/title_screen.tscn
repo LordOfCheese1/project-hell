@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c564hrb2h6b1b"]
+
+[ext_resource type="Script" path="res://scripts/levels/title_screen.gd" id="1_y1xnr"]
+[ext_resource type="FontFile" uid="uid://dvi6fokkws0s0" path="res://fonts/hell_font.ttf" id="2_p0555"]
+[ext_resource type="PackedScene" uid="uid://bc3lkgruflwk2" path="res://prefabs/user_interface/button.tscn" id="3_q0nvy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0v0m"]
+font = ExtResource("2_p0555")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_atpru"]
+font = ExtResource("2_p0555")
+font_color = Color(0, 0, 0, 1)
+
+[node name="title_screen" type="Node2D"]
+script = ExtResource("1_y1xnr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 384.0
+offset_bottom = 256.0
+color = Color(0.470588, 0.117647, 0.215686, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 108.0
+offset_top = 76.0
+offset_right = 289.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME TITLE"
+label_settings = SubResource("LabelSettings_h0v0m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" parent="." instance=ExtResource("3_q0nvy")]
+position = Vector2(192, 128)
+size = Vector2(32, 10)
+
+[node name="Label" type="Label" parent="play"]
+offset_left = -28.0
+offset_top = -9.0
+offset_right = 28.0
+offset_bottom = 10.0
+text = "PLAY"
+label_settings = SubResource("LabelSettings_atpru")
+horizontal_alignment = 1
+vertical_alignment = 1

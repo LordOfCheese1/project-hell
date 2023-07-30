@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c44ccpe2dxd7a"]
+
+[ext_resource type="Script" path="res://scripts/user_interface/ui_tentacle.gd" id="1_in4xf"]
+
+[sub_resource type="Curve" id="Curve_1mb7b"]
+_data = [Vector2(0, 0.595092), 0.0, 0.0, 0, 0, Vector2(0.504808, 0.447853), 0.0, 0.0, 0, 0, Vector2(1, 0.0306748), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="ui_tentacle" type="Node2D"]
+script = ExtResource("1_in4xf")
+
+[node name="line" type="Line2D" parent="."]
+width = 32.0
+width_curve = SubResource("Curve_1mb7b")
+default_color = Color(0.0352941, 0.0352941, 0.0509804, 1)
+joint_mode = 2
+begin_cap_mode = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0352941, 0.0352941, 0.0509804, 1)
+polygon = PackedVector2Array(-5, -44, 6, -39, 9, -24, 8, -4, 8, 1, 7, 6, 7, 24, -1, 36, -15, 32, -24, 18, -29, 0, -22, -22)

@@ -20,7 +20,6 @@ func _ready():
 	$attackbox/CollisionShape2D.position.x = (collider_size.x * tile_size) / 2
 	$attackbox/CollisionShape2D.position.y = -(collider_size.y * tile_size) / 2
 	$line.position.y = -16
-	print($line.position.y)
 	points = $lava_polygon.polygon
 	if !Engine.is_editor_hint():
 		create_points()
@@ -31,6 +30,7 @@ func _physics_process(delta):
 	animate_points(delta)
 	refresh_points()
 	create_enter_waves()
+	
 	
 	for i in range(len($line.points) - 1):
 		$line.set_point_position(i, points[i + 2])
