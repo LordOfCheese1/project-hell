@@ -47,9 +47,9 @@ func load_mods():
 
 func enable_mods():
 	for i in range(len(mods)):
-		if orig_game_files.has(mods[i]):
+		if orig_game_files.has(mods[i]): # If current file name is found in orig game files, overwrite the orig game file with new one
 			load(mods_folder + "/" + mods[i]).take_over_path(orig_game_files[orig_game_files.find(mods[i]) + 1] + "/" + mods[i])
-		else:
+		else: # This adds any nonexisting script to an autoload, NEEDS REWORKING
 			var mod_node = Node2D.new()
 			mod_node.set_script(ResourceLoader.load(mods_folder + "/" + mods[i]))
 			call_deferred("add_child", mod_node)

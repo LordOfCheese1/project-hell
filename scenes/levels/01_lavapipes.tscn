@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ijs4dlp405ga"]
+[gd_scene load_steps=25 format=3 uid="uid://ijs4dlp405ga"]
 
 [ext_resource type="Script" path="res://scripts/world/level.gd" id="1_0r16f"]
 [ext_resource type="PackedScene" uid="uid://f17hcev0cvv2" path="res://prefabs/world/bg_walls.tscn" id="1_iword"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="10_25hnr"]
 [ext_resource type="PackedScene" uid="uid://c4lsuwvd1l5g7" path="res://prefabs/entities/enemies/devil.tscn" id="10_arfwx"]
 [ext_resource type="PackedScene" uid="uid://cyb3dlskfxrim" path="res://prefabs/items/scissors.tscn" id="10_nmx7r"]
+[ext_resource type="PackedScene" uid="uid://dleg4fbn8lmwi" path="res://prefabs/world/lava.tscn" id="11_08y3w"]
 [ext_resource type="PackedScene" uid="uid://b6dhldkdwokp8" path="res://prefabs/items/bomb_gun.tscn" id="13_muhhf"]
 [ext_resource type="PackedScene" uid="uid://c2le1sh0qkxs" path="res://prefabs/items/dev_item.tscn" id="14_ucru5"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="16_43ur5"]
@@ -175,6 +176,11 @@ position = Vector2(-1024, 1368)
 
 [node name="spring8" parent="environment" instance=ExtResource("9_gj7t5")]
 position = Vector2(800, 1736)
+
+[node name="lava" parent="environment" instance=ExtResource("11_08y3w")]
+position = Vector2(1808, 928)
+size = Vector2(5, -1)
+collider_size = Vector2(5, 2)
 
 [node name="entities" type="Node2D" parent="."]
 
