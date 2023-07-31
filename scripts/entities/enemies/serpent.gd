@@ -6,6 +6,7 @@ var active_attack = 0
 var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
 var current_attack_phase = 0
 var spotted_player = false
+var tongue_progress = 0
 
 
 func _ready():
@@ -15,7 +16,10 @@ func _ready():
 	for i in range(points):
 		$body/neck.add_point(Vector2(0, 0))
 
+
 func _physics_process(_delta):
+	
+	tongue_motions()
 	
 	if gv.player.position.distance_to(position) < 192 && !spotted_player:
 		spot_player()
@@ -63,3 +67,24 @@ func chomp_attack():
 		chomp_inst.position = $body/head.global_position + orig_head_transform * 10 + orig_head_transform * 12 * i
 		get_tree().current_scene.add_child(chomp_inst)
 		await get_tree().create_timer(0.02).timeout
+
+
+func tongue_motions():
+	$tongue_looker.position = $body/head.position
+	$body/eye.position = $tongue_looker.position + $tongue_looker.transform.x * 48 * tongue_progress
+	if tongue_progress > 0:
+		var prev_rot = $tongue_looker.rotation_degrees
+		if gv.player != null:
+			$tongue_looker.look_at(gv.player.position)
+		
+		$tongue_looker.rotation_degrees = lerp(prev_rot, $tongue_looker.rotation_degrees, 0.2)
+		
+		$body/tongue.position = $body/head.position
+		$body/tongue.points[0] = Vector2(0, 0)
+		$body/tongue.points[9] = $tongue_looker.transform.x * 48 * tongue_progress
+		
+		for i in range(len($body/tongue.points) - 2):
+			$body/tongue.points[i + 1] += ($body/tongue.points[i] - $body/tongue.points[i + 1]) * 0.4 #Snap towards previous point
+			$body/tongue.points[i + 1] += ($body/tongue.points[i + 2] - $body/tongue.points[i + 1]) * 0.4 #Snap towards next point
+		
+		$body/eye.look_at(gv.player.position)

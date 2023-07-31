@@ -1,14 +1,14 @@
+Line2D
+Node2D
 Sprite2D
 CollisionShape2D
 CharacterBody2D
 Timer
-Line2D
 Polygon2D
 RayCast2D
 Area2D
 ColorRect
 Label
-Node2D
 Node
 VisibleOnScreenEnabler2D
 StaticBody2D

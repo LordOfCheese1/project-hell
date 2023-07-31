@@ -16,7 +16,7 @@ var values = {
 	"pl_health" : 10.0,
 	
 	#settings
-	"music_is_playing" : true
+	"music_is_playing" : false
 }
 
 
@@ -46,6 +46,7 @@ func load_values(from_file = false):
 				get_tree().current_scene.add_child(item)
 				to_attach.append(item)
 			to_attach[1].attach_to(to_attach[0])
+			to_attach[1].grabbed_entity = gv.player
 			give_to_player.append(to_attach[0])
 		elif typeof(i) == TYPE_STRING:
 			var item = load(i).instantiate()

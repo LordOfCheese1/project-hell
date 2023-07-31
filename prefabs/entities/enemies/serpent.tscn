@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://y3jh1hmif7h2"]
+[gd_scene load_steps=8 format=3 uid="uid://y3jh1hmif7h2"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/serpent.gd" id="1_og10g"]
 [ext_resource type="Texture2D" uid="uid://b74dfdcslrp5y" path="res://textures/entities/serpent/upper_head.png" id="2_1nyja"]
+[ext_resource type="Texture2D" uid="uid://mheccj8ogbjs" path="res://textures/entities/serpent/eye.png" id="2_8lqfm"]
 [ext_resource type="Texture2D" uid="uid://cg1288lontf1u" path="res://textures/entities/serpent/lower_head.png" id="3_3dbkm"]
 [ext_resource type="Texture2D" uid="uid://hsfydacsvaq5" path="res://textures/entities/serpent/plume.png" id="4_tfgfn"]
 
 [sub_resource type="Curve" id="Curve_dfk2k"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.774336, 0.165644), 0.0, 0.0, 0, 0, Vector2(1, 0.239264), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Curve" id="Curve_ecjb7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.257669), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="serpent" type="CharacterBody2D"]
 script = ExtResource("1_og10g")
@@ -21,6 +26,16 @@ width = 32.0
 width_curve = SubResource("Curve_dfk2k")
 default_color = Color(0.231373, 0.0823529, 0.176471, 1)
 end_cap_mode = 2
+
+[node name="tongue" type="Line2D" parent="body"]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_ecjb7")
+default_color = Color(0.960784, 0.917647, 0.517647, 1)
+end_cap_mode = 2
+
+[node name="eye" type="Sprite2D" parent="body"]
+texture = ExtResource("2_8lqfm")
 
 [node name="head" type="Node2D" parent="body"]
 
@@ -38,3 +53,5 @@ texture = ExtResource("2_1nyja")
 offset = Vector2(9, -3)
 
 [node name="looker" type="Node2D" parent="."]
+
+[node name="tongue_looker" type="Node2D" parent="."]

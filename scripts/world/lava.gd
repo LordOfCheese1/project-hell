@@ -29,9 +29,13 @@ func _ready():
 
 
 func _physics_process(delta):
-	animate_points(delta)
-	refresh_points()
-	create_enter_waves()
+	if global_position.distance_to(gv.player.position) < 512:
+		animate_points(delta)
+		refresh_points()
+		create_enter_waves()
+		visible = true
+	else:
+		visible = false
 	
 	
 	for i in range(len($line.points) - 1):
