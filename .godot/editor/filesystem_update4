@@ -15,8 +15,6 @@ res://prefabs/projectiles/chomp_explosion.tscn
 res://prefabs/world/health_pickup.tscn
 res://autoloads/music_manager.tscn
 res://prefabs/items/grapple_hook.tscn
-res://prefabs/world/lava.tscn
-res://prefabs/world/lava_bubble.tscn
-res://scripts/autoloads/saved_values.gd
-res://scripts/entities/enemies/serpent.gd
-res://scripts/world/lava.gd
+res://prefabs/entities/enemies/wall_crawler.tscn
+res://autoloads/mod_loader.tscn
+res://scripts/autoloads/mod_loader.gd

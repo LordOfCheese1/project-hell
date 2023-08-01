@@ -1,23 +1,41 @@
 extends Node2D
 
-var mods = [
+var orig_game_files = {
+	"file_names" : [],
+	"file_locations": []
+}
+var mod_files = {
+	"text" : [],
+	"audio" : [],
+	"image" : []
+}
+var main_scripts = [
 	
 ]
-var other_files = [
-	
-]
-var orig_game_files = [
-	
-]
+var stored_files = {}
 var allowed_extensions = [
-	"gd"
+	"gd",
+	"png",
+	"wav",
+	"mp3"
 ]
+var extension_types = {
+	"text" : ["gd"],
+	"audio" : ["wav", "mp3"],
+	"image" : ["png"]
+}
 var game_directory
 var mods_folder = ""
 
 
 func _ready():
-	orig_game_files = get_all_files("res://")
+	var is_folder = false
+	for i in get_all_files("res://"):
+		if is_folder:
+			orig_game_files["file_locations"].append(i)
+		else:
+			orig_game_files["file_names"].append(i)
+		is_folder = !is_folder
 	
 	game_directory = DirAccess.open(OS.get_executable_path().get_base_dir())
 	if game_directory.dir_exists("mods"):
@@ -32,27 +50,64 @@ func _ready():
 
 func load_mods():
 	var mods_dir = DirAccess.open(mods_folder)
+	var subdirs = []
 	
-	mods_dir.list_dir_begin()
+	mods_dir.list_dir_begin() #Loop through mods directory to find all subdirectories
 	
 	while true:
 		var file = mods_dir.get_next()
 		if file == "":
 			break
-		else:
-			mods.append(file)
+		elif mods_dir.current_is_dir():
+			subdirs.append(file)
 	
 	mods_dir.list_dir_end()
+	
+	for i in subdirs: #Loop through current mod folder
+		var mod_folder = DirAccess.open(mods_folder + "/" + i)
+		
+		mod_folder.list_dir_begin()
+		
+		while true:
+			var file = mod_folder.get_next()
+			if file == "":
+				break
+			elif !mod_folder.current_is_dir():
+				if extension_types["text"].has(file.get_extension()) && file.get_basename() != "main": #Append text files to "mod_files" if it's not called "main"
+					mod_files["text"].append([file, mods_folder + "/" + i])
+				elif file.get_basename() == "main": #Append "main.gd" to main scripts
+					main_scripts.append(mods_folder + "/" + i + "/" + file)
+				
+				if extension_types["audio"].has(file.get_extension()): #Append audio files to "mod_files"
+					mod_files["aduio"].append([file, mods_folder + "/" + i])
+				
+				if extension_types["image"].has(file.get_extension()): #Append image files to "mod_files
+					mod_files["image"].append([file, mods_folder + "/" + i])
+		
+		mod_folder.list_dir_end()
+	
+	#Load mod files
+	for file in mod_files["text"]: #Load text files
+		stored_files[file[0]] = load(file[1] + "/" + file[0])
+	
+	for file in mod_files["image"]: #Load image files
+		var image = Image.load_from_file(file[1] + "/" + file[0])
+		var texture = ImageTexture.create_from_image(image)
+		stored_files[file[0]] = texture
 
 
 func enable_mods():
-	for i in range(len(mods)):
-		if orig_game_files.has(mods[i]): # If current file name is found in orig game files, overwrite the orig game file with new one
-			load(mods_folder + "/" + mods[i]).take_over_path(orig_game_files[orig_game_files.find(mods[i]) + 1] + "/" + mods[i])
-		else: # This adds any nonexisting script to an autoload, NEEDS REWORKING
-			var mod_node = Node2D.new()
-			mod_node.set_script(ResourceLoader.load(mods_folder + "/" + mods[i]))
-			call_deferred("add_child", mod_node)
+	for i in stored_files: #Replace existing files if they exist, otherwise leave them stored to be accessed by main.gd
+		if orig_game_files["file_names"].has(i):
+			var file_id = orig_game_files["file_names"].find(i)
+			print(file_id)
+			stored_files[i].take_over_path(orig_game_files["file_locations"][file_id] + "/" + orig_game_files["file_names"][file_id])
+	
+	for i in range(len(main_scripts)):
+		var script_holder = Node2D.new()
+		script_holder.name = "mod" + str(i)
+		script_holder.set_script(load(main_scripts[i]))
+		add_child(script_holder)
 
 
 func get_all_files(path : String, files := []):
@@ -68,7 +123,6 @@ func get_all_files(path : String, files := []):
 		elif allowed_extensions.has(file_name.get_extension()):
 			files.append(file_name)
 			files.append(dir.get_current_dir())
-		
 		file_name = dir.get_next()
 	
 	dir.list_dir_end()
