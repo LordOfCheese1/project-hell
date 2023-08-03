@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bwrdo8d5xayke"]
+
+[node name="bomb_laser" type="Area2D"]

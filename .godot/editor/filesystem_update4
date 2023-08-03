@@ -1,8 +1,9 @@
-res://scenes/levels/00_hellgates.tscn
+res://prefabs/projectiles/bomb_laser.tscn
 res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres
 res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres
 res://addons/FMOD/editor/resources/parameters/{62137e18-39de-43a4-84e4-fa933d51a995}.tres
 res://addons/FMOD/editor/resources/parameters/{bda6838f-d187-4205-b530-1f05674472c5}.tres
+res://scenes/levels/00_hellgates.tscn
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/world/scrap.tscn
@@ -15,6 +16,7 @@ res://prefabs/projectiles/chomp_explosion.tscn
 res://prefabs/world/health_pickup.tscn
 res://autoloads/music_manager.tscn
 res://prefabs/items/grapple_hook.tscn
+res://prefabs/entities/enemies/roller.tscn
 res://prefabs/entities/enemies/wall_crawler.tscn
-res://autoloads/mod_loader.tscn
-res://scripts/autoloads/mod_loader.gd
+res://scripts/autoloads/saved_values.gd
+res://scripts/entities/player/player.gd

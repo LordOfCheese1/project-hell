@@ -32,14 +32,17 @@ func _physics_process(delta):
 		$head.look_at(gv.player.position)
 	$head.rotation_degrees = lerp(prev_head_rot, $head.rotation_degrees, 0.1)
 	
+	#if Input.is_action_pressed("click"):
 	velocity = lerp(velocity, $head.transform.x * speed, 0.1)
+	#else:
+	#	velocity = Vector2(0, 0)
 	
 	animate_body(delta)
 
 
 func create_points():
 	for i in range(length):
-		$line.add_point(Vector2(0, 0))
+		$line.add_point(Vector2(i * 6, 0))
 		var collider = CollisionShape2D.new()
 		add_child(collider)
 		var shape = CircleShape2D.new()
@@ -53,6 +56,7 @@ func animate_body(delta : float):
 		$line.points[i + 1] += (prev_pos - position)
 		if $line.points[i + 1].distance_to($line.points[i]) > 6:
 			$line.points[i + 1] = lerp($line.points[i + 1], $line.points[i], 0.4)
+		
 		colliders[i + 1].position = $line.points[i + 1]
 
 

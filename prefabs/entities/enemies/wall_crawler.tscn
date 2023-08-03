@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://clxdotlpcf07h" path="res://textures/entities/wallcrawler/head.png" id="2_o4it6"]
 
 [sub_resource type="Curve" id="Curve_u5mm6"]
-_data = [Vector2(0, 0.576687), 0.0, 0.0, 0, 0, Vector2(0.199115, 1), 0.0, 0.0, 0, 0, Vector2(0.738938, 0.613497), 0.0, 0.0, 0, 0, Vector2(1, 0.153374), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0.576687), 0.0, 0.0, 0, 0, Vector2(0.199115, 1), 0.0, 0.0, 0, 0, Vector2(0.477876, 0.601227), 0.0, 0.0, 0, 0, Vector2(0.920354, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.680982), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_diswi"]
+colors = PackedColorArray(0.0941176, 0.0941176, 0.129412, 1, 0.470588, 0.117647, 0.215686, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r5k6y"]
 radius = 4.0
 height = 128.0
-
-[sub_resource type="Curve" id="Curve_v6re3"]
-_data = [Vector2(0, 0.134969), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [node name="wall_crawler" type="CharacterBody2D"]
 collision_layer = 2
@@ -23,7 +22,7 @@ script = ExtResource("1_wluy6")
 [node name="line" type="Line2D" parent="."]
 width = 12.0
 width_curve = SubResource("Curve_u5mm6")
-default_color = Color(0.0941176, 0.0941176, 0.129412, 1)
+gradient = SubResource("Gradient_diswi")
 begin_cap_mode = 2
 end_cap_mode = 2
 
@@ -36,12 +35,5 @@ texture = ExtResource("2_o4it6")
 position = Vector2(64, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_r5k6y")
-
-[node name="sight_ray" type="Line2D" parent="head"]
-points = PackedVector2Array(0, 0, 124, 0)
-width = 8.0
-width_curve = SubResource("Curve_v6re3")
-default_color = Color(0.960784, 0.917647, 0.517647, 0.392157)
-end_cap_mode = 2
 
 [connection signal="body_entered" from="head/player_detector" to="." method="_on_player_detector_body_entered"]

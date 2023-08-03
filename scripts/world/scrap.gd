@@ -25,6 +25,7 @@ func _on_body_entered(body):
 		velocity.x = velocity.x * -0.85
 	
 	if body.is_in_group("player"):
+		gv.player.hp += 0.5
 		body.scrap += 1
 		call_deferred("free")
 

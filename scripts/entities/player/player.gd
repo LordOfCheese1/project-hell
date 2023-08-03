@@ -119,8 +119,8 @@ func _physics_process(delta):
 	
 	entity_update()
 	
-	if Input.is_action_just_pressed("test"):
-		hp -= 1
+	if hp < max_hp:
+		hp = max_hp
 
 
 func jump():

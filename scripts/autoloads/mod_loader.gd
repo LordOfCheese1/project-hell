@@ -83,6 +83,7 @@ func load_mods():
 				
 				if extension_types["image"].has(file.get_extension()): #Append image files to "mod_files
 					mod_files["image"].append([file, mods_folder + "/" + i])
+					print(file)
 		
 		mod_folder.list_dir_end()
 	
@@ -100,7 +101,6 @@ func enable_mods():
 	for i in stored_files: #Replace existing files if they exist, otherwise leave them stored to be accessed by main.gd
 		if orig_game_files["file_names"].has(i):
 			var file_id = orig_game_files["file_names"].find(i)
-			print(file_id)
 			stored_files[i].take_over_path(orig_game_files["file_locations"][file_id] + "/" + orig_game_files["file_names"][file_id])
 	
 	for i in range(len(main_scripts)):

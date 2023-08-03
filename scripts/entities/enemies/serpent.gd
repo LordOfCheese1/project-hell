@@ -4,9 +4,11 @@ extends "res://scripts/classes/entity_class.gd"
 var attack_cooldown = 80
 var active_attack = 0
 var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
+var bomb_path = load("res://prefabs/projectiles/bomb.tscn")
 var current_attack_phase = 0
 var spotted_player = false
 var tongue_progress = 0
+var current_attack = 0
 
 
 func _ready():
@@ -50,7 +52,12 @@ func _physics_process(_delta):
 	else:
 		attack_cooldown = 80
 		active_attack = 60
-		chomp_attack()
+		if current_attack == 0:
+			chomp_attack()
+			current_attack = 1
+		elif current_attack == 1:
+			bomb_attack()
+			current_attack = 0
 	
 	if active_attack > 0:
 		active_attack -= 1
@@ -67,6 +74,13 @@ func chomp_attack():
 		chomp_inst.position = $body/head.global_position + orig_head_transform * 10 + orig_head_transform * 12 * i
 		get_tree().current_scene.add_child(chomp_inst)
 		await get_tree().create_timer(0.02).timeout
+
+
+func bomb_attack():
+	var bomb_inst = bomb_path.instantiate()
+	bomb_inst.position = $body/head.global_position
+	bomb_inst.rotation_degrees = $body/head.rotation_degrees
+	get_tree().current_scene.add_child(bomb_inst)
 
 
 func tongue_motions():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ijs4dlp405ga"]
+[gd_scene load_steps=26 format=3 uid="uid://ijs4dlp405ga"]
 
 [ext_resource type="Script" path="res://scripts/world/level.gd" id="1_0r16f"]
 [ext_resource type="PackedScene" uid="uid://f17hcev0cvv2" path="res://prefabs/world/bg_walls.tscn" id="1_iword"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b0rvmqbtxvwhg" path="res://prefabs/items/laser_gun.tscn" id="19_k1lfl"]
 [ext_resource type="PackedScene" uid="uid://cam3jddb7aawg" path="res://prefabs/entities/enemies/giraffe.tscn" id="20_my67o"]
 [ext_resource type="PackedScene" uid="uid://y3jh1hmif7h2" path="res://prefabs/entities/enemies/serpent.tscn" id="20_wuh5r"]
+[ext_resource type="PackedScene" uid="uid://dk4ylnbh8j0cl" path="res://prefabs/entities/enemies/wall_crawler.tscn" id="25_ft1cd"]
 
 [node name="01_lavapipes" type="Node2D"]
 script = ExtResource("1_0r16f")
@@ -262,6 +263,9 @@ points = 10
 
 [node name="serpent" parent="entities" instance=ExtResource("20_wuh5r")]
 position = Vector2(-736, 1552)
+
+[node name="wall_crawler" parent="entities" instance=ExtResource("25_ft1cd")]
+position = Vector2(349, 985)
 
 [node name="player" parent="entities" instance=ExtResource("2_vajox")]
 position = Vector2(5, 103)

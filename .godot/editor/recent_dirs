@@ -1,6 +1,7 @@
-C:/Gamedev/Godot4/Exports/project-hell/modloader-test
+res://prefabs/projectiles
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
+C:/Gamedev/Godot4/Exports/project-hell/modloader-test
 res://autoloads
 res://scripts/autoloads
 res://scripts/world
@@ -12,7 +13,6 @@ res://prefabs/user_interface
 res://scenes
 res://scripts/user_interface
 res://scripts/projectiles
-res://prefabs/projectiles
 res://scripts/systems
 res://shaders
 C:/Gamedev/Godot4/Exports/project-hell/playtest/linux
