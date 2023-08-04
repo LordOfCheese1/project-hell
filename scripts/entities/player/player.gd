@@ -119,7 +119,7 @@ func _physics_process(delta):
 	
 	entity_update()
 	
-	if hp < max_hp:
+	if hp > max_hp:
 		hp = max_hp
 
 

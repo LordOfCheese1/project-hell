@@ -1,3 +1,4 @@
+res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
@@ -12,7 +13,6 @@ res://scripts/levels
 res://prefabs/user_interface
 res://scenes
 res://scripts/user_interface
-res://scripts/projectiles
 res://scripts/systems
 res://shaders
 C:/Gamedev/Godot4/Exports/project-hell/playtest/linux

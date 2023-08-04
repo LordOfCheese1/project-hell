@@ -17,7 +17,7 @@ func _ready():
 	$Sprite2D.texture = textures[randi_range(0, 1)]
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$Sprite2D.scale = lerp($Sprite2D.scale, Vector2(1, 1), 0.1)
 	decay_time -= 1
 	if decay_time > 0:

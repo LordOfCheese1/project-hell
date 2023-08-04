@@ -1,37 +1,61 @@
-[gd_scene load_steps=7 format=3 uid="uid://cefml1p8tygdi"]
+[gd_scene load_steps=9 format=3 uid="uid://cefml1p8tygdi"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/roller.gd" id="1_rmv82"]
 [ext_resource type="Texture2D" uid="uid://62tl0c1cdync" path="res://textures/entities/roller/wheel.png" id="2_r5nil"]
 [ext_resource type="Texture2D" uid="uid://dlpq1myv3kr81" path="res://textures/entities/roller/pipe.png" id="3_ia8r4"]
 [ext_resource type="Texture2D" uid="uid://cpltl4agl7jlw" path="res://textures/entities/roller/box.png" id="3_nbsly"]
 [ext_resource type="Texture2D" uid="uid://dquu887ra2tg4" path="res://textures/entities/roller/head.png" id="5_ktgaa"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="6_objnk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvb4w"]
+radius = 4.0
+height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nc27d"]
-radius = 9.0
+radius = 8.0
 
 [node name="roller" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_rmv82")
 
 [node name="wheel" type="Sprite2D" parent="."]
+use_parent_material = true
 texture = ExtResource("2_r5nil")
 
 [node name="body" type="Node2D" parent="."]
+use_parent_material = true
 
 [node name="pipe" type="Sprite2D" parent="body"]
+use_parent_material = true
 position = Vector2(0, -11)
 texture = ExtResource("3_ia8r4")
 
 [node name="box" type="Sprite2D" parent="body"]
+use_parent_material = true
 position = Vector2(0, -9)
 texture = ExtResource("3_nbsly")
 
 [node name="box2" type="Sprite2D" parent="body"]
+use_parent_material = true
 position = Vector2(0, -17)
 texture = ExtResource("3_nbsly")
 
 [node name="head" type="Sprite2D" parent="body/box2"]
+use_parent_material = true
 position = Vector2(0, -6)
 texture = ExtResource("5_ktgaa")
 
+[node name="hitbox" parent="body" instance=ExtResource("6_objnk")]
+use_parent_material = true
+position = Vector2(0, -10)
+entity = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body/hitbox"]
+shape = SubResource("CapsuleShape2D_fvb4w")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+use_parent_material = true
 shape = SubResource("CircleShape2D_nc27d")
+
+[connection signal="has_been_hit" from="body/hitbox" to="." method="_on_hitbox_has_been_hit"]

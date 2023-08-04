@@ -7,7 +7,7 @@ var moved_cursor = 0
 var prev_cursor_pos = Vector2(0, 0)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player == null:
 		prev_cursor_pos = cursor_pos
 		$cursor.position.x += Input.get_axis("left", "right") * 3

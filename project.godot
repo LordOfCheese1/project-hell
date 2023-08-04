@@ -22,7 +22,6 @@ gv="*res://autoloads/global_values.tscn"
 sv="*res://autoloads/saved_values.tscn"
 mm="*res://autoloads/music_manager.tscn"
 se="*res://autoloads/screen_effects.tscn"
-ml="*res://autoloads/mod_loader.tscn"
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 
 [display]

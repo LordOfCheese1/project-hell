@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://ljtim2mukvda"]
+[gd_scene load_steps=26 format=3 uid="uid://ljtim2mukvda"]
 
 [ext_resource type="Texture2D" uid="uid://c4kaoiqfrlxrt" path="res://textures/tiles/decal_glow_terminal.png" id="1_vuqx0"]
 [ext_resource type="Texture2D" uid="uid://oejb4pxt5q6y" path="res://textures/tiles/decal_snakebird.png" id="2_oh332"]
 [ext_resource type="Texture2D" uid="uid://c2tn5gu0uhkux" path="res://textures/tiles/decal_hole_in_wall.png" id="3_drcqu"]
 [ext_resource type="Texture2D" uid="uid://jnat22bfo50n" path="res://textures/tiles/decal_vines.png" id="3_t23io"]
 [ext_resource type="Texture2D" uid="uid://ctm82yowoheo4" path="res://textures/tiles/decal_slice_in_wall.png" id="4_e780p"]
+[ext_resource type="Texture2D" uid="uid://by1eafprdbed7" path="res://textures/tiles/decal_boiblet.png" id="4_k3pcm"]
 [ext_resource type="Texture2D" uid="uid://gngcipvoqpre" path="res://textures/tiles/decal_knightpanda.png" id="5_kbmy5"]
 [ext_resource type="Texture2D" uid="uid://bhg1yk34paqmn" path="res://textures/tiles/decal_evil_smiley.png" id="6_ed11q"]
 [ext_resource type="Texture2D" uid="uid://cjfg30diq1nxk" path="res://textures/tiles/decal_devil.png" id="7_nb2cd"]
@@ -26,6 +27,11 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m2cxj"]
 texture = ExtResource("3_t23io")
 texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mm56"]
+texture = ExtResource("4_k3pcm")
+texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsd0k"]
@@ -81,6 +87,7 @@ sources/7 = SubResource("TileSetAtlasSource_n5e5p")
 sources/8 = SubResource("TileSetAtlasSource_5l1r1")
 sources/9 = SubResource("TileSetAtlasSource_r2hdx")
 sources/10 = SubResource("TileSetAtlasSource_m2cxj")
+sources/11 = SubResource("TileSetAtlasSource_5mm56")
 
 [node name="decal_walls" type="TileMap"]
 tile_set = SubResource("TileSet_gohk5")

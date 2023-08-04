@@ -21,7 +21,7 @@ func _ready():
 	look_at(get_parent().position + Vector2(192.0, 128.0))
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	visible = get_parent().visible
 	if visible:
 		crawl_progress = get_parent().modulate.a

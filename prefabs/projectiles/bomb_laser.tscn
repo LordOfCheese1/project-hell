@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bwrdo8d5xayke"]
+[gd_scene load_steps=2 format=3 uid="uid://bwrdo8d5xayke"]
+
+[ext_resource type="Texture2D" uid="uid://bx3ffayp62tra" path="res://textures/particles/fire_spark.png" id="1_p5gki"]
 
 [node name="bomb_laser" type="Area2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_p5gki")
