@@ -55,6 +55,10 @@ func _physics_process(delta):
 			attack()
 	
 	entity_update()
+	
+	if hp <= 0:
+		die(10)
+		call_deferred("free")
 
 
 func swap_box_pos():

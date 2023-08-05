@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://2r8658hdphdo"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/spider/spider.gd" id="1_0bh8v"]
+[ext_resource type="Texture2D" uid="uid://djsyw3ag33nlt" path="res://textures/entities/spider/body.png" id="1_w5y76"]
+[ext_resource type="PackedScene" uid="uid://difw7llf2dvyo" path="res://prefabs/entities/enemies/spider/spider_leg.tscn" id="2_gwgir"]
+
+[node name="spider" type="CharacterBody2D"]
+position = Vector2(192, 8)
+script = ExtResource("1_0bh8v")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_w5y76")
+
+[node name="legs" type="Node2D" parent="."]
+
+[node name="spider_leg" parent="legs" instance=ExtResource("2_gwgir")]
+position = Vector2(24, -1)
+length = 8
+
+[node name="spider_leg2" parent="legs" instance=ExtResource("2_gwgir")]
+position = Vector2(-24, -1)
+length = 8
+
+[node name="spider_leg3" parent="legs" instance=ExtResource("2_gwgir")]
+position = Vector2(12, -3)
+length = 8
+
+[node name="spider_leg4" parent="legs" instance=ExtResource("2_gwgir")]
+position = Vector2(-12, -3)
+length = 8

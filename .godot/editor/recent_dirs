@@ -1,3 +1,5 @@
+res://scripts/entities/enemies/spider
+res://prefabs/entities/enemies/spider
 C:/Gamedev/Godot4/project-hell
 res://scripts/world
 res://prefabs/world
@@ -18,5 +20,3 @@ res://scripts/user_interface
 res://scripts/systems
 res://shaders
 C:/Gamedev/Godot4/Exports/project-hell/playtest/linux
-res://scripts/entities
-res://prefabs/components

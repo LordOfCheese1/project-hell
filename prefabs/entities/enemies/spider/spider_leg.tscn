@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://difw7llf2dvyo"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/spider/spider_leg.gd" id="1_jhim1"]
+
+[node name="spider_leg" type="Node2D"]
+script = ExtResource("1_jhim1")
+
+[node name="leg_parts" type="Node2D" parent="."]

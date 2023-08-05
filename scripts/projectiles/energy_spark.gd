@@ -14,7 +14,7 @@ func _physics_process(delta):
 	projectile_update(delta)
 	rotation_degrees += random_rot_value
 	velocity = lerp(velocity, Vector2(0, 0), 0.02)
-	scale = lerp(scale, Vector2(0, 0), 0.02)
+	scale = lerp(scale, Vector2(0, 0), 0.05)
 	if scale.x <= 0.1:
 		call_deferred("free")
 

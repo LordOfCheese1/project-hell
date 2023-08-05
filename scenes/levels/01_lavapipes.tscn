@@ -207,6 +207,9 @@ collider_size = Vector2(3, 1)
 [node name="save_point" parent="environment" instance=ExtResource("12_aksxv")]
 position = Vector2(72, 240)
 
+[node name="save_point" parent="environment/save_point" instance=ExtResource("12_aksxv")]
+position = Vector2(-320, 1216)
+
 [node name="entities" type="Node2D" parent="."]
 
 [node name="devil" parent="entities" instance=ExtResource("10_arfwx")]
@@ -265,7 +268,7 @@ position = Vector2(-736, 1552)
 position = Vector2(349, 985)
 
 [node name="roller" parent="entities" instance=ExtResource("26_ibrao")]
-position = Vector2(733, 744)
+position = Vector2(572, 744)
 
 [node name="player" parent="entities" instance=ExtResource("2_vajox")]
 position = Vector2(5, 103)
