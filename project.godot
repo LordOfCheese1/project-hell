@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project-hell"
-run/main_scene="res://scenes/init_scene.tscn"
+run/main_scene="res://scenes/title_screen.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"

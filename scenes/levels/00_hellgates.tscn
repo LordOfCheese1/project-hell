@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bteu5mwcxlb3l"]
+[gd_scene load_steps=17 format=3 uid="uid://bteu5mwcxlb3l"]
 
 [ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="1_1ntxu"]
 [ext_resource type="PackedScene" uid="uid://cq6jk1bdbr4vb" path="res://prefabs/world/game_camera.tscn" id="1_htqok"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqjmokvbmo81b" path="res://prefabs/world/scene_switcher.tscn" id="6_853bj"]
 [ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="8_pl13o"]
 [ext_resource type="PackedScene" uid="uid://bd1culmdmnt3w" path="res://prefabs/items/laser_hand.tscn" id="9_8qi1i"]
+[ext_resource type="PackedScene" uid="uid://bu73avqix8cqa" path="res://prefabs/world/save_point.tscn" id="9_gqs51"]
 [ext_resource type="PackedScene" uid="uid://cgl64yjn0gxey" path="res://prefabs/entities/enemies/cerberus.tscn" id="11_0sfts"]
 [ext_resource type="PackedScene" uid="uid://c2le1sh0qkxs" path="res://prefabs/items/dev_item.tscn" id="13_rc87h"]
 [ext_resource type="PackedScene" uid="uid://cui8or72o8h26" path="res://prefabs/world/gate.tscn" id="15_36l11"]
@@ -97,6 +98,9 @@ position = Vector2(778, 968)
 size = 3
 entity_to_defeat = NodePath("../../entities/cerberus")
 
+[node name="save_point" parent="environment" instance=ExtResource("9_gqs51")]
+position = Vector2(1376, 720)
+
 [node name="entities" type="Node2D" parent="."]
 
 [node name="stationary_hand" parent="entities" instance=ExtResource("8_pl13o")]
@@ -105,6 +109,9 @@ unspotted_lookat = Vector2(-48, 0)
 
 [node name="cerberus" parent="entities" instance=ExtResource("11_0sfts")]
 position = Vector2(843, 984)
+
+[node name="roller" parent="entities" instance=ExtResource("16_lsrrj")]
+position = Vector2(454, 1272)
 
 [node name="player" parent="entities" groups=["Player"] instance=ExtResource("2_1ot01")]
 position = Vector2(192, 8)
@@ -117,6 +124,3 @@ position = Vector2(987, 740)
 
 [node name="dev_item" parent="." instance=ExtResource("13_rc87h")]
 position = Vector2(357, 613)
-
-[node name="roller" parent="." instance=ExtResource("16_lsrrj")]
-position = Vector2(454, 1272)

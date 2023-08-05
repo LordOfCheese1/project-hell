@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu73avqix8cqa"]
+
+[ext_resource type="Script" path="res://scripts/world/save_point.gd" id="1_5wgrc"]
+[ext_resource type="Texture2D" uid="uid://cv81vatmbut4n" path="res://textures/environment/save_point/finger.png" id="1_bgbwe"]
+[ext_resource type="Texture2D" uid="uid://1w5pefyxee4a" path="res://textures/environment/save_point/gear.png" id="1_pvt4q"]
+
+[sub_resource type="Curve" id="Curve_1q2vt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.539823, 0.202454), 0.0, 0.0, 0, 0, Vector2(1, 0.361963), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwayn"]
+size = Vector2(20, 61)
+
+[node name="save_point" type="Area2D"]
+script = ExtResource("1_5wgrc")
+
+[node name="colour" type="Polygon2D" parent="."]
+color = Color(0.701961, 0.203922, 0.243137, 1)
+polygon = PackedVector2Array(-4, -56, 0, -57, 4, -56, 5, -52, 4, -48, 0, -47, -4, -48, -5, -52)
+
+[node name="gear" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+texture = ExtResource("1_pvt4q")
+
+[node name="stem" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -4, 0, -8, 0, -12, 0, -16, 0, -20, 0, -24)
+width = 16.0
+width_curve = SubResource("Curve_1q2vt")
+default_color = Color(0.0941176, 0.0941176, 0.129412, 1)
+end_cap_mode = 2
+
+[node name="finger_left" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_bgbwe")
+offset = Vector2(-12, -12)
+flip_h = true
+
+[node name="finger_right" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_bgbwe")
+offset = Vector2(12, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30.5)
+shape = SubResource("RectangleShape2D_lwayn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

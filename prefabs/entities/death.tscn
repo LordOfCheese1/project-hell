@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dpll5l8otd3vh"]
+
+[node name="death" type="CharacterBody2D"]

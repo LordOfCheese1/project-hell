@@ -2,7 +2,7 @@ extends Node2D
 
 const particle_path = preload("res://prefabs/world/particle.tscn")
 var player : Node
-var cursor_pos = Vector2()
+var cursor_pos = Vector2(192, 96)
 var moved_cursor = 0
 var prev_cursor_pos = Vector2(0, 0)
 

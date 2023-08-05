@@ -5,7 +5,7 @@ var is_hovered = false
 signal clicked
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if abs(global_position.x - get_global_mouse_position().x) < size.x && abs(global_position.y - get_global_mouse_position().y) < size.y:
 		is_hovered = true
 	elif abs(global_position.x - gv.cursor_pos.x) < size.x && abs(global_position.y - gv.cursor_pos.y) < size.y:

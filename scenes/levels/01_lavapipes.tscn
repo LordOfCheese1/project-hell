@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bqv4d3fj5oq15" path="res://prefabs/items/dasher.tscn" id="8_7ht4n"]
 [ext_resource type="PackedScene" uid="uid://cui8or72o8h26" path="res://prefabs/world/gate.tscn" id="8_g1hrl"]
 [ext_resource type="PackedScene" uid="uid://brsgvbfsb8ox7" path="res://prefabs/world/spring.tscn" id="9_gj7t5"]
-[ext_resource type="PackedScene" uid="uid://c34s84tvv8odc" path="res://prefabs/entities/enemies/stationary_hand.tscn" id="10_25hnr"]
 [ext_resource type="PackedScene" uid="uid://c4lsuwvd1l5g7" path="res://prefabs/entities/enemies/devil.tscn" id="10_arfwx"]
 [ext_resource type="PackedScene" uid="uid://cyb3dlskfxrim" path="res://prefabs/items/scissors.tscn" id="10_nmx7r"]
 [ext_resource type="PackedScene" uid="uid://dleg4fbn8lmwi" path="res://prefabs/world/lava.tscn" id="11_08y3w"]
+[ext_resource type="PackedScene" uid="uid://bu73avqix8cqa" path="res://prefabs/world/save_point.tscn" id="12_aksxv"]
 [ext_resource type="PackedScene" uid="uid://b6dhldkdwokp8" path="res://prefabs/items/bomb_gun.tscn" id="13_muhhf"]
 [ext_resource type="PackedScene" uid="uid://c2le1sh0qkxs" path="res://prefabs/items/dev_item.tscn" id="14_ucru5"]
 [ext_resource type="PackedScene" uid="uid://b14gfsdlfvhmm" path="res://prefabs/items/dagger.tscn" id="16_43ur5"]
@@ -204,6 +204,9 @@ position = Vector2(-704, 1584)
 size = Vector2(3, 0)
 collider_size = Vector2(3, 1)
 
+[node name="save_point" parent="environment" instance=ExtResource("12_aksxv")]
+position = Vector2(72, 240)
+
 [node name="entities" type="Node2D" parent="."]
 
 [node name="devil" parent="entities" instance=ExtResource("10_arfwx")]
@@ -211,9 +214,6 @@ position = Vector2(609, 570)
 
 [node name="devil2" parent="entities" instance=ExtResource("10_arfwx")]
 position = Vector2(24, 1223)
-
-[node name="stationary_hand" parent="entities" instance=ExtResource("10_25hnr")]
-position = Vector2(359, 1492)
 
 [node name="wallsitter" parent="entities" instance=ExtResource("18_51ms2")]
 position = Vector2(1472, 776)
@@ -264,6 +264,9 @@ position = Vector2(-736, 1552)
 [node name="wall_crawler" parent="entities" instance=ExtResource("25_ft1cd")]
 position = Vector2(349, 985)
 
+[node name="roller" parent="entities" instance=ExtResource("26_ibrao")]
+position = Vector2(733, 744)
+
 [node name="player" parent="entities" instance=ExtResource("2_vajox")]
 position = Vector2(5, 103)
 
@@ -280,7 +283,7 @@ position = Vector2(24, 1223)
 position = Vector2(90, 118)
 
 [node name="dagger" parent="." instance=ExtResource("16_43ur5")]
-position = Vector2(359, 1492)
+position = Vector2(176, 413)
 
 [node name="laser_hand2" parent="." instance=ExtResource("17_6muj7")]
 position = Vector2(1472, 776)
@@ -296,6 +299,3 @@ position = Vector2(2055, 760)
 
 [node name="laser_gun3" parent="." instance=ExtResource("19_k1lfl")]
 position = Vector2(2072, 760)
-
-[node name="roller" parent="." instance=ExtResource("26_ibrao")]
-position = Vector2(733, 744)

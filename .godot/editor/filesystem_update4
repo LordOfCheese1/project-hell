@@ -20,3 +20,14 @@ res://prefabs/entities/enemies/wall_crawler.tscn
 res://prefabs/projectiles/bomb_laser.tscn
 res://prefabs/world/decal_walls.tscn
 res://prefabs/world/lava.tscn
+res://scenes/game_over.tscn
+res://scenes/title_screen.tscn
+res://autoloads/global_values.tscn
+res://scripts/levels/title_screen.gd
+res://scripts/user_interface/button.gd
+res://scripts/autoloads/saved_values.gd
+res://prefabs/world/save_point.tscn
+res://prefabs/components/hitbox.tscn
+res://scripts/components/hitbox.gd
+res://scripts/world/save_point.gd
+res://scripts/autoloads/global_values.gd
