@@ -1,9 +1,10 @@
 extends Area2D
 
 var new_gear_rot = 0.0
+var scrap_path = load("res://prefabs/world/scrap.tscn")
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	new_gear_rot += 1.5
 	
 	if $gear.rotation_degrees >= 360:
@@ -24,3 +25,4 @@ func _on_body_entered(body):
 		sv.save_values(true)
 		$finger_left.rotation_degrees = -30
 		$finger_right.rotation_degrees = 30
+		gv.player.hp = gv.player.max_hp

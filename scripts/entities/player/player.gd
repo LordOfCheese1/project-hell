@@ -15,7 +15,8 @@ var max_item_use_cooldown = 25
 var scrap = 0
 var max_hp = 15.0
 var sounds = {
-	"hit" : [load("res://sfx/entities/player/hit/player_hit_0.wav")]
+	"hit" : [load("res://sfx/entities/player/hit/player_hit_0.wav")],
+	"jump" : [load("res://sfx/entities/player/jump/jump0.wav"), load("res://sfx/entities/player/jump/jump1.wav")]
 }
 
 
@@ -124,6 +125,8 @@ func _physics_process(delta):
 
 
 func jump():
+	$jump.pitch_scale = randf_range(0.8, 1.2)
+	$jump.play()
 	jump_held_for = 2
 	velocity.y = -10
 	is_jumping = true
@@ -164,6 +167,7 @@ func _on_hitbox_has_been_hit():
 	hit()
 	gv.hitstop(0.1)
 	$hit.stream = sounds["hit"][randi_range(0, 0)]
+	$hit.pitch_scale = randf_range(0.8, 1.2)
 	$hit.play(0.0)
 	mm.switch_mix_event("Hurt", 0.0)
 	mm.switch_mix_event("NotHurt", 0.5)

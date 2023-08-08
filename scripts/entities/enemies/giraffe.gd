@@ -45,6 +45,10 @@ func _physics_process(_delta):
 		gv.player.position = lerp(gv.player.position, $head.global_position + $head.transform.x * 10, 0.4)
 	
 	entity_update()
+	
+	if hp <= 0:
+		die(6)
+		call_deferred("free")
 
 
 func grab_player():

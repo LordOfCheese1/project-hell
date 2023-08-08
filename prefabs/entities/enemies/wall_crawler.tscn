@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk4ylnbh8j0cl"]
+[gd_scene load_steps=10 format=3 uid="uid://dk4ylnbh8j0cl"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/wall_crawler.gd" id="1_wluy6"]
+[ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="2_aebts"]
 [ext_resource type="Texture2D" uid="uid://clxdotlpcf07h" path="res://textures/entities/wallcrawler/head.png" id="2_o4it6"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="3_m461u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a66pi"]
+radius = 12.0
 
 [sub_resource type="Curve" id="Curve_u5mm6"]
 _data = [Vector2(0, 0.576687), 0.0, 0.0, 0, 0, Vector2(0.199115, 1), 0.0, 0.0, 0, 0, Vector2(0.477876, 0.601227), 0.0, 0.0, 0, 0, Vector2(0.920354, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.680982), 0.0, 0.0, 0, 0]
@@ -14,10 +19,21 @@ colors = PackedColorArray(0.0941176, 0.0941176, 0.129412, 1, 0.470588, 0.117647,
 radius = 4.0
 height = 128.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vh84p"]
+radius = 7.0
+
 [node name="wall_crawler" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_wluy6")
+
+[node name="attackbox" parent="." instance=ExtResource("2_aebts")]
+use_parent_material = true
+damage = 0.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox"]
+shape = SubResource("CircleShape2D_a66pi")
+disabled = true
 
 [node name="line" type="Line2D" parent="."]
 width = 12.0
@@ -27,6 +43,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="head" type="Sprite2D" parent="."]
+use_parent_material = true
 texture = ExtResource("2_o4it6")
 
 [node name="player_detector" type="Area2D" parent="head"]
@@ -36,4 +53,12 @@ position = Vector2(64, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_r5k6y")
 
+[node name="hitbox" parent="." instance=ExtResource("3_m461u")]
+use_parent_material = true
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_vh84p")
+
 [connection signal="body_entered" from="head/player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm8txnxhwlbsf"]
+[gd_scene load_steps=15 format=3 uid="uid://dm8txnxhwlbsf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_knm7x"]
 [ext_resource type="Texture2D" uid="uid://dmxue76w3mm3x" path="res://textures/entities/player/leg.png" id="2_50baq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djfueglvo5g7a" path="res://textures/entities/player/eyes.png" id="5_il2qx"]
 [ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="7_332ni"]
 [ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="8_fe7xh"]
+[ext_resource type="AudioStream" uid="uid://bsbnnj6b2rep1" path="res://sfx/entities/player/jump/jump1.wav" id="8_pwhea"]
 [ext_resource type="Texture2D" uid="uid://brwfmqdilsn5r" path="res://textures/icons/dot.png" id="9_p7poj"]
 [ext_resource type="Texture2D" uid="uid://bt3gimkvsm186" path="res://textures/icons/merge_icon.png" id="10_irf6q"]
 
@@ -67,6 +68,9 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cx5uv")
 
 [node name="hit" type="AudioStreamPlayer" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pwhea")
 
 [node name="progress_bar" type="Node2D" parent="."]
 position = Vector2(0, -24)

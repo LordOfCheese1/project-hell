@@ -25,6 +25,12 @@ func _physics_process(delta):
 		rotation_degrees += velocity.y * 0.05
 	else:
 		velocity = Vector2(0, 0)
+	
+	if grabbed_entity != null:
+		if len($attackbox.ignore_in_detection) > 0:
+			$attackbox.ignore_in_detection[0] = grabbed_entity
+		else:
+			$attackbox.ignore_in_detection.append(null)
 
 func _on_used():
 	target_angle = 0

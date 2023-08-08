@@ -25,6 +25,8 @@ offset = Vector2(7, 0)
 position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_45om3")
 
+[node name="swing" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="used" from="." to="." method="_on_used"]

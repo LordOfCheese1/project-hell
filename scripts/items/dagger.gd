@@ -6,6 +6,15 @@ var projectile_path = load("res://prefabs/projectiles/dagger_swing.tscn")
 var prev_dir = -1
 var target_rot = -100
 var flash_fac = 0.0
+var sounds = [
+	load("res://sfx/items/dagger/dagger0.wav"),
+	load("res://sfx/items/dagger/dagger1.wav"),
+	load("res://sfx/items/dagger/dagger2.wav"),
+	load("res://sfx/items/dagger/dagger3.wav"),
+	load("res://sfx/items/dagger/dagger4.wav"),
+	load("res://sfx/items/dagger/dagger5.wav"),
+	load("res://sfx/items/dagger/dagger6.wav")
+]
 
 
 func _ready():
@@ -45,6 +54,8 @@ func _on_body_exited(body):
 
 
 func _on_used():
+	$swing.stream = sounds[randi_range(0, 6)]
+	$swing.play()
 	flash_fac = 1.0
 	target_rot = 100 * -prev_dir
 	var projectile = projectile_path.instantiate()

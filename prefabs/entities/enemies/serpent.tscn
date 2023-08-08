@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://y3jh1hmif7h2"]
+[gd_scene load_steps=10 format=3 uid="uid://y3jh1hmif7h2"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/serpent.gd" id="1_og10g"]
 [ext_resource type="Texture2D" uid="uid://b74dfdcslrp5y" path="res://textures/entities/serpent/upper_head.png" id="2_1nyja"]
 [ext_resource type="Texture2D" uid="uid://mheccj8ogbjs" path="res://textures/entities/serpent/eye.png" id="2_8lqfm"]
 [ext_resource type="Texture2D" uid="uid://cg1288lontf1u" path="res://textures/entities/serpent/lower_head.png" id="3_3dbkm"]
 [ext_resource type="Texture2D" uid="uid://hsfydacsvaq5" path="res://textures/entities/serpent/plume.png" id="4_tfgfn"]
+[ext_resource type="PackedScene" uid="uid://cdth6i3giacnl" path="res://prefabs/components/hitbox.tscn" id="6_u4sed"]
 
 [sub_resource type="Curve" id="Curve_dfk2k"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.774336, 0.165644), 0.0, 0.0, 0, 0, Vector2(1, 0.239264), 0.0, 0.0, 0, 0]
@@ -14,11 +15,15 @@ point_count = 3
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.257669), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ke7p"]
+size = Vector2(33, 21)
+
 [node name="serpent" type="CharacterBody2D"]
 script = ExtResource("1_og10g")
 points = 16
 
 [node name="body" type="Node2D" parent="."]
+use_parent_material = true
 
 [node name="neck" type="Line2D" parent="body"]
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -35,23 +40,37 @@ default_color = Color(0.960784, 0.917647, 0.517647, 1)
 end_cap_mode = 2
 
 [node name="eye" type="Sprite2D" parent="body"]
+use_parent_material = true
 texture = ExtResource("2_8lqfm")
 
 [node name="head" type="Node2D" parent="body"]
+use_parent_material = true
 
 [node name="plume" type="Sprite2D" parent="body/head"]
+use_parent_material = true
 position = Vector2(-5, 0)
 texture = ExtResource("4_tfgfn")
 
 [node name="lower_head" type="Sprite2D" parent="body/head"]
+use_parent_material = true
 position = Vector2(-2, 0)
 texture = ExtResource("3_3dbkm")
 offset = Vector2(10, 2)
 
 [node name="upper_head" type="Sprite2D" parent="body/head"]
+use_parent_material = true
 texture = ExtResource("2_1nyja")
 offset = Vector2(9, -3)
 
 [node name="looker" type="Node2D" parent="."]
 
 [node name="tongue_looker" type="Node2D" parent="."]
+
+[node name="hitbox" parent="." instance=ExtResource("6_u4sed")]
+entity = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(4.5, -0.5)
+shape = SubResource("RectangleShape2D_6ke7p")
+
+[connection signal="has_been_hit" from="hitbox" to="." method="_on_hitbox_has_been_hit"]

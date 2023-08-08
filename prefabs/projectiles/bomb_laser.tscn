@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwrdo8d5xayke"]
+[gd_scene load_steps=4 format=3 uid="uid://bwrdo8d5xayke"]
 
 [ext_resource type="Texture2D" uid="uid://bx3ffayp62tra" path="res://textures/particles/fire_spark.png" id="1_p5gki"]
+[ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="2_m2stb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uico8"]
+size = Vector2(4, 4)
 
 [node name="bomb_laser" type="Area2D"]
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_p5gki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uico8")
+
+[node name="particle_spawner" parent="." instance=ExtResource("2_m2stb")]

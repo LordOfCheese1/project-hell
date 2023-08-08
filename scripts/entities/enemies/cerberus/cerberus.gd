@@ -10,11 +10,11 @@ var laser_spawn_cooldown = 0
 var laser_head_rot_dir = 0
 var poison_cooldown = 200
 var orig_laser_head_rot = 0
-#fmod stuffs
+var second_phase = false
 
 
 func _ready():
-	setup_entity(22, 0, 2)
+	setup_entity(36, 0, 2)
 	$body/head_1/screw/particle_spawner.is_emitting = false
 
 
@@ -40,13 +40,13 @@ func _physics_process(delta):
 			else:
 				start_laser()
 		if is_lasering:
-			$body/head_0.desired_head_rot = orig_laser_head_rot - laser_attack_cooldown * laser_head_rot_dir
+			$body/head_0.desired_head_rot = (orig_laser_head_rot - laser_attack_cooldown) + 30
 			if laser_spawn_cooldown > 0:
 				laser_spawn_cooldown -= 1
 			else:
 				spawn_laser()
 			$body/head_1.is_doing_something = false
-		else:
+		else: #Do poison stuff
 			$body/head_1.is_doing_something = true
 			$looker.look_at(Vector2(gv.player.position.x, gv.player.position.y - 80))
 			$body/head_1.desired_head_rot = $looker.rotation_degrees
@@ -80,15 +80,18 @@ func _process(_delta):
 		spot_player()
 	
 	#switch boss music to v2 when cerberus is at Low health
-	if hp <= 10 && !is_dead:
+	if hp <= 18 && !second_phase:
+		second_phase = true
 		mm.switch_boss_param("LowHealth")
-		
 
 
 func start_laser():
-	orig_laser_head_rot = $body/head_0/screw.rotation_degrees
+	laser_head_rot_dir = ((gv.player.position.x - position.x) / abs(gv.player.position.x - position.x)) #get direction to player
+	laser_attack_cooldown = 150
+	$body/head_0/screw.look_at(Vector2(gv.player.position.x, gv.player.position.y - 50))
+	$looker.look_at(gv.player.position)
+	orig_laser_head_rot = $looker.rotation_degrees
 	laser_spawn_cooldown = 10
-	laser_attack_cooldown = 140
 	$body/head_0.is_doing_something = true
 	is_lasering = true
 
@@ -100,14 +103,12 @@ func end_laser():
 
 
 func spawn_laser():
-	if laser_attack_cooldown < 130:
-		laser_head_rot_dir = ((gv.player.position.x - position.x) / abs(gv.player.position.x - position.x))
-		laser_spawn_cooldown = 5
-		var laser_inst = laser_path.instantiate()
-		laser_inst.rotation_degrees = $body/head_0/screw.rotation_degrees
-		laser_inst.global_position = $body/head_0/screw.global_position
-		laser_inst.get_child(0).ignore_in_detection.append(self)
-		get_tree().current_scene.add_child(laser_inst)
+	laser_spawn_cooldown = 5
+	var laser_inst = laser_path.instantiate()
+	laser_inst.rotation_degrees = $body/head_0/screw.rotation_degrees
+	laser_inst.global_position = $body/head_0/screw.global_position
+	laser_inst.get_child(0).ignore_in_detection.append(self)
+	get_tree().current_scene.add_child(laser_inst)
 
 
 func spawn_poison():

@@ -20,14 +20,14 @@ func _physics_process(delta):
 	target_pos = get_global_mouse_position()
 	
 	var prev_part = target_pos
-	for i in $leg_parts.get_child_count():
-		$leg_parts.get_child(i).look_at(prev_part)
-		$leg_parts.get_child(i).position = prev_part - $leg_parts.get_child(i).transform.x * 16
-		prev_part = $leg_parts.get_child(i).position
+	for i in $leg_parts.get_child_count(): #Loop through segments
+		$leg_parts.get_child(i).look_at(prev_part) #Look at previous part
+		$leg_parts.get_child(i).position = prev_part - $leg_parts.get_child(i).transform.x * 16 #put current point behind prev segment
+		prev_part = $leg_parts.get_child(i).position 
 	
-	var dst_to_move = $leg_parts.get_child($leg_parts.get_child_count() - 1).position - Vector2(0, 0)
+	var dst_to_move = $leg_parts.get_child($leg_parts.get_child_count() - 1).position - Vector2(0, 0) #get distance from first segment to init(which is (0, 0)
 	
-	for i in $leg_parts.get_children():
+	for i in $leg_parts.get_children(): #Move all segments back by the distance calculated above
 		i.position -= dst_to_move
 	
 	last_part_pos = $leg_parts.get_child($leg_parts.get_child_count() - 1).position

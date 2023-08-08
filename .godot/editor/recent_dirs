@@ -1,3 +1,5 @@
+res://scripts/projectiles
+res://prefabs/projectiles
 res://scripts/entities/enemies/spider
 res://prefabs/entities/enemies/spider
 C:/Gamedev/Godot4/project-hell
@@ -5,8 +7,6 @@ res://scripts/world
 res://prefabs/world
 res://prefabs/entities
 res://scenes
-res://scripts/projectiles
-res://prefabs/projectiles
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
 C:/Gamedev/Godot4/Exports/project-hell/modloader-test

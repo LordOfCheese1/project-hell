@@ -1,14 +1,15 @@
+AudioStreamPlayer
+CollisionShape2D
+Sprite2D
+Area2D
 Node2D
 CharacterBody2D
 RayCast2D
 Polygon2D
-CollisionShape2D
-Area2D
 Line2D
 Node
 ColorRect
 CanvasModulate
-Sprite2D
 Label
 TileMap
 Timer
@@ -16,7 +17,6 @@ VisibleOnScreenEnabler2D
 StaticBody2D
 CanvasLayer
 CanvasGroup
-AudioStreamPlayer
 TextureProgressBar
 StudioEventEmitter2D
 MeshInstance2D

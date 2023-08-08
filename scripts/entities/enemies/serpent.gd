@@ -4,15 +4,17 @@ extends "res://scripts/classes/entity_class.gd"
 var attack_cooldown = 80
 var active_attack = 0
 var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
-var bomb_path = load("res://prefabs/projectiles/bomb.tscn")
+var laser_path = load("res://prefabs/projectiles/sparklaser.tscn")
 var current_attack_phase = 0
 var spotted_player = false
-var tongue_progress = 0
+var tongue_progress = 0.0
 var current_attack = 0
+var tongue_out = false
+var laser_cooldown = 10
 
 
 func _ready():
-	setup_entity(50, 0, 1)
+	setup_entity(35, 0, 1)
 	
 	$body/neck.clear_points()
 	for i in range(points):
@@ -42,25 +44,49 @@ func _physics_process(_delta):
 	else:
 		$body/head.scale.y = lerp($body/head.scale.y, -1.0, 0.2)
 	
-	$body/head/lower_head.rotation_degrees = lerp($body/head/lower_head.rotation_degrees, 20.0 - (attack_cooldown / 4), 0.2)
-	$body/head/upper_head.rotation_degrees = lerp($body/head/upper_head.rotation_degrees, -(80.0 - attack_cooldown), 0.2)
+	if !tongue_out:
+		$body/head/lower_head.rotation_degrees = lerp($body/head/lower_head.rotation_degrees, 20.0 - (attack_cooldown / 5.0), 0.2)
+		$body/head/upper_head.rotation_degrees = lerp($body/head/upper_head.rotation_degrees, -(80.0 - attack_cooldown * 0.8), 0.2)
 	
 	
 	if attack_cooldown > 0:
 		if active_attack <= 0 && spotted_player:
 			attack_cooldown -= 1
 	else:
-		attack_cooldown = 80
-		active_attack = 60
+		attack_cooldown = 100.0
 		if current_attack == 0:
+			active_attack = 60
 			chomp_attack()
 			current_attack = 1
 		elif current_attack == 1:
-			bomb_attack()
+			laser_cooldown = 20
+			active_attack = 100
 			current_attack = 0
+			tongue_out = true
 	
 	if active_attack > 0:
 		active_attack -= 1
+	else:
+		tongue_out = false
+	
+	if tongue_out:
+		$body/head/lower_head.rotation_degrees = lerp($body/head/lower_head.rotation_degrees, 60.0, 0.2)
+		$body/head/upper_head.rotation_degrees = lerp($body/head/upper_head.rotation_degrees, -60.0, 0.2)
+		tongue_progress = lerp(float(tongue_progress), 1.0, 0.1)
+		if laser_cooldown > 0:
+			laser_cooldown -= 1
+		else:
+			laser_cooldown = 8
+			shoot_laser()
+		
+	else:
+		tongue_progress = lerp(float(tongue_progress), 0.0, 0.1)
+	
+	
+	$hitbox.rotation_degrees = $body/head.rotation_degrees
+	$hitbox.position = $body/head.position
+	
+	entity_update()
 
 
 func spot_player():
@@ -71,21 +97,24 @@ func chomp_attack():
 	var orig_head_transform = $body/head.transform.x
 	for i in range(9):
 		var chomp_inst = chomp_path.instantiate()
+		chomp_inst.get_child(0).ignore_in_detection.append(self)
 		chomp_inst.position = $body/head.global_position + orig_head_transform * 10 + orig_head_transform * 12 * i
 		get_tree().current_scene.add_child(chomp_inst)
 		await get_tree().create_timer(0.02).timeout
 
 
-func bomb_attack():
-	var bomb_inst = bomb_path.instantiate()
-	bomb_inst.position = $body/head.global_position
-	bomb_inst.rotation_degrees = $body/head.rotation_degrees
-	get_tree().current_scene.add_child(bomb_inst)
+func shoot_laser():
+	var laser_inst = laser_path.instantiate()
+	laser_inst.position = $body/eye.global_position
+	laser_inst.rotation_degrees = $body/eye.rotation_degrees
+	laser_inst.get_child(0).ignore_in_detection.append(self)
+	get_tree().current_scene.add_child(laser_inst)
 
 
 func tongue_motions():
+	var prev_eye_rot = $body/eye.rotation_degrees
 	$tongue_looker.position = $body/head.position
-	$body/eye.position = $tongue_looker.position + $tongue_looker.transform.x * 48 * tongue_progress
+	$body/eye.position = $tongue_looker.position + $tongue_looker.transform.x * 24 * tongue_progress
 	if tongue_progress > 0:
 		var prev_rot = $tongue_looker.rotation_degrees
 		if gv.player != null:
@@ -95,10 +124,15 @@ func tongue_motions():
 		
 		$body/tongue.position = $body/head.position
 		$body/tongue.points[0] = Vector2(0, 0)
-		$body/tongue.points[9] = $tongue_looker.transform.x * 48 * tongue_progress
+		$body/tongue.points[9] = $tongue_looker.transform.x * 24 * tongue_progress
 		
 		for i in range(len($body/tongue.points) - 2):
 			$body/tongue.points[i + 1] += ($body/tongue.points[i] - $body/tongue.points[i + 1]) * 0.4 #Snap towards previous point
 			$body/tongue.points[i + 1] += ($body/tongue.points[i + 2] - $body/tongue.points[i + 1]) * 0.4 #Snap towards next point
 		
 		$body/eye.look_at(gv.player.position)
+		$body/eye.rotation_degrees = lerp(prev_eye_rot, $body/eye.rotation_degrees, 0.1)
+
+
+func _on_hitbox_has_been_hit():
+	hit()
