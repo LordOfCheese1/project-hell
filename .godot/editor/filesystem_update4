@@ -1,11 +1,8 @@
-res://prefabs/projectiles/chomp_explosion.tscn
+res://scenes/levels/00_hellgates.tscn
 res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres
 res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres
 res://addons/FMOD/editor/resources/parameters/{62137e18-39de-43a4-84e4-fa933d51a995}.tres
 res://addons/FMOD/editor/resources/parameters/{bda6838f-d187-4205-b530-1f05674472c5}.tres
-res://prefabs/entities/player.tscn
-res://scripts/entities/player/player.gd
-res://scenes/levels/00_hellgates.tscn
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/world/scrap.tscn
@@ -17,6 +14,10 @@ res://prefabs/projectiles/bomb_laser.tscn
 res://scenes/game_over.tscn
 res://scenes/title_screen.tscn
 res://prefabs/world/save_point.tscn
-res://scripts/autoloads/saved_values.gd
+res://prefabs/projectiles/chomp_explosion.tscn
 res://prefabs/items/dagger.tscn
-res://scripts/items/dagger.gd
+res://prefabs/projectiles/big_fireball.tscn
+res://prefabs/entities/player.tscn
+res://prefabs/entities/death.tscn
+res://scripts/entities/death.gd
+res://scripts/autoloads/saved_values.gd
