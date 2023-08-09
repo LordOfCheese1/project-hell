@@ -91,6 +91,7 @@ func _physics_process(_delta):
 
 func spot_player():
 	spotted_player = true
+	mm.switch_fmod_event("LVL2Boss")
 
 
 func chomp_attack():
