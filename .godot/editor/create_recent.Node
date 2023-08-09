@@ -1,12 +1,12 @@
-AudioStreamPlayer
+Line2D
 CollisionShape2D
 Sprite2D
+Polygon2D
 Area2D
+AudioStreamPlayer
 Node2D
 CharacterBody2D
 RayCast2D
-Polygon2D
-Line2D
 Node
 ColorRect
 CanvasModulate

@@ -5,16 +5,20 @@ var attack_cooldown = 80
 var active_attack = 0
 var chomp_path = load("res://prefabs/projectiles/chomp_explosion.tscn")
 var laser_path = load("res://prefabs/projectiles/sparklaser.tscn")
+var fireball_scene = load("res://prefabs/projectiles/big_fireball.tscn")
+var giraffe_scene = load("res://prefabs/entities/enemies/giraffe.tscn")
 var current_attack_phase = 0
 var spotted_player = false
 var tongue_progress = 0.0
 var current_attack = 0
 var tongue_out = false
 var laser_cooldown = 10
+var giraffe_positions = [-846, -626]
+var second_phase = false
 
 
 func _ready():
-	setup_entity(35, 0, 1)
+	setup_entity(40, 0, 1)
 	
 	$body/neck.clear_points()
 	for i in range(points):
@@ -61,8 +65,12 @@ func _physics_process(_delta):
 		elif current_attack == 1:
 			laser_cooldown = 20
 			active_attack = 100
-			current_attack = 0
+			current_attack = 2
 			tongue_out = true
+		elif current_attack == 2:
+			active_attack = 80
+			current_attack = 0
+			fire_attack()
 	
 	if active_attack > 0:
 		active_attack -= 1
@@ -86,6 +94,16 @@ func _physics_process(_delta):
 	$hitbox.rotation_degrees = $body/head.rotation_degrees
 	$hitbox.position = $body/head.position
 	
+	
+	if hp <= 20 && !second_phase:
+		second_phase = true
+		for i in giraffe_positions:
+			var giraffe = giraffe_scene.instantiate()
+			giraffe.position = Vector2(i, 1552)
+			giraffe.points = 10
+			get_tree().current_scene.call_deferred("add_child", giraffe)
+	
+	
 	entity_update()
 
 
@@ -101,6 +119,14 @@ func chomp_attack():
 		chomp_inst.position = $body/head.global_position + orig_head_transform * 10 + orig_head_transform * 12 * i
 		get_tree().current_scene.add_child(chomp_inst)
 		await get_tree().create_timer(0.02).timeout
+
+
+func fire_attack():
+	var fireball = fireball_scene.instantiate()
+	fireball.rotation_degrees = $body/head.rotation_degrees
+	fireball.get_child(0).ignore_in_detection.append(self)
+	fireball.global_position = $body/head.global_position
+	get_tree().current_scene.call_deferred("add_child", fireball)
 
 
 func shoot_laser():

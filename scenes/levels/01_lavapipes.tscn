@@ -253,14 +253,6 @@ points = 8
 position = Vector2(-247, 1600)
 points = 8
 
-[node name="giraffe3" parent="entities" instance=ExtResource("20_my67o")]
-position = Vector2(-846, 1552)
-points = 10
-
-[node name="giraffe4" parent="entities" instance=ExtResource("20_my67o")]
-position = Vector2(-626, 1552)
-points = 10
-
 [node name="serpent" parent="entities" instance=ExtResource("20_wuh5r")]
 position = Vector2(-736, 1552)
 
