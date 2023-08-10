@@ -24,3 +24,5 @@ res://scripts/world/tutorial_popup.gd
 res://scripts/entities/enemies/roller.gd
 res://autoloads/music_manager.tscn
 res://scripts/autoloads/music_manager.gd
+res://scripts/entities/enemies/cerberus/cerberus.gd
+res://scripts/world/level.gd

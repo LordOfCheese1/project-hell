@@ -74,7 +74,6 @@ func _process(_delta):
 		mm.switch_boss_param("Victory")
 		mm.switch_fmod_event("LVL1", 3.0)
 		call_deferred("free")
-		print("cerberus dead")
 	
 	if !spotted_player && position.distance_to(gv.player.position) < 128:
 		spot_player()
