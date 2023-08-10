@@ -10,7 +10,7 @@ func _ready():
 	$CollisionShape2D.scale = size
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player_in_range:
 		get_child(1).scale = lerp(get_child(1).scale, Vector2(1, 1), 0.1)
 		get_child(1).modulate.a = lerp(get_child(1).modulate.a, 1.0, 0.15)

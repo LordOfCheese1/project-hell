@@ -5,4 +5,3 @@ extends Node2D
 
 func _ready():
 	mm.switch_fmod_event(param_name)
-	mm.switch_boss_param("Start")

@@ -26,7 +26,8 @@ func switch_fmod_event(value : String, wait_time = 0.0):
 	if wait_time != 0.0:
 		await get_tree().create_timer(wait_time, true, false, true).timeout
 	musicInstance.set_parameter_by_name_with_label("MusicChange", value, false)
-	
+	mm.switch_boss_param("Start")
+
 #change mix parameter	
 func switch_mix_event(value : String, wait_time = 0.0):
 	if wait_time != 0.0:
