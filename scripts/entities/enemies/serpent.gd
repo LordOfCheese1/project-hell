@@ -103,7 +103,6 @@ func _physics_process(_delta):
 			giraffe.points = 10
 			get_tree().current_scene.call_deferred("add_child", giraffe)
 	
-	
 	entity_update()
 
 

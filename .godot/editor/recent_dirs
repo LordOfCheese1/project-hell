@@ -1,11 +1,11 @@
+res://scripts/world
+res://prefabs/world
 res://scripts/entities
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies/spider
 res://prefabs/entities/enemies/spider
 C:/Gamedev/Godot4/project-hell
-res://scripts/world
-res://prefabs/world
 res://prefabs/entities
 res://scenes
 res://scripts/entities/enemies

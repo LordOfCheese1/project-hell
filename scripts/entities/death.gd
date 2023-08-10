@@ -26,6 +26,6 @@ func beard_movements(delta : float):
 		var force = ($beard.points[i + 1].distance_to(prev_point) - 4) * 5.0
 		point_velocities[i] = (prev_point - $beard.points[i]) * force
 		
-		$beard.points[i + 1] += point_velocities[i]# * delta
+		$beard.points[i + 1] += point_velocities[i] * delta
 		
 		prev_point = $beard.points[i + 1]

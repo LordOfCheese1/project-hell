@@ -5,7 +5,7 @@ var spotted_player = false
 var current_box_pos = -17
 var cooldown = 20
 var dir_to_player = 0
-var projectile_scene = load("res://prefabs/projectiles/energy_spark.tscn")
+var projectile_scene = load("res://prefabs/projectiles/sparklaser.tscn")
 var attack_cooldown = 0
 
 
@@ -50,7 +50,7 @@ func _physics_process(delta):
 	if spotted_player:
 		if attack_cooldown > 0:
 			attack_cooldown -= 1
-		elif position.distance_to(gv.player.position) < 64:
+		elif position.distance_to(gv.player.position) < 128:
 			attack_cooldown = 50
 			attack()
 	

@@ -19,5 +19,8 @@ res://prefabs/items/dagger.tscn
 res://prefabs/projectiles/big_fireball.tscn
 res://prefabs/entities/player.tscn
 res://prefabs/entities/death.tscn
-res://scripts/entities/death.gd
-res://scripts/autoloads/saved_values.gd
+res://prefabs/world/tutorial_popup.tscn
+res://scripts/world/tutorial_popup.gd
+res://scripts/entities/enemies/roller.gd
+res://autoloads/music_manager.tscn
+res://scripts/autoloads/music_manager.gd

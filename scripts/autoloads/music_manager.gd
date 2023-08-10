@@ -11,7 +11,7 @@ func _ready():
 	mixInstance = RuntimeManager.create_instance(mixEvent)
 	if sv.values["music_is_playing"] == true:
 		musicInstance.start()
-		mixInstance.start() # Remove/Comment this out if you want your game to have no music
+		mixInstance.start()
 
 #change parameter within level music
 func switch_level_param(value : String):
