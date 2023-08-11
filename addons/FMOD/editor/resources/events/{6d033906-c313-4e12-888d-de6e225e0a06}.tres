@@ -1,66 +1,66 @@
 [gd_resource type="EventAsset" load_steps=10 format=3 uid="uid://bsnhude3rimi6"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_jwoda"]
-data1 = 1069653682
-data2 = 199517189
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_0nj5k"]
-name = "Boss"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_jwoda")
-maximum = 2.0
-flags = 24
-guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
-
-[sub_resource type="ParameterAsset" id="ParameterAsset_r5dsw"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_0nj5k")
-labels = ["Start", "LowHealth", "Victory"]
-path = "parameter:/Boss"
-guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
-name = "Boss"
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_h6pa5"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_ovuhi"]
 data1 = 1431423629
 data2 = 425412405
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_r8h0q"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_u0opt"]
 name = "MusicChange"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_h6pa5")
-maximum = 5.0
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_ovuhi")
+maximum = 6.0
 flags = 24
 guid = "{a7e22802-7519-4acc-aed2-d20f7518e1e6}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_sc72i"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_r8h0q")
-labels = ["LVL1", "LVL1Boss", "LVL2", "LVL2Boss", "LVL3", "LVL3Boss"]
+[sub_resource type="ParameterAsset" id="ParameterAsset_gplx4"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_u0opt")
+labels = ["LVL1", "LVL1Boss", "LVL2", "LVL2Boss", "LVL3", "LVL3Boss", "Silence"]
 path = "parameter:/MusicChange"
 guid = "{a7e22802-7519-4acc-aed2-d20f7518e1e6}"
 name = "MusicChange"
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_ktcws"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_xnins"]
 data1 = 2698993571
 data2 = 2410977455
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_ll7w8"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_w0erl"]
 name = "LevelVar"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_ktcws")
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_xnins")
 maximum = 1.0
 flags = 24
 guid = "{c5288052-5771-4dd5-8170-02db062c925c}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_w3tnq"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_ll7w8")
+[sub_resource type="ParameterAsset" id="ParameterAsset_w0x5x"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_w0erl")
 labels = ["Start", "Var1"]
 path = "parameter:/LevelVar"
 guid = "{c5288052-5771-4dd5-8170-02db062c925c}"
 name = "LevelVar"
 
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_xi77o"]
+data1 = 1069653682
+data2 = 199517189
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain"]
+name = "Boss"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_xi77o")
+maximum = 2.0
+flags = 24
+guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_gjdlq"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain")
+labels = ["Start", "LowHealth", "Victory"]
+path = "parameter:/Boss"
+guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
+name = "Boss"
+
 [resource]
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
-"{90a41af1-9930-4e53-b3d4-c9093a961b57}": SubResource("ParameterAsset_r5dsw"),
-"{a7e22802-7519-4acc-aed2-d20f7518e1e6}": SubResource("ParameterAsset_sc72i"),
-"{c5288052-5771-4dd5-8170-02db062c925c}": SubResource("ParameterAsset_w3tnq")
+"{90a41af1-9930-4e53-b3d4-c9093a961b57}": SubResource("ParameterAsset_gjdlq"),
+"{a7e22802-7519-4acc-aed2-d20f7518e1e6}": SubResource("ParameterAsset_gplx4"),
+"{c5288052-5771-4dd5-8170-02db062c925c}": SubResource("ParameterAsset_w0x5x")
 }
 path = "event:/GlobalMusic"
 guid = "{6d033906-c313-4e12-888d-de6e225e0a06}"
