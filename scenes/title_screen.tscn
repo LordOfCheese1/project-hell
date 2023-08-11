@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c564hrb2h6b1b"]
+[gd_scene load_steps=7 format=3 uid="uid://c564hrb2h6b1b"]
 
 [ext_resource type="Script" path="res://scripts/levels/title_screen.gd" id="1_y1xnr"]
 [ext_resource type="FontFile" uid="uid://dvi6fokkws0s0" path="res://fonts/hell_font.ttf" id="2_p0555"]
 [ext_resource type="PackedScene" uid="uid://bc3lkgruflwk2" path="res://prefabs/user_interface/button.tscn" id="3_q0nvy"]
 [ext_resource type="Texture2D" uid="uid://bmjh70rdqyoyx" path="res://textures/user_interface/border_button.png" id="4_6aqxk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymnqf"]
+font = ExtResource("2_p0555")
+font_color = Color(0.0352941, 0.0352941, 0.0509804, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_atpru"]
 font = ExtResource("2_p0555")
@@ -17,6 +21,17 @@ script = ExtResource("1_y1xnr")
 offset_right = 384.0
 offset_bottom = 256.0
 color = Color(0.470588, 0.117647, 0.215686, 1)
+
+[node name="title" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 79.0
+offset_right = 272.0
+offset_bottom = 102.0
+pivot_offset = Vector2(72, 11)
+text = "PROJECT:   HELL"
+label_settings = SubResource("LabelSettings_ymnqf")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="play" parent="." instance=ExtResource("3_q0nvy")]
 position = Vector2(192, 128)
@@ -52,5 +67,24 @@ vertical_alignment = 1
 [node name="border_button" type="Sprite2D" parent="quit"]
 texture = ExtResource("4_6aqxk")
 
+[node name="delete_save" parent="." instance=ExtResource("3_q0nvy")]
+position = Vector2(192, 210)
+size = Vector2(32, 12)
+
+[node name="Label" type="Label" parent="delete_save"]
+offset_left = -30.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 12.0
+text = "DELETE SAVE"
+label_settings = SubResource("LabelSettings_atpru")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="border_button" type="Sprite2D" parent="delete_save"]
+texture = ExtResource("4_6aqxk")
+
 [connection signal="clicked" from="play" to="." method="_on_play_clicked"]
 [connection signal="clicked" from="quit" to="." method="_on_quit_clicked"]
+[connection signal="clicked" from="delete_save" to="." method="_on_delete_save_clicked"]

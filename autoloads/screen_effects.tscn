@@ -22,160 +22,120 @@ offset_bottom = 256.0
 visible = false
 
 [node name="ui_tentacle" parent="tentacles" instance=ExtResource("3_tet0k")]
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle28" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(21, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle29" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(47, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle30" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(99, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle31" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(272, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle32" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(359, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle33" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(362, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle34" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(252, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle35" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(113, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle9" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(72, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle10" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(130, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle11" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(1.90735e-06, 30)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle12" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(1.90735e-06, 79)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle13" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(1.90735e-06, 170)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle14" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(1.13687e-13, 217)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle15" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(26, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle16" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(83, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle36" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(71, 255)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle37" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(41, 255)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle17" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(141, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle18" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(224, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle19" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(277, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle20" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(329, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle21" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 224)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle22" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 171)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle23" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 77)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle24" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 23)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle25" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(317, 1.90735e-06)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle26" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(234, 1.13687e-13)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle27" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(157, 6.77626e-21)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle5" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(192, 0)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle6" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(192, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle2" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 9.53674e-07)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle7" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 128)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle38" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 197)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle39" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 146)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle40" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(-3.55271e-15, 100)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle8" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(0, 128)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle3" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(384, 256)
-scale = Vector2(1, 1)
 
 [node name="ui_tentacle4" parent="tentacles" instance=ExtResource("3_tet0k")]
 position = Vector2(5.96046e-08, 256)
-scale = Vector2(1, 1)

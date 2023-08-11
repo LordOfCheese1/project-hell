@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ijs4dlp405ga"]
+[gd_scene load_steps=29 format=3 uid="uid://ijs4dlp405ga"]
 
 [ext_resource type="Script" path="res://scripts/world/level.gd" id="1_0r16f"]
 [ext_resource type="PackedScene" uid="uid://f17hcev0cvv2" path="res://prefabs/world/bg_walls.tscn" id="1_iword"]
@@ -26,11 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://y3jh1hmif7h2" path="res://prefabs/entities/enemies/serpent.tscn" id="20_wuh5r"]
 [ext_resource type="PackedScene" uid="uid://dk4ylnbh8j0cl" path="res://prefabs/entities/enemies/wall_crawler.tscn" id="25_ft1cd"]
 [ext_resource type="PackedScene" uid="uid://cefml1p8tygdi" path="res://prefabs/entities/enemies/roller.tscn" id="26_ibrao"]
-[ext_resource type="Script" path="res://scripts/world/param_change_trigger.gd" id="27_2h7nc"]
+[ext_resource type="PackedScene" uid="uid://c5arx6hdg1yvd" path="res://prefabs/world/music_changer.tscn" id="27_cdiyd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c631h"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jabty"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q171j"]
+size = Vector2(16, 48)
 
 [node name="01_lavapipes" type="Node2D"]
 script = ExtResource("1_0r16f")
@@ -215,6 +214,20 @@ position = Vector2(72, 240)
 [node name="save_point" parent="environment/save_point" instance=ExtResource("12_aksxv")]
 position = Vector2(-320, 1216)
 
+[node name="music_changer" parent="environment" instance=ExtResource("27_cdiyd")]
+position = Vector2(-544, 1208)
+param_name = "Silence"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer"]
+shape = SubResource("RectangleShape2D_q171j")
+
+[node name="music_changer2" parent="environment" instance=ExtResource("27_cdiyd")]
+position = Vector2(-527, 1208)
+param_name = "LVL2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer2"]
+shape = SubResource("RectangleShape2D_q171j")
+
 [node name="entities" type="Node2D" parent="."]
 
 [node name="devil" parent="entities" instance=ExtResource("10_arfwx")]
@@ -299,39 +312,3 @@ position = Vector2(2055, 760)
 
 [node name="laser_gun3" parent="." instance=ExtResource("19_k1lfl")]
 position = Vector2(2072, 760)
-
-[node name="music_silence_trigger2" type="Area2D" parent="."]
-position = Vector2(-850, 1215)
-scale = Vector2(46.2401, 1)
-script = ExtResource("27_2h7nc")
-param = "Silence"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="music_silence_trigger2"]
-position = Vector2(575, -1217)
-shape = SubResource("RectangleShape2D_c631h")
-
-[node name="music_LVL2_trigger2" type="Area2D" parent="."]
-position = Vector2(-879, 1215)
-script = ExtResource("27_2h7nc")
-param = "LVL2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="music_LVL2_trigger2"]
-shape = SubResource("RectangleShape2D_jabty")
-
-[node name="music_silence_trigger" type="Area2D" parent="."]
-position = Vector2(-575, 1217)
-scale = Vector2(6.8, 1)
-script = ExtResource("27_2h7nc")
-param = "Silence"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="music_silence_trigger"]
-position = Vector2(575, -1217)
-shape = SubResource("RectangleShape2D_c631h")
-
-[node name="music_LVL2_trigger" type="Area2D" parent="."]
-position = Vector2(-525, 1211)
-script = ExtResource("27_2h7nc")
-param = "LVL2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="music_LVL2_trigger"]
-shape = SubResource("RectangleShape2D_jabty")

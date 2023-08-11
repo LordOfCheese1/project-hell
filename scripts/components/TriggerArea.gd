@@ -11,8 +11,3 @@ signal param_Name(paramName1, paramName2, paramName3, paramName4, paramName5)
 
 func _ready():
 	emit_signal("param_Name", paramName1, paramName2, paramName3, paramName4, paramName5)
-
- 
-
-
-

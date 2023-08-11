@@ -72,6 +72,12 @@ func load_values(from_file = false):
 			i.grabbed_entity = gv.player
 
 
+func delete_save():
+	if FileAccess.file_exists(OS.get_executable_path().get_base_dir() + "/" + "save_file.json"):
+		var file = FileAccess.open(OS.get_executable_path().get_base_dir() + "/" + "save_file.json", FileAccess.WRITE)
+		file.store_string("")
+
+
 func switch_scene(scene : String, player_pos, is_in_playable_scene = true):
 	temp_pos_save = player_pos
 	if is_in_playable_scene:

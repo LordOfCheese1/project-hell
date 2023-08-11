@@ -1,5 +1,23 @@
 [gd_resource type="EventAsset" load_steps=10 format=3 uid="uid://bsnhude3rimi6"]
 
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_xi77o"]
+data1 = 1069653682
+data2 = 199517189
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain"]
+name = "Boss"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_xi77o")
+maximum = 2.0
+flags = 24
+guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_gjdlq"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain")
+labels = ["Start", "LowHealth", "Victory"]
+path = "parameter:/Boss"
+guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
+name = "Boss"
+
 [sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_ovuhi"]
 data1 = 1431423629
 data2 = 425412405
@@ -35,24 +53,6 @@ labels = ["Start", "Var1"]
 path = "parameter:/LevelVar"
 guid = "{c5288052-5771-4dd5-8170-02db062c925c}"
 name = "LevelVar"
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_xi77o"]
-data1 = 1069653682
-data2 = 199517189
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain"]
-name = "Boss"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_xi77o")
-maximum = 2.0
-flags = 24
-guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
-
-[sub_resource type="ParameterAsset" id="ParameterAsset_gjdlq"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_dbain")
-labels = ["Start", "LowHealth", "Victory"]
-path = "parameter:/Boss"
-guid = "{90a41af1-9930-4e53-b3d4-c9093a961b57}"
-name = "Boss"
 
 [resource]
 min_distance = 1.0

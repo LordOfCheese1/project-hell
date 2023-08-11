@@ -103,6 +103,13 @@ func _physics_process(_delta):
 			giraffe.points = 10
 			get_tree().current_scene.call_deferred("add_child", giraffe)
 	
+	
+	if hp <= 0:
+		die(20)
+		mm.switch_fmod_event("LVL2")
+		call_deferred("free")
+	
+	
 	entity_update()
 
 

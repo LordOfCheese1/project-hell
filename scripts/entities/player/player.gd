@@ -122,6 +122,10 @@ func _physics_process(delta):
 	
 	if hp > max_hp:
 		hp = max_hp
+	
+	if hp <= 0:
+		hp = max_hp
+		get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 
 func jump():
