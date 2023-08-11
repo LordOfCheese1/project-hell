@@ -22,3 +22,4 @@ res://scenes/game_over.tscn
 res://scenes/title_screen.tscn
 res://autoloads/music_manager.tscn
 res://scripts/world/level.gd
+res://scripts/entities/enemies/serpent.gd

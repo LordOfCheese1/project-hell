@@ -106,7 +106,8 @@ func _physics_process(_delta):
 	
 	if hp <= 0:
 		die(20)
-		mm.switch_fmod_event("LVL2")
+		mm.switch_boss_param("Victory")
+		mm.switch_fmod_event("LVL2", 3.0)
 		call_deferred("free")
 	
 	
