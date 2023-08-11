@@ -214,15 +214,29 @@ position = Vector2(72, 240)
 [node name="save_point" parent="environment/save_point" instance=ExtResource("12_aksxv")]
 position = Vector2(-320, 1216)
 
+[node name="music_changer4" parent="environment" instance=ExtResource("27_cdiyd")]
+position = Vector2(-855, 1209)
+param_name = "LVL2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer4"]
+shape = SubResource("RectangleShape2D_q171j")
+
+[node name="music_changer3" parent="environment" instance=ExtResource("27_cdiyd")]
+position = Vector2(-834, 1209)
+param_name = "Silence"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer3"]
+shape = SubResource("RectangleShape2D_q171j")
+
 [node name="music_changer" parent="environment" instance=ExtResource("27_cdiyd")]
-position = Vector2(-544, 1208)
+position = Vector2(-617, 1208)
 param_name = "Silence"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer"]
 shape = SubResource("RectangleShape2D_q171j")
 
 [node name="music_changer2" parent="environment" instance=ExtResource("27_cdiyd")]
-position = Vector2(-527, 1208)
+position = Vector2(-597, 1208)
 param_name = "LVL2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="environment/music_changer2"]
