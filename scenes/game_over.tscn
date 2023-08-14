@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://brhprh6473ix5"]
+[gd_scene load_steps=5 format=3 uid="uid://brhprh6473ix5"]
+
+[ext_resource type="PackedScene" uid="uid://dpll5l8otd3vh" path="res://prefabs/entities/death/death.tscn" id="1_jerd7"]
+[ext_resource type="PackedScene" uid="uid://dm8txnxhwlbsf" path="res://prefabs/entities/player.tscn" id="2_84nfs"]
+[ext_resource type="PackedScene" uid="uid://b57ljljuvefk1" path="res://prefabs/world/walls.tscn" id="3_jx5hy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me0we"]
+size = Vector2(384, 32)
 
 [node name="game_over" type="Node2D"]
 
@@ -6,3 +13,19 @@
 offset_right = 384.0
 offset_bottom = 256.0
 color = Color(0.0352941, 0.0352941, 0.0509804, 1)
+
+[node name="death" parent="." instance=ExtResource("1_jerd7")]
+position = Vector2(316, 193)
+
+[node name="player" parent="." instance=ExtResource("2_84nfs")]
+position = Vector2(101, 186)
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(192, -16)
+shape = SubResource("RectangleShape2D_me0we")
+
+[node name="walls" parent="." instance=ExtResource("3_jx5hy")]
+layer_0/tile_data = PackedInt32Array(65535, 196609, 1, -1, 262145, 0, 131071, 196609, 1, 196607, 196609, 1, 262143, 196609, 1, 327679, 196609, 1, 393215, 196609, 1, 458751, 196609, 1, 524287, 196609, 1, 589823, 196609, 1, 655359, 196609, 1, 917503, 196609, 1, 983039, 196609, 1, 1048575, 196609, 2, 851967, 196609, 1, 786431, 196609, 1, 720895, 196609, 1, -65536, 65537, 3, -65535, 65537, 3, -65534, 65537, 3, -65533, 65537, 3, -65532, 65537, 3, -65531, 65537, 3, -65530, 65537, 3, -65529, 65537, 3, -65528, 65537, 3, -65527, 65537, 3, -65526, 65537, 3, -65525, 65537, 3, -65524, 65537, 3, -65523, 65537, 3, -65522, 65537, 3, -65521, 65537, 3, -65520, 65537, 3, -65519, 65537, 3, -65518, 65537, 3, -65517, 65537, 3, -65516, 65537, 3, -65515, 65537, 3, -65514, 65537, 3, -65513, 65537, 3, -65512, 458753, 0, 24, 196609, 1, 65560, 196609, 1, 131096, 196609, 1, 196632, 196609, 1, 262168, 196609, 1, 327704, 196609, 1, 917528, 196609, 1, 983064, 196609, 2, 589848, 196609, 1, 524312, 196609, 1, 458776, 196609, 1, 393240, 196609, 1, 655384, 196609, 1, 720920, 196609, 1, 786456, 196609, 1, 851992, 196609, 1)

@@ -15,7 +15,7 @@ var values = {
 	"current_scene" : "res://scenes/levels/00_hellgates.tscn",
 	
 	#settings
-	"music_is_playing" : true
+	"music_is_playing" : false
 }
 
 

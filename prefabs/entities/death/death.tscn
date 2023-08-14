@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpll5l8otd3vh"]
+
+[ext_resource type="Script" path="res://scripts/entities/death/death.gd" id="1_mi8nd"]
+[ext_resource type="Texture2D" uid="uid://cyedn5ffs66ui" path="res://textures/entities/death/body.png" id="2_2godi"]
+[ext_resource type="Texture2D" uid="uid://dvqwmnmx1d0k3" path="res://textures/entities/death/neck.png" id="3_68m1f"]
+[ext_resource type="Texture2D" uid="uid://cka0c1jrs8gab" path="res://textures/entities/death/tophat.png" id="4_3amxt"]
+[ext_resource type="Texture2D" uid="uid://n6u65832nyyu" path="res://textures/entities/death/eye.png" id="5_0bev0"]
+
+[sub_resource type="Curve" id="Curve_dho2h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.402655, 0.809816), 0.0, 0.0, 0, 0, Vector2(1, 0.104294), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="death" type="CharacterBody2D"]
+script = ExtResource("1_mi8nd")
+
+[node name="body" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_2godi")
+offset = Vector2(16, 0)
+
+[node name="neck" type="Sprite2D" parent="."]
+position = Vector2(0, -36)
+rotation = -1.5708
+texture = ExtResource("3_68m1f")
+offset = Vector2(11, 0)
+
+[node name="head" type="Node2D" parent="."]
+position = Vector2(0, -59)
+
+[node name="tophat" type="Sprite2D" parent="head"]
+position = Vector2(0, -5)
+texture = ExtResource("4_3amxt")
+offset = Vector2(0, -7)
+
+[node name="eye" type="Sprite2D" parent="head/tophat"]
+position = Vector2(0, -8)
+texture = ExtResource("5_0bev0")
+offset = Vector2(2, 0)
+
+[node name="beard" type="Line2D" parent="head"]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 16.0
+width_curve = SubResource("Curve_dho2h")
+default_color = Color(0.811765, 0.780392, 0.745098, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="looker" type="Node2D" parent="."]

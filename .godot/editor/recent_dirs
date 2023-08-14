@@ -1,15 +1,15 @@
+res://scripts/entities
+res://prefabs/entities
 res://autoloads
 res://scripts/autoloads
 res://scripts/world
 res://prefabs/world
 C:/Gamedev/Godot4/Exports/project-hell/early_demo
-res://scripts/entities
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies/spider
 res://prefabs/entities/enemies/spider
 C:/Gamedev/Godot4/project-hell
-res://prefabs/entities
 res://scenes
 res://scripts/entities/enemies
 res://prefabs/entities/enemies

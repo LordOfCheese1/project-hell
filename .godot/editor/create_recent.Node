@@ -1,12 +1,13 @@
-Label
-Node2D
-CanvasLayer
 CollisionShape2D
+StaticBody2D
+Node2D
+AudioStreamPlayer
+Label
+CanvasLayer
 Area2D
 Line2D
 Sprite2D
 Polygon2D
-AudioStreamPlayer
 CharacterBody2D
 RayCast2D
 Node
@@ -15,7 +16,6 @@ CanvasModulate
 TileMap
 Timer
 VisibleOnScreenEnabler2D
-StaticBody2D
 CanvasGroup
 TextureProgressBar
 StudioEventEmitter2D

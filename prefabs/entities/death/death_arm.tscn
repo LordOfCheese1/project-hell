@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctwekjc54me0i"]
+
+[ext_resource type="Script" path="res://scripts/entities/death/death_arm.gd" id="1_7ayr0"]
+[ext_resource type="Texture2D" uid="uid://b1vapbb3g5yj7" path="res://textures/entities/death/lower_arm.png" id="2_yaatd"]
+[ext_resource type="Texture2D" uid="uid://degtvh8gxvlmt" path="res://textures/entities/death/upper_arm.png" id="3_7mcmp"]
+
+[node name="death_arm" type="Node2D"]
+script = ExtResource("1_7ayr0")
+
+[node name="upper_arm" type="Sprite2D" parent="."]
+position = Vector2(23, 0)
+texture = ExtResource("3_7mcmp")
+offset = Vector2(12, 0)
+
+[node name="lower_arm" type="Sprite2D" parent="."]
+texture = ExtResource("2_yaatd")
+offset = Vector2(12, 0)

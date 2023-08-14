@@ -33,6 +33,7 @@ position = Vector2(-2, 5)
 texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 script = ExtResource("2_wmahh")
+sound = NodePath("../../footsteps")
 
 [node name="leg_right" type="Sprite2D" parent="body"]
 use_parent_material = true
@@ -41,6 +42,7 @@ texture = ExtResource("2_50baq")
 offset = Vector2(0, 2)
 flip_h = true
 script = ExtResource("2_wmahh")
+sound = NodePath("../../footsteps")
 
 [node name="upper_body" type="Sprite2D" parent="body"]
 use_parent_material = true
@@ -71,6 +73,8 @@ shape = SubResource("RectangleShape2D_cx5uv")
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pwhea")
+
+[node name="footsteps" type="AudioStreamPlayer" parent="."]
 
 [node name="progress_bar" type="Node2D" parent="."]
 position = Vector2(0, -24)
