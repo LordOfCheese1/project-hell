@@ -19,7 +19,7 @@ func _ready():
 	if sv.values["music_is_playing"] == true:
 		musicInstance.start()
 		mixInstance.start()
-		ambiInstance.start()
+		#ambiInstance.start()
 
 #change parameter within level music
 func switch_level_param(value : String):
