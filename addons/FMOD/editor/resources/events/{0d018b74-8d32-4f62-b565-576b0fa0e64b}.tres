@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://c560se0hbc30k"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/SerpentDeath"
+guid = "{0d018b74-8d32-4f62-b565-576b0fa0e64b}"
+name = "SerpentDeath"

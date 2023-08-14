@@ -108,6 +108,7 @@ func _physics_process(_delta):
 		die(20)
 		mm.switch_boss_param("Victory")
 		mm.switch_fmod_event("LVL2", 3.0)
+		mm.trigger_serpent_death()
 		call_deferred("free")
 	
 	

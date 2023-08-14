@@ -1,18 +1,18 @@
 [gd_resource type="ParameterAsset" load_steps=3 format=3 uid="uid://bi8jsegwcn5bu"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_v3abo"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_hwny1"]
 data1 = 1018547671
 data2 = 3968208176
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_txmch"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_7ix3o"]
 name = "MixState"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_v3abo")
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_hwny1")
 maximum = 1.0
 flags = 28
 guid = "{62137e18-39de-43a4-84e4-fa933d51a995}"
 
 [resource]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_txmch")
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_7ix3o")
 labels = ["NotHurt", "Hurt"]
 path = "parameter:/MixState"
 guid = "{62137e18-39de-43a4-84e4-fa933d51a995}"

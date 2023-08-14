@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cukvd5btye2yg"]
+[gd_scene load_steps=7 format=3 uid="uid://cukvd5btye2yg"]
 
 [ext_resource type="Script" path="res://scripts/autoloads/music_manager.gd" id="1_qaea8"]
 [ext_resource type="EventAsset" uid="uid://bsnhude3rimi6" path="res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}.tres" id="2_ydi7u"]
+[ext_resource type="EventAsset" uid="uid://cbp0uw4h6oduw" path="res://addons/FMOD/editor/resources/events/{5f7e2062-3ae8-40f6-abd9-f9504bee4812}.tres" id="3_ceops"]
+[ext_resource type="EventAsset" uid="uid://byqd256glv4gv" path="res://addons/FMOD/editor/resources/events/{5377e23d-c098-43e6-ae84-c82f80467acc}.tres" id="4_g0qq8"]
+[ext_resource type="EventAsset" uid="uid://c560se0hbc30k" path="res://addons/FMOD/editor/resources/events/{0d018b74-8d32-4f62-b565-576b0fa0e64b}.tres" id="5_6rp8p"]
 
 [sub_resource type="EventAsset" id="EventAsset_osx8v"]
 min_distance = 1.0
@@ -14,3 +17,6 @@ name = "MixState"
 script = ExtResource("1_qaea8")
 musicEvent = ExtResource("2_ydi7u")
 mixEvent = SubResource("EventAsset_osx8v")
+ambiEvent = ExtResource("3_ceops")
+cerbDeath = ExtResource("4_g0qq8")
+serpentDeath = ExtResource("5_6rp8p")

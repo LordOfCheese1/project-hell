@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://byqd256glv4gv"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/CerberusDeath"
+guid = "{5377e23d-c098-43e6-ae84-c82f80467acc}"
+name = "CerberusDeath"
