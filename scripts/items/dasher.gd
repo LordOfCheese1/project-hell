@@ -29,7 +29,9 @@ func _on_used():
 	
 	if usable:
 		gv.spawn_explosion(15, global_position + transform.x * 10, load("res://textures/particles/small_lighting_spark.png"), -0.05, 0, 0, 0, 0, 50)
+		$recharge.play()
 		$particle_spawner.texture = load("res://textures/particles/lighting_spark.png")
 	else:
 		gv.spawn_explosion(15, global_position + transform.x * 10, load("res://textures/particles/lighting_spark.png"), -0.05, 0, 0, 0, 0, 80)
+		$zap.play()
 		$particle_spawner.texture = load("res://textures/particles/small_lighting_spark.png")

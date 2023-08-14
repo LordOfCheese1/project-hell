@@ -1,7 +1,7 @@
+AudioStreamPlayer
 CollisionShape2D
 StaticBody2D
 Node2D
-AudioStreamPlayer
 Label
 CanvasLayer
 Area2D

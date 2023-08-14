@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqv4d3fj5oq15"]
+[gd_scene load_steps=8 format=3 uid="uid://bqv4d3fj5oq15"]
 
 [ext_resource type="Script" path="res://scripts/items/dasher.gd" id="1_y1f0i"]
 [ext_resource type="Texture2D" uid="uid://bhbkn2tdnxdit" path="res://textures/items/dasher.png" id="2_xpjt7"]
 [ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="3_txdie"]
 [ext_resource type="Texture2D" uid="uid://c44csjm000xau" path="res://textures/particles/lighting_spark.png" id="4_e22rk"]
+[ext_resource type="AudioStream" uid="uid://dg3ep07ndp7oe" path="res://sfx/items/dash_gun/zap_jump.wav" id="5_fmc0h"]
+[ext_resource type="AudioStream" uid="uid://d18aovay6tvt" path="res://sfx/items/dash_gun/zap_recharge.wav" id="6_fb6u8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nc6fu"]
 size = Vector2(12, 8)
@@ -25,5 +27,11 @@ texture = ExtResource("4_e22rk")
 freq = 0.02
 scale_amount = -0.06
 rot_amount = 3.0
+
+[node name="zap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fmc0h")
+
+[node name="recharge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fb6u8")
 
 [connection signal="used" from="." to="." method="_on_used"]
