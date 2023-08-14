@@ -1,3 +1,7 @@
+C:/Gamedev/Godot4/Exports/project-hell/demo/mac
+C:/Gamedev/Godot4/Exports/project-hell/demo/web
+C:/Gamedev/Godot4/Exports/project-hell/demo
+res://
 res://scripts/entities
 res://prefabs/entities
 res://autoloads
@@ -19,4 +23,3 @@ res://prefabs/items
 res://scripts/levels
 res://prefabs/user_interface
 res://scripts/user_interface
-res://scripts/systems

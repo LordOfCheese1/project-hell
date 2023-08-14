@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://u757tn11btkt"]
+[gd_scene load_steps=9 format=3 uid="uid://u757tn11btkt"]
 
 [ext_resource type="Script" path="res://scripts/projectiles/big_fireball.gd" id="1_jh547"]
 [ext_resource type="Texture2D" uid="uid://cxe8u58fypvoq" path="res://textures/projectiles/big_fireball.png" id="2_wgpqe"]
 [ext_resource type="PackedScene" uid="uid://54v6okuwwheq" path="res://prefabs/components/attackbox.tscn" id="3_gu876"]
 [ext_resource type="PackedScene" uid="uid://dcx2yxnmsex4q" path="res://prefabs/components/particle_spawner.tscn" id="4_h7eu1"]
 [ext_resource type="Texture2D" uid="uid://csh53q1nbqguy" path="res://textures/particles/fire0.png" id="5_s43kk"]
+[ext_resource type="AudioStream" uid="uid://dgxqa547km7g5" path="res://sfx/projectiles/fireball.wav" id="6_t0xvm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyxj8"]
 radius = 8.0
@@ -34,5 +35,8 @@ freq = 0.02
 scale_amount = -0.1
 alpha_amount = -0.1
 rot_amount = 15.0
+
+[node name="fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_t0xvm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

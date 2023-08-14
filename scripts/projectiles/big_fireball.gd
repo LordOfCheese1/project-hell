@@ -4,6 +4,7 @@ var small_fireball_scene = load("res://prefabs/projectiles/laser.tscn")
 
 
 func _ready():
+	$fire.play()
 	velocity = transform.x * 180
 	$sprite.scale = Vector2(0, 0)
 

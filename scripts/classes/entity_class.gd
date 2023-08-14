@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var hit_stream = load("res://sfx/entities/enemyhit.wav")
 @onready var hit_shader = load("res://shaders/flash.gdshader")
 var scrap_path = load("res://prefabs/world/scrap.tscn")
 var hp = 1.0
@@ -10,6 +11,7 @@ var is_dead = false
 var type = 0 #0 = friendly, 1 = enemy, 2 = boss
 var hit_flash_fac = 0.0
 var weight = 12.0
+var hit_sound = null
 
 
 func setup_entity(starting_hp : float, grab_capacity : int, entity_type = 0):
@@ -20,6 +22,10 @@ func setup_entity(starting_hp : float, grab_capacity : int, entity_type = 0):
 	material = ShaderMaterial.new()
 	material.shader = hit_shader
 	material.setup_local_to_scene()
+	if !is_in_group("player"):
+		hit_sound = AudioStreamPlayer.new()
+		hit_sound.stream = hit_stream
+		add_child(hit_sound)
 
 
 func entity_update():
@@ -32,6 +38,9 @@ func entity_update():
 
 
 func hit():
+	if !is_in_group("player"):
+		hit_sound.pitch_scale = randf_range(0.8, 1.2)
+		hit_sound.play()
 	hit_flash_fac = 1.0
 
 

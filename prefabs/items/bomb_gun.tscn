@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6dhldkdwokp8"]
+[gd_scene load_steps=6 format=3 uid="uid://b6dhldkdwokp8"]
 
 [ext_resource type="Script" path="res://scripts/items/bomb_gun.gd" id="1_h66ei"]
 [ext_resource type="Texture2D" uid="uid://b6xrwljja172s" path="res://textures/items/bomb_gun/gun.png" id="2_yltk1"]
 [ext_resource type="Texture2D" uid="uid://cfrcp8jg0bs6g" path="res://textures/items/bomb_gun/bubble.png" id="3_mympu"]
+[ext_resource type="AudioStream" uid="uid://d01dyrffpmh04" path="res://sfx/items/poison_wand/poison_spit.wav" id="4_bcqwx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgkxf"]
 radius = 4.0
@@ -23,6 +24,9 @@ offset = Vector2(4, 0)
 position = Vector2(4, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lgkxf")
+
+[node name="spit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bcqwx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

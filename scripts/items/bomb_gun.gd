@@ -34,6 +34,8 @@ func _on_used():
 		bomb_inst.get_child(0).ignore_in_detection.append(grabbed_entity)
 	get_tree().current_scene.add_child(bomb_inst)
 	bubble_size = 0.1
+	$spit.pitch_scale = randf_range(0.8, 1.2)
+	$spit.play()
 
 
 func _on_body_entered(body):

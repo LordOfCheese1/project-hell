@@ -23,8 +23,8 @@ var sounds = {
 func _ready():
 	$particle_spawner.alt_parent = $merge_icon
 	gv.player = self
-	setup_entity(15, 2, 0)
 	add_to_group("player")
+	setup_entity(15, 2, 0)
 
 
 func _physics_process(delta):
