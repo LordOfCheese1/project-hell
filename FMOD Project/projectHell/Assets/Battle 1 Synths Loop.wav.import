@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt5p1ulvakc8w"
+path="res://.godot/imported/Battle 1 Synths Loop.wav-244a82afee738cd3167e4e337a03b295.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/Battle 1 Synths Loop.wav"
+dest_files=["res://.godot/imported/Battle 1 Synths Loop.wav-244a82afee738cd3167e4e337a03b295.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

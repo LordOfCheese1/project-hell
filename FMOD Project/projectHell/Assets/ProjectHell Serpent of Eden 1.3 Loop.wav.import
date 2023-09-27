@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpoknec1pftoi"
+path="res://.godot/imported/ProjectHell Serpent of Eden 1.3 Loop.wav-cedd2ee3eaaf0c4fa07da6b1c10695fc.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/ProjectHell Serpent of Eden 1.3 Loop.wav"
+dest_files=["res://.godot/imported/ProjectHell Serpent of Eden 1.3 Loop.wav-cedd2ee3eaaf0c4fa07da6b1c10695fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

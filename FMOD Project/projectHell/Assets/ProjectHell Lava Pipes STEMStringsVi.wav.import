@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3jsmk675dtmh"
+path="res://.godot/imported/ProjectHell Lava Pipes STEMStringsVi.wav-d78bedcb701f2fc87bac2b5d4c984837.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/ProjectHell Lava Pipes STEMStringsVi.wav"
+dest_files=["res://.godot/imported/ProjectHell Lava Pipes STEMStringsVi.wav-d78bedcb701f2fc87bac2b5d4c984837.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

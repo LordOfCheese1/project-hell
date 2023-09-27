@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbedd8u5c27xp"
+path="res://.godot/imported/Battle 1 Choir Loop.wav-77ea2549bfda3f3956b1b1f909428481.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/Battle 1 Choir Loop.wav"
+dest_files=["res://.godot/imported/Battle 1 Choir Loop.wav-77ea2549bfda3f3956b1b1f909428481.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

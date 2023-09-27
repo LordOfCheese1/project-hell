@@ -3,8 +3,6 @@ res://addons/FMOD/editor/resources/events/{6d033906-c313-4e12-888d-de6e225e0a06}
 res://addons/FMOD/editor/resources/events/{81da5049-8c5b-4c92-b275-2e4d53058596}.tres
 res://addons/FMOD/editor/resources/parameters/{62137e18-39de-43a4-84e4-fa933d51a995}.tres
 res://addons/FMOD/editor/resources/parameters/{bda6838f-d187-4205-b530-1f05674472c5}.tres
-res://scripts/entities/player/player.gd
-res://scripts/classes/entity_class.gd
 res://scenes/levels/01_lavapipes.tscn
 res://prefabs/world/walls.tscn
 res://prefabs/world/scrap.tscn
@@ -19,5 +17,3 @@ res://prefabs/entities/player.tscn
 res://prefabs/items/dasher.tscn
 res://prefabs/items/bomb_gun.tscn
 res://prefabs/projectiles/big_fireball.tscn
-res://scripts/projectiles/big_fireball.gd
-res://scripts/autoloads/saved_values.gd

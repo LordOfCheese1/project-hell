@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://uao38fm60b3i"
+path="res://.godot/imported/Battle 1 Piano 1st Pass.wav-a6244273d84c3b6d8dadae101de9f3e3.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/Battle 1 Piano 1st Pass.wav"
+dest_files=["res://.godot/imported/Battle 1 Piano 1st Pass.wav-a6244273d84c3b6d8dadae101de9f3e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

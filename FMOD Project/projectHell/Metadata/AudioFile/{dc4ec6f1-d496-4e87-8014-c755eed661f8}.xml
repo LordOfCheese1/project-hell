@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dc4ec6f1-d496-4e87-8014-c755eed661f8}">
+		<property name="assetPath">
+			<value>Hell ambience.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>157.37160416666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{404b4666-e221-4c70-9d06-cbbae200dac8}</destination>
+		</relationship>
+	</object>
+</objects>

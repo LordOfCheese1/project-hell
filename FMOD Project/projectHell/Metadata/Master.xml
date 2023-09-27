@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerMaster" id="{4cc134c8-cc52-4cc4-9948-977095682b9c}">
+		<property name="name">
+			<value>Master Bus</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{2bb4b0ba-21ba-4eab-bf92-3567924b2609}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b3e4edd2-d4d5-4b74-8e97-0a22bac9cc73}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{79dbae9a-dc94-4c74-bcb7-2b49bfb1048c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{2bb4b0ba-21ba-4eab-bf92-3567924b2609}">
+		<relationship name="effects">
+			<destination>{73fc1d71-c813-41ab-b5ac-fcc8cf422033}</destination>
+			<destination>{e880f061-93fb-4545-863f-acb1cb877e27}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b3e4edd2-d4d5-4b74-8e97-0a22bac9cc73}">
+		<property name="overridingOutputFormat">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{73fc1d71-c813-41ab-b5ac-fcc8cf422033}">
+		<property name="filterTypeA">
+			<value>2</value>
+		</property>
+		<property name="filterTypeE">
+			<value>5</value>
+		</property>
+		<property name="frequencyA">
+			<value>21999.9902</value>
+		</property>
+		<property name="frequencyE">
+			<value>20</value>
+		</property>
+		<property name="qualityA">
+			<value>0.497689635</value>
+		</property>
+		<property name="qualityE">
+			<value>0.639999986</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{e880f061-93fb-4545-863f-acb1cb877e27}" />
+</objects>

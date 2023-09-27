@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{36306836-2d3f-4b52-89de-81b499afd497}">
+		<property name="assetPath">
+			<value>ProjectHell Lava Pipes STEMChoir.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>79.058843537414973</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{404b4666-e221-4c70-9d06-cbbae200dac8}</destination>
+		</relationship>
+	</object>
+</objects>

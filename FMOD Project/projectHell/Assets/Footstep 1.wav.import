@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4lpdko30iny8"
+path="res://.godot/imported/Footstep 1.wav-c9e26f96379c8e6afee184993aa3ad9e.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/Footstep 1.wav"
+dest_files=["res://.godot/imported/Footstep 1.wav-c9e26f96379c8e6afee184993aa3ad9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

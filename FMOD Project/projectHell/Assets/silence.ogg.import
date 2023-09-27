@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxlv1rri4xj7d"
+path="res://.godot/imported/silence.ogg-c7805b63adda4e7065aeaa5e3cb21137.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/silence.ogg"
+dest_files=["res://.godot/imported/silence.ogg-c7805b63adda4e7065aeaa5e3cb21137.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

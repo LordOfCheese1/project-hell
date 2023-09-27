@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9126b9fb-9e64-463c-a249-a3dfbcb1c478}">
+		<property name="assetPath">
+			<value>Battle 1 Piano 1st Pass.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>117.03702947845805</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{404b4666-e221-4c70-9d06-cbbae200dac8}</destination>
+		</relationship>
+	</object>
+</objects>

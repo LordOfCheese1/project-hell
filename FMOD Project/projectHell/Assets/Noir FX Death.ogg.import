@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7cbrpiuom2dp"
+path="res://.godot/imported/Noir FX Death.ogg-9c22407d79ef6b1cd13e98222e5f7822.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/Noir FX Death.ogg"
+dest_files=["res://.godot/imported/Noir FX Death.ogg-9c22407d79ef6b1cd13e98222e5f7822.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e1a0bd4f-3b0d-4907-b438-2d5418acd016}">
+		<property name="name">
+			<value>MusicChange</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ee1151b6-4fee-46b3-9cfa-a7abe335be75}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a7e22802-7519-4acc-aed2-d20f7518e1e6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a7e22802-7519-4acc-aed2-d20f7518e1e6}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>LVL1</value>
+			<value>LVL1Boss</value>
+			<value>LVL2</value>
+			<value>LVL2Boss</value>
+			<value>LVL3</value>
+			<value>LVL3Boss</value>
+			<value>Silence</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

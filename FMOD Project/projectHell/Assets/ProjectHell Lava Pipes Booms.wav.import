@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drqkd2tp6q5jv"
+path="res://.godot/imported/ProjectHell Lava Pipes Booms.wav-4842a9c5f4bc05999743ee919780162e.sample"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/ProjectHell Lava Pipes Booms.wav"
+dest_files=["res://.godot/imported/ProjectHell Lava Pipes Booms.wav-4842a9c5f4bc05999743ee919780162e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

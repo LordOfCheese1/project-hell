@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{65fc7285-41ad-4192-9697-a57bab00f293}">
+		<property name="assetPath">
+			<value>ProjectHell Lava Pipes Booms.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>22.941179138321996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{404b4666-e221-4c70-9d06-cbbae200dac8}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,6 +1,5 @@
-C:/Gamedev/Godot4/Exports/project-hell/demo/mac
-C:/Gamedev/Godot4/Exports/project-hell/demo/web
-C:/Gamedev/Godot4/Exports/project-hell/demo
+C:/Users/jipmi/Desktop
+C:/Users/jipmi/Documents/Godot Projects/project-hell
 res://
 res://scripts/entities
 res://prefabs/entities
@@ -8,16 +7,13 @@ res://autoloads
 res://scripts/autoloads
 res://scripts/world
 res://prefabs/world
-C:/Gamedev/Godot4/Exports/project-hell/early_demo
 res://scripts/projectiles
 res://prefabs/projectiles
 res://scripts/entities/enemies/spider
 res://prefabs/entities/enemies/spider
-C:/Gamedev/Godot4/project-hell
 res://scenes
 res://scripts/entities/enemies
 res://prefabs/entities/enemies
-C:/Gamedev/Godot4/Exports/project-hell/modloader-test
 res://scripts/items
 res://prefabs/items
 res://scripts/levels

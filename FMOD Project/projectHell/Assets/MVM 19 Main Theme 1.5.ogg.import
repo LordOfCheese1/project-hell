@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jsus47swwnmk"
+path="res://.godot/imported/MVM 19 Main Theme 1.5.ogg-b674c5f3ec40464e73dd340b75150e68.oggvorbisstr"
+
+[deps]
+
+source_file="res://FMOD Project/projectHell/Assets/MVM 19 Main Theme 1.5.ogg"
+dest_files=["res://.godot/imported/MVM 19 Main Theme 1.5.ogg-b674c5f3ec40464e73dd340b75150e68.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
